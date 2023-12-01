@@ -25,4 +25,46 @@ let stringAndNum = [1, "2", 3];
 let tester = [1, 'Test'];
 let mySize = 2;
 console.log(mySize);
+function calculateTax(income, taxYear) {
+    if (taxYear < 2023)
+        return income * 1.2;
+    return income * 1.3;
+}
+calculateTax(10000, 2023);
+let employee = {
+    id: 1,
+    name: "Joey",
+    retire: (date) => {
+        console.log(date);
+    }
+};
+function kgToLbs(weight) {
+    if (typeof weight === 'number') {
+        return weight * 2.2;
+    }
+    else {
+        return parseInt(weight) * 2.2;
+    }
+}
+kgToLbs(10);
+kgToLbs('10');
+let textBox = {
+    drag: () => { },
+    resize: () => { }
+};
+const variable = "literal";
+let quantity;
+let measure;
+function greeted(name) {
+    if (name)
+        console.log(name.toLowerCase());
+    else
+        console.log('Hola!');
+}
+greeted(null);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(1);
+console.log(customer === null || customer === void 0 ? void 0 : customer.birthday);
 //# sourceMappingURL=index.js.map

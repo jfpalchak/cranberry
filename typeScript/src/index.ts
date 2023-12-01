@@ -72,3 +72,94 @@ function calculateTax(income: number, taxYear: number): number {
 }
 
 calculateTax(10_000, 2023);
+
+// OBJECTS
+
+interface Employee {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void
+} 
+
+type Employee2 = {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+}
+
+let employee: Employee = { 
+  id: 1, 
+  name: "Joey",
+  retire: (date: Date) => {
+    console.log(date);
+  }
+}
+
+// UNION TYPES
+function kgToLbs(weight: number | string): number {
+  if (typeof weight === 'number') {
+    return weight * 2.2;
+  }
+  else {
+    return parseInt(weight) * 2.2;
+  }
+}
+
+kgToLbs(10);
+kgToLbs('10');
+
+// INTERSECTION
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resize: () => void;
+}
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {}
+}
+
+// LITERAL TYPES
+const variable = "literal";
+
+type Quantity = 50 | 100;
+let quantity: Quantity;
+
+type Metric = 'cm' | 'inch';
+let measure: Metric;
+
+// NULLABLE TYPES
+function greeted(name: string | null | undefined) {
+  if (name)
+    console.log(name.toLowerCase());
+  else
+    console.log('Hola!');
+}
+
+greeted(null);
+
+// OPTIONAL CHAINING
+
+type Customer = {
+  birthday?: Date
+}
+
+function getCustomer(id: number): Customer | null {
+  return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = getCustomer(1);
+// Optional property access operator
+console.log(customer?.birthday?.getFullYear());
+
+// Optional element access operator
+// customers?.[0]
+
+// Optional Call
+let log: any = null;
+log?.('a');
