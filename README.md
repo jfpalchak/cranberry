@@ -10,5 +10,6 @@ AM
 * 9:17 - spent time drafting initial component tree & application data in Miro
 * 9:18 - there's a humming bird outside my window, maybe I should call the app 'Hum'
 * 9:39 - begin looking into TypeScript documentation
+* 10:15 - reading through TypeScript documentation
 
 ```
