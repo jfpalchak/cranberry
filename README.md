@@ -11,5 +11,7 @@ AM
 * 9:18 - there's a humming bird outside my window, maybe I should call the app 'Hum'
 * 9:39 - begin looking into TypeScript documentation
 * 10:15 - reading through TypeScript documentation
+* 10:30 - introductory practice with TS, add folder to repo
+* 10:52 - research on defining types in TS: Interfaces vs Type Aliases
 
 ```
