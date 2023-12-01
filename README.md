@@ -9,5 +9,6 @@ AM
 * 8:40 - begin research into other 'Quit Smoking' apps for design inspiration
 * 9:17 - spent time drafting initial component tree & application data in Miro
 * 9:18 - there's a humming bird outside my window, maybe I should call the app 'Hum'
+* 9:39 - begin looking into TypeScript documentation
 
 ```
