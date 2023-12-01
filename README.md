@@ -7,5 +7,7 @@ AM
 * 8:20 - begin to draft up database schema for user data
 * 8:37 - create first draft of database schema w/ one-to-many relationship
 * 8:40 - begin research into other 'Quit Smoking' apps for design inspiration
+* 9:17 - spent time drafting initial component tree & application data in Miro
+* 9:18 - there's a humming bird outside my window, maybe I should call the app 'Hum'
 
 ```
