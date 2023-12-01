@@ -15,5 +15,8 @@ AM
 * 10:52 - research on defining types in TS: Interfaces vs Type Aliases
 * 11:10 - taking notes on when to use Interface vs Type Aliases
 * 11:20 - back to TypeScript documentation: 'The Basics'
+
+PM
 * 12:00 - finish covering 'The Basics'
+* 1:00 - resume reading through the TS docs
 ```
