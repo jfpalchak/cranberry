@@ -19,7 +19,8 @@ AM
 PM
 * 12:00 - finish covering 'The Basics'
 * 1:00 - resume reading through the TS docs
-* 1:32 - working through 'Narrowing' in the docs, will most likely jump over to a video tutorial, as the documentation is... thick
+* 1:32 - working through 'Narrowing' in the docs
 * 1:55 - stepping away from docs, watch Tutorial on TS by Mosh
+* 3:00 - finish watching Tutorial, back to reviewing docs
 
 ```
