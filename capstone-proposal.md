@@ -18,6 +18,13 @@ Allow users to track their progress in their journey to quit smoking. Displays t
 
 ### What tools, frameworks, libraries, APIs, modules and/or other resources will you use to create this MVP? List them all here:
 
+#### Planning / Design
+
+* Miro
+* draw.io
+* SQL Designer
+* Figma
+
 #### Front End
 
 * JavaScript/TypeScript
@@ -38,7 +45,8 @@ Allow users to track their progress in their journey to quit smoking. Displays t
 ### If you finish developing the minimum viable product (MVP) with time to spare, what will you work on next? Describe these features here:
 
 * Allow users to signal if they've relapsed - reset progress trackers.
-* Ability for users to document cravings:
+* Ability for users to document cravings.
+* Track user cravings:
   * Graph cravings over time (severity, cigarettes smoked, etc)
 * Implement tips for overcoming cravings.
 * Add test coverage.
