@@ -26,5 +26,6 @@ PM
 * 4:08 - for now, use: npx create-react-app my-app --template typescript
 -> would like to look into alternatives, otherwise everything works out of the box
 * 4:24 - continue watching TypeScript tutorials
-
+* 5:01 - feeling comfortable with moving forward on implementing TypeScript, will plan on continuing review of documentation over the weekend
+* 5:02 - next steps is deciding on use of NoSQL like Firestore, or implementing my own backend with ASP.NET & MySQL. I'll hold off on making that decision after going through the weekend work and learning more about NoSQL & Firestore. 
 ```
