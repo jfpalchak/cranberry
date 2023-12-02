@@ -22,5 +22,6 @@ PM
 * 1:32 - working through 'Narrowing' in the docs
 * 1:55 - stepping away from docs, watch Tutorial on TS by Mosh
 * 3:00 - finish watching Tutorial, back to reviewing docs
+* 3:34 - look into configuring & using TypeScript with React (review the React docs)
 
 ```
