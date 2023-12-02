@@ -25,5 +25,6 @@ PM
 * 3:34 - look into configuring & using TypeScript with React (review the React docs)
 * 4:08 - for now, use: npx create-react-app my-app --template typescript
 -> would like to look into alternatives, otherwise everything works out of the box
+* 4:24 - continue watching TypeScript tutorials
 
 ```

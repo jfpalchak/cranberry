@@ -65,3 +65,5 @@ Allow users to track their progress in their journey to quit smoking. Displays t
 ## Is there anything else you'd like your instructor to know?
 
 For my backend, I'm considering implementing a NoSQL database instead, or possibly looking into working with the MERN Stack. But I hesitate to try too many new things, and am leaning towards prioritizing learning TypeScript and otherwise sticking to the tools I already know.
+
+I'm also contemplating approaching this project as mobile-first, and looking into React-Native.
