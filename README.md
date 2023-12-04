@@ -35,5 +35,5 @@
 ### Sunday, 12/03/2023
 ```
 * 11am-1pm - continue learning TypeScript (review Generic types)
-* 03:20pm  - look into Authentication w/ Firebase (including review of relevant LHP lessons)
+* 3pm-6pm  - look into Authentication w/ Firebase (including review of relevant LHP lessons)
 ```
