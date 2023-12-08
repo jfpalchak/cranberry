@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* HEADER COMPONENT STYLES */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+nav ul{
+  margin: auto;
+  list-style: none;
+  display: flex;
+  justify-content: row;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+nav a:hover {
+  border-bottom: 1px solid black;
+}
