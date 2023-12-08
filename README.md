@@ -1,3 +1,5 @@
+
+
 ## Research & Planning Log
 
 ### Friday, 12/01/2023
@@ -36,4 +38,9 @@
 ```
 * 11am-1pm - continue learning TypeScript (review Generic types)
 * 3pm-6pm  - look into Authentication w/ Firebase (including review of relevant LHP lessons)
+```
+
+### Friday, 12/08/2023
+```
+* 8am
 ```
