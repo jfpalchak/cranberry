@@ -41,6 +41,10 @@
 ```
 
 ### Friday, 12/08/2023
+
+Began work on backend. Can find the repository here: [CranberryAPI](https://github.com/jfpalchak/CranberryAPI.git).
+
 ```
-* 8am
+* 8:00am  - begin working on ASP.NET Core API backend
+* 11:00am - API WIP. After working with NoSQL/Firestore recently, I'm starting to appreciate how easy it is to incorporate into an application. Will see how I feel about actually implementing a C# backend once complete, or using Firestore instead. 
 ```
