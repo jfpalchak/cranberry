@@ -47,6 +47,7 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 ```
 * 8:00am  - begin working on ASP.NET Core API backend
 * 11:00am - API WIP. After working with NoSQL/Firestore recently, I'm starting to appreciate how easy it is to incorporate into an application. Will see how I feel about actually implementing a C# backend once complete, or using Firestore instead. 
-* 11:45am - look into best way to get/update custom user data (date quit, avg cigs smoked, etc)
-* 1:00pm  - WIP: implement basic CRUD & Auth for Users & Journals controllers. As I build out the API I'm really leaning towards using Firestore for the ease of use.
+* 11:45am - review customizing Identity user data
+* 1:00pm  - WIP: implement basic CRUD & Auth for Users & Journals controllers. As I build out the API, I'm really starting to lean towards using Firestore for the ease of use.
+* 1:45pm  - begin working on basic React UI to test API & Client integration
 ```
