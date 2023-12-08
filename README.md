@@ -52,4 +52,5 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 1:45pm  - begin working on basic React UI to test API & Client integration
 * 2:30pm  - look into creating type-friendly forms in React w/ TypeScript
 * 3:15pm  - troubleshooting CORS issue when attempting to sign up through react client
+* 3:38pm  - resolve issue, implement CORS policy in API
 ```

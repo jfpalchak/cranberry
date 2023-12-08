@@ -1,7 +1,11 @@
+import axios from "axios";
 import React, { useState } from "react";
 
+const BASE_URL = "http://localhost:5000/api";
 
 export default function SignIn() {
+
+  const [registerSuccess, setRegisterSuccess] = useState<string | null>(null);
 
   const [formData, setFormData] = useState<SignUpFormState>({
     userName: '',
@@ -17,10 +21,12 @@ export default function SignIn() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    fetch(`https://localhost:5001/api/users/register`)
-      .then(response => response.json())
-      .then((jsonResponse) => {
-        
+    axios.post(`${BASE_URL}/users/register`, formData)
+      .then(response => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
       })
 
   }
@@ -28,13 +34,14 @@ export default function SignIn() {
   return (
     <section>
       <h1>Register:</h1>
-      <form className="register-form">
+      <form className="register-form" onSubmit={handleSubmit}>
       <input 
           type="text" 
           id="userName" 
           name="userName" 
           placeholder="User Name" 
-          required 
+          required
+          onChange={handleChange}
         />
         <br/>
         <input 
@@ -43,6 +50,7 @@ export default function SignIn() {
           name="email"
           placeholder="Email"
           required
+          onChange={handleChange}
         />
         <br/>
         <input 
@@ -50,7 +58,8 @@ export default function SignIn() {
           id="password" 
           name="password" 
           placeholder="Password" 
-          required 
+          required
+          onChange={handleChange}
         />
         <br/>
         <button>Register</button>
