@@ -51,4 +51,5 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 1:00pm  - WIP: implement basic CRUD & Auth for Users & Journals controllers. As I build out the API, I'm really starting to lean towards using Firestore for the ease of use.
 * 1:45pm  - begin working on basic React UI to test API & Client integration
 * 2:30pm  - look into creating type-friendly forms in React w/ TypeScript
+* 3:15pm  - troubleshooting CORS issue when attempting to sign up through react client
 ```
