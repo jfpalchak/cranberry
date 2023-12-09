@@ -26,9 +26,10 @@ export default function SignIn() {
     axios.post(`${BASE_URL}/users/register`, formData)
       .then(response => {
         setRegisterSuccess(`${response.data.status}: ${response.data.message}`);
+        // redirect user
       })
       .catch((error) => {
-        setRegisterSuccess(`${error.data.status}: ${error.data.message}`)
+        setRegisterSuccess(`${error.response.data.status}: ${error.response.data.message}`);
       });
   }
 
@@ -42,10 +43,10 @@ export default function SignIn() {
         const token = response.data.token;
 
         sessionStorage.setItem("token", token);
-
+        // redirect user
       })
       .catch((error) => {
-        setSignInSuccess(`${error.data.status}: ${error.data.message}`);
+        setSignInSuccess(`${error.response.data.status}: ${error.response.data.message}`);
       });
 
   }

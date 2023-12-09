@@ -53,4 +53,6 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 2:30pm  - look into creating type-friendly forms in React w/ TypeScript
 * 3:15pm  - troubleshooting CORS issue when attempting to sign up through react client
 * 3:38pm  - resolve issue, implement CORS policy in API
+* 4pm-5pm - implement user registration & sign in, research into persistence with user credentials 
+* 5:22pm  - ending the day looking into best practice for user persistence with React, Axios, & React Router.
 ```
