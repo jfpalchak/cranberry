@@ -6,6 +6,7 @@ const BASE_URL = "http://localhost:5000/api";
 export default function SignIn() {
 
   const [registerSuccess, setRegisterSuccess] = useState<string | null>(null);
+  const [signInSuccess, setSignInSuccess] = useState<string | null>(null);
 
   const [formData, setFormData] = useState<SignUpFormState>({
     userName: '',
@@ -18,22 +19,42 @@ export default function SignIn() {
     setFormData(prevData => ({...prevData, [name]: value}));
   }
 
+  // REGISTER
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     axios.post(`${BASE_URL}/users/register`, formData)
       .then(response => {
-        console.log(response);
+        setRegisterSuccess(`${response.data.status}: ${response.data.message}`);
       })
       .catch((error) => {
-        console.log(error);
+        setRegisterSuccess(`${error.data.status}: ${error.data.message}`)
+      });
+  }
+
+  // SIGN IN
+  const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    axios.post(`${BASE_URL}/users/signin`, { email: formData.email, password: formData.password })
+      .then(response => {
+        setSignInSuccess(`${response.data.status}: ${response.data.message}`);
+        const token = response.data.token;
+
+        sessionStorage.setItem("token", token);
+
       })
+      .catch((error) => {
+        setSignInSuccess(`${error.data.status}: ${error.data.message}`);
+      });
 
   }
 
   return (
     <section>
+
       <h1>Register:</h1>
+      {registerSuccess}
       <form className="register-form" onSubmit={handleSubmit}>
       <input 
           type="text" 
@@ -46,7 +67,7 @@ export default function SignIn() {
         <br/>
         <input 
           type="text"
-          id="email"
+          id="registerEmail"
           name="email"
           placeholder="Email"
           required
@@ -55,7 +76,7 @@ export default function SignIn() {
         <br/>
         <input 
           type="password" 
-          id="password" 
+          id="registerPassword" 
           name="password" 
           placeholder="Password" 
           required
@@ -63,6 +84,30 @@ export default function SignIn() {
         />
         <br/>
         <button>Register</button>
+      </form>
+
+      <h1>Sign In</h1>
+      {signInSuccess}
+      <form className="signin-form" onSubmit={handleSignIn}>
+        <input 
+          type="text"
+          id="signinEmail"
+          name="email"
+          placeholder="Email"
+          required
+          onChange={handleChange}
+        />
+        <br/>
+        <input 
+          type="password" 
+          id="signinPassword" 
+          name="password" 
+          placeholder="Password" 
+          required
+          onChange={handleChange}
+        />
+        <br/>
+        <button>Log In</button>
       </form>
 
     </section>
