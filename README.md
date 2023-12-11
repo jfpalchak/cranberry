@@ -56,3 +56,8 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 4pm-5pm - implement user registration & sign in, research into persistence with user credentials 
 * 5:22pm  - ending the day looking into best practice for user persistence with React, Axios, & React Router.
 ```
+
+### Sunday, 12/10/2023
+```
+7pm-10pm  - continue to implement basic API functionality, reaching MVP status
+```
