@@ -45,3 +45,18 @@ nav a {
 nav a:hover {
   border-bottom: 1px solid black;
 }
+
+/* SPLASH */
+.splash-btn {
+  border: 2px red solid;
+  font-size: 1.2em;
+  padding: 1em;
+  border-radius: 3px;
+  background: white;
+  color: red;
+  transition: 0.3s
+}
+.splash-btn:hover {
+  cursor: pointer;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
