@@ -72,8 +72,11 @@ export default function Register() {
         <br/>
         <button>Register</button>
       </form>
-      <p>Already have an account? <Link to="/sign-in">Sign in.</Link></p>
 
+      <div className="callout">
+        <p>Already have an account? <Link to="/sign-in">Sign in.</Link></p>
+      </div>
+      
     </section>
   );
 } 

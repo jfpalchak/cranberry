@@ -1,3 +1,4 @@
+/* GENERAL */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,11 +13,23 @@ code {
     monospace;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
 /* HEADER COMPONENT STYLES */
 header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
@@ -28,15 +41,14 @@ header {
   font-weight: bold;
 }
 
-nav ul{
+header nav ul{
   margin: auto;
-  list-style: none;
   display: flex;
   justify-content: row;
   gap: 10px;
 }
 
-nav a {
+header a {
   text-decoration: none;
   color: black;
   border-bottom: 1px solid transparent;
@@ -59,4 +71,43 @@ nav a:hover {
 .splash-btn:hover {
   cursor: pointer;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+/* DASH NAV */
+
+.sidebar {
+  /* position: fixed; */
+  /* background: wheat; */
+  border: 1px solid black;
+  height: 100%;
+}
+
+.sidebar ul {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.sidebar li {
+  padding: 10px;
+  margin-left: 5px;
+  /* border-radius: 50px 0 0 50px;
+  background: white; */
+}
+
+.sidebar li:hover {
+  cursor: pointer;
+}
+
+/* DASHBOARD */
+.main-dashboard {
+  display: flex;
+}
+
+/* PROFILE */
+.user-profile {
+  display: grid;
+}
+
+.profile-content {
+  display: flex;
 }

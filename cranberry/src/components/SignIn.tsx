@@ -5,7 +5,9 @@ import AuthService from "../services/auth.service";
 
 const BASE_URL = "http://localhost:5000/api";
 
-export default function SignIn() {
+export default function SignIn(props: SignInProps) {
+
+  const { handleSetLoggedIn } = props;
 
   const [signInSuccess, setSignInSuccess] = useState<string | null>(null);
   const [formData, setFormData] = useState<SignInFormState>({
@@ -33,6 +35,7 @@ export default function SignIn() {
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("user", userId);
         
+        handleSetLoggedIn();
         navigate("/dashboard");
       })
       .catch((error) => {
@@ -73,7 +76,10 @@ export default function SignIn() {
         <br/>
         <button type="submit">Log In</button>
       </form>
-      <p>New to Cranberry? <Link to="/register">Register here.</Link></p>
+
+      <div className="callout">
+        <p>New to Cranberry? <Link to="/register">Register here.</Link></p>
+      </div>
     </section>
   );
 }
@@ -81,4 +87,8 @@ export default function SignIn() {
 interface SignInFormState {
   email: string;
   password: string;
+}
+
+type SignInProps = {
+  handleSetLoggedIn: () => void;
 }
