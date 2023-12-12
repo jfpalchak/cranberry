@@ -61,3 +61,10 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 ```
 7pm-10pm  - continue to implement basic API functionality, reaching MVP status
 ```
+
+### Monday, 12/11/2023
+```
+8am-2pm  - WIP: draft a mock-up design on Miro for the frontend
+2pm-3pm  - draft a component diagram for user Dashboard
+3pm-5pm  - WIP: building out React components following the diagram
+```
