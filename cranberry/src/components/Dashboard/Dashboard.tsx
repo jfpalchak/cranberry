@@ -37,7 +37,9 @@ export default function Dashboard() {
   return (
     <main className="main-dashboard">
       <DashNav />
-      <Outlet />
+        <Outlet />
+      <div className="dash-content">
+      </div>
       {/* <Routes>
         <Route index element={user ? <Profile user={user} /> : <p> Loading... </p> } />
         <Route path="dashboard/journals" element={<JournalControl />} />

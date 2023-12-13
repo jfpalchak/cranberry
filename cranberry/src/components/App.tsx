@@ -7,6 +7,7 @@ import Dashboard from './Dashboard/Dashboard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './Dashboard/Profile';
 import JournalControl from './Dashboard/JournalControl';
+import JournalDetail from './Dashboard/JournalDetail';
 import { IUser } from "./../types";
 import AuthService from '../services/auth.service';
 
