@@ -33,7 +33,7 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .logo {
@@ -54,7 +54,7 @@ header a {
   border-bottom: 1px solid transparent;
   transition: 0.2s;
 }
-nav a:hover {
+header nav a:hover {
   border-bottom: 1px solid black;
 }
 
@@ -73,44 +73,142 @@ nav a:hover {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-/* DASH NAV */
-
-.sidebar {
-  /* position: fixed; */
-  /* background: wheat; */
-  border: 1px solid black;
-  height: 100%;
-}
-
-.sidebar ul {
-  width: 100%;
-  margin-top: 50px;
-}
-
-.sidebar li {
-  padding: 10px;
-  margin-left: 5px;
-  /* border-radius: 50px 0 0 50px;
-  background: white; */
-}
-
-.sidebar li:hover {
-  cursor: pointer;
-}
-
 /* DASHBOARD */
 .main-dashboard {
   display: flex;
   background: whitesmoke;
 }
 
+
+/* DASH NAV */
+.sidebar {
+  /* position: fixed; */
+  background: white;
+  /* border: 1px solid black; */
+  height: 100%;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.sidebar ul {
+  /* width: 100%; */
+  margin-top: 50px;
+  padding-left: 5px;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* height: 40px; */
+  /* margin-left: 5px; */
+  border-radius: 25px;
+  width: 100%;
+  background: transparent;
+}
+
+.sidebar a {
+  font-size: 1.1em;
+  display: flex;
+  padding: 9px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px 0 0 50px;
+  text-decoration: none;
+  background: white;
+  color: black;
+}
+
+.sidebar a:hover {
+  cursor: pointer;
+}
+
+.sidebar .active li {
+  background: white;
+
+}
+.sidebar a.active {
+  background: whitesmoke;
+  font-weight: bold;
+  color: darkred;
+  position: relative;
+}
+.sidebar ul a.active::before{
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  top: -40px;
+  right: 0;
+  box-shadow: 20px 20px 0 whitesmoke;
+  /* z-index: -1; */
+}
+.sidebar ul a.active::after{
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  bottom: -40px;
+  right: 0;
+  box-shadow: 20px -20px 0 whitesmoke;
+  /* z-index: 1; */
+}
+
 /* PROFILE */
 .user-profile {
   display: grid;
+  padding: 20px;
   width: 100%;
 }
 
 .profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.profile-col {
+  display: grid;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.time-elapsed {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1em;
+  width: 350px;
+  margin: auto;
+  margin-bottom: 2px;
+}
+
+.progress-trackers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tracker {
+  padding: 1em;
+  width: 125px;
+  height: 100px;
+  border: 1px black solid;
+}
+
+/* JOURNALS */
+.user-journals {
+  display: grid;
+  width: 100%;
+  padding: 20px;
+}
+
+.journals-content {
   display: flex;
   justify-content: space-around;
   width: 100%;

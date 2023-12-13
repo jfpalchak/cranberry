@@ -7,7 +7,8 @@ export default function Profile(props: ProfileProps) {
 
   const { user } = props;
 
-  user.quitDate = new Date("12-11-2023");
+  user.quitDate = new Date("12-11-2023"); // ! NEED TO ADD ABILITY TO SET QUIT DATE
+
   const userProgress = useDataCalculations(user);
 
   console.log("Profile Rendered.")
@@ -16,24 +17,24 @@ export default function Profile(props: ProfileProps) {
 
   return (
     <section className="user-profile">
-      <h1>User Profile</h1>
+      <h1>Profile</h1>
 
       <div className="profile-content">
 
-        <div className="profile col">
+        <div className="profile-col">
           <ElapsedTime quitDate={user.quitDate} />
           <div className="progress-trackers">
-            <div className="money-tracker">
+            <div className="money-tracker tracker">
               <h3>Money Saved:</h3>
               <h4>${userProgress?.moneySaved.toFixed(2)}</h4>
             </div>
-            <div className="avoided-tracker">
+            <div className="avoided-tracker tracker">
               Cigarettes Avoided: {userProgress?.cigsAvoided.toFixed(2)}
             </div>
-            <div className="time-gained-tracker">
+            <div className="time-gained-tracker tracker">
               Time Spent Not Smoking: {(userProgress?.timeSaved! / 60).toFixed(2)}
             </div>
-            <div className="life-regained-tracker">
+            <div className="life-regained-tracker tracker">
               Life Gained Back:
             </div>
           </div>
@@ -42,7 +43,7 @@ export default function Profile(props: ProfileProps) {
           </div>
         </div>
 
-        <div className="profile col">
+        <div className="profile-col">
           <div className="tip">
             Tip of the Day
           </div>
