@@ -101,6 +101,7 @@ nav a:hover {
 /* DASHBOARD */
 .main-dashboard {
   display: flex;
+  background: whitesmoke;
 }
 
 /* PROFILE */

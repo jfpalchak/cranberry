@@ -6,6 +6,7 @@ import useDataCalculations from "../../hooks/useDataCalculations";
 export default function Profile(props: ProfileProps) {
 
   const { user } = props;
+
   user.quitDate = new Date("12-11-2023");
   const userProgress = useDataCalculations(user);
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function DashNav() {
   return (
@@ -6,13 +7,13 @@ export default function DashNav() {
       <nav className="dash-nav">
         <ul>
           <li>
-            Progress
+          <Link to="/dashboard">Profile</Link>
           </li>
           <li>
             Health
           </li>
           <li>
-            Journals
+            <Link to="/dashboard/journals">Journals</Link>
           </li>
           <li>
             Timeline

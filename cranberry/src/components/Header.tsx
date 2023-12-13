@@ -6,7 +6,7 @@ export default function Header(props: HeaderProps) {
   return (
     <header>
       <div className="logo">
-        <Link to="/">
+        <Link to={!loggedIn ? "/" : "/dashboard"}>
           Cranberry
         </Link>
       </div>
