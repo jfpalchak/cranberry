@@ -14,3 +14,12 @@ export interface ElapsedTime {
   minutes: number;
   seconds: number;
 }
+
+export interface IJournal {
+  journalId: number;
+  date: string;
+  cravingIntensity: number;
+  cigsSmoked: number;
+  notes: string;
+  userId: string;
+}
