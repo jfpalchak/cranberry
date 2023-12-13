@@ -27,7 +27,7 @@ export default function Register() {
         // redirect user
       })
       .catch((error) => {
-        console.log(error)
+        console.log("Registration error: ", error) // ! CONSOLE LOG
         const message = error.response.data.message 
         || error.response.data[0]?.description
         || error.response.data.errors.Email

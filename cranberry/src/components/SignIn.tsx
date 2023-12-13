@@ -30,7 +30,7 @@ export default function SignIn(props: SignInProps) {
         setSignInSuccess(`${response.data.status}: ${response.data.message}`);
         const { token, userId }= response.data;
 
-        console.log(response);
+        console.log("Log in successful: ", response); // ! CONSOLE LOG
 
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("user", userId);
@@ -39,12 +39,12 @@ export default function SignIn(props: SignInProps) {
         navigate("/dashboard");
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error logging in: ", error); // ! CONSOLE LOG
         const message = error.response.data.message 
         || error.response.data[0]?.description
         || error.response.data.errors.Email
         || error.response.data.errors.Password
-        console.log(error);
+        console.log("The error message: ", message); // ! CONSOLE LOG
         setSignInSuccess(message);
       });
 

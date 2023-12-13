@@ -3,10 +3,11 @@ import axios from "axios";
 import AuthService from "../../services/auth.service";
 import DashNav from "./DashNav";
 import Profile from "./Profile";
+import { IUser } from "../../types";
 
 export default function Dashboard() {
 
-  const [user, setUser] = useState<IUser>({});
+  const [user, setUser] = useState<IUser | null>(null);
   const [status, setStatus] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,11 +17,11 @@ export default function Dashboard() {
         const user = await AuthService.getUserProfile()
         setStatus("Success");
         setUser(user.data)
-        console.log(user);
+        console.log("Fetched user: ", user); // ! CONSOLE LOG
       }
       catch (error) {
         setStatus("Error.")
-        console.log(error);
+        console.log("Error fetching user info: ", error); // ! CONSOLE LOG
       }
     }
 
@@ -28,19 +29,15 @@ export default function Dashboard() {
 
   }, [])
 
+  console.log("Dashboard rendered") // ! CONSOLE LOG
+
+  // TODO : Render profile only on successful user fetch
   return (
     <main className="main-dashboard">
       <DashNav />
-      <Profile />
+      { user 
+      ? <Profile user={user}/>
+      : <p>Loading...</p>}
     </main>
   );
-}
-
-interface IUser {
-  userId?: string;
-  userName?: string;
-  avgSmokedDaily?: number;
-  cigsPerPack?: number;
-  pricePerPack?: number;
-  quitDate?: string;
 }
