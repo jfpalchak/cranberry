@@ -1,4 +1,5 @@
 
+Can find the repository here: [CranberryAPI](https://github.com/jfpalchak/CranberryAPI.git).
 
 ## Research & Planning Log
 
@@ -59,18 +60,18 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 
 ### Sunday, 12/10/2023
 ```
-7pm-10pm  - continue to implement basic API functionality, reaching MVP status
+* 7pm-10pm - continue to implement basic API functionality, reaching MVP status
 ```
 
 ### Monday, 12/11/2023
 ```
-5pm-8pm  - WIP: draft a mock-up design on Miro for the frontend
-8pm-9pm  - draft a component diagram for user Dashboard
+* 5pm-8pm  - WIP: draft a mock-up design on Miro for the frontend
+* 8pm-9pm  - draft a component diagram for user Dashboard
 ```
 
 ### Tuesday, 12/12/2023
 ```
-10am-11am - review date-fns & other methods to create a counter to display the time since a user's last cigarette
-2pm-3pm   - plan out how to structure components for and calculate elapsed time, # cigs avoided, time saved, time gained, money saved, etc.
-5pm-7pm   - create custom hooks to calculate elapsed time & user progress data
+* 10am-11am - review date-fns & other methods to create a counter to display the time since a user's last cigarette
+* 2pm-3pm   - plan out how to structure components for and calculate elapsed time, # cigs avoided, time saved, time gained, money saved, etc.
+* 5pm-7pm   - create custom hooks to calculate elapsed time & user progress data
 ```
