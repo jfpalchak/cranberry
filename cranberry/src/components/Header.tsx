@@ -7,7 +7,7 @@ export default function Header(props: HeaderProps) {
     <header>
       <div className="logo">
         <Link to={!loggedIn ? "/" : "/dashboard"}>
-          Cranberry
+          Cran<span style={ { color: "darkred" } }>berry</span>
         </Link>
       </div>
       <nav className="header-nav">

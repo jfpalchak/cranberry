@@ -36,7 +36,7 @@ export default function SignIn(props: SignInProps) {
         sessionStorage.setItem("user", userId);
         
         handleSetLoggedIn();
-        navigate("/dashboard");
+        navigate("/dashboard/profile");
       })
       .catch((error) => {
         console.log("Error logging in: ", error); // ! CONSOLE LOG
