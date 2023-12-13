@@ -1,3 +1,5 @@
+// ! NOT IMPLEMENTED 
+// ! Alternative to Api Interceptor (./api.tsx)
 
 // In the case we need to access protected endpoints,
 // the HTTP request will need an Authorization header.

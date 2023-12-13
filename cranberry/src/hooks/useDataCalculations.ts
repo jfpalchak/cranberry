@@ -37,6 +37,8 @@ export default function useDataCalculations(userData: IUser) {
     return daysSince;
   };
 
+  // TODO: Refactor out of using these functions to shorten our hook down a bit.
+
   const calcCigsAvoided = (cigsPerDay: number, elapsedDays: number) => {
     return (cigsPerDay * elapsedDays);
   }

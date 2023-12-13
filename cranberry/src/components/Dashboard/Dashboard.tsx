@@ -4,6 +4,7 @@ import AuthService from "../../services/auth.service";
 import DashNav from "./DashNav";
 import Profile from "./Profile";
 import { IUser } from "../../types";
+import { Route } from "react-router-dom";
 
 export default function Dashboard() {
 
@@ -31,13 +32,13 @@ export default function Dashboard() {
 
   console.log("Dashboard rendered") // ! CONSOLE LOG
 
-  // TODO : Render profile only on successful user fetch
+  // TODO: possibly use Routes to render between Profile / Journals / Health / etc
   return (
     <main className="main-dashboard">
       <DashNav />
       { user 
-      ? <Profile user={user}/>
-      : <p>Loading...</p>}
+        ? <Profile user={user}/>
+        : <p>Loading...</p>}
     </main>
   );
 }

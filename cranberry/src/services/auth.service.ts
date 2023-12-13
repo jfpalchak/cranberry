@@ -26,7 +26,7 @@ const getUserProfile = async () => {
 
   const { token, userId } = getCurrentUser();
 
-  const response = await api.get(`${BASE_URL}/users/${userId}`)
+  const response = await api.get(`/users/${userId}`)
 
   return response.data;
 }
