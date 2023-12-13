@@ -64,15 +64,13 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 
 ### Monday, 12/11/2023
 ```
-8am-2pm  - WIP: draft a mock-up design on Miro for the frontend
-2pm-3pm  - draft a component diagram for user Dashboard
-3pm-5pm  - WIP: building out React components following the diagram
+5pm-8pm  - WIP: draft a mock-up design on Miro for the frontend
+8pm-9pm  - draft a component diagram for user Dashboard
 ```
 
 ### Tuesday, 12/12/2023
 ```
 10am-11am - review date-fns & other methods to create a counter to display the time since a user's last cigarette
-2pm-3pm   - figure out how to calculate elapsed time, # cigs avoided, time saved, time gained, money saved, etc. Wondering how to structure the code for calculating each individual piece
+2pm-3pm   - plan out how to structure components for and calculate elapsed time, # cigs avoided, time saved, time gained, money saved, etc.
 5pm-7pm   - create custom hooks to calculate elapsed time & user progress data
-
 ```
