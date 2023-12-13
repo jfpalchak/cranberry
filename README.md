@@ -68,3 +68,11 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 2pm-3pm  - draft a component diagram for user Dashboard
 3pm-5pm  - WIP: building out React components following the diagram
 ```
+
+### Tuesday, 12/12/2023
+```
+10am-11am - review date-fns & other methods to create a counter to display the time since a user's last cigarette
+2pm-3pm   - figure out how to calculate elapsed time, # cigs avoided, time saved, time gained, money saved, etc. Wondering how to structure the code for calculating each individual piece
+5pm-7pm   - create custom hooks to calculate elapsed time & user progress data
+
+```
