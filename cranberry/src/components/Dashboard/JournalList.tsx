@@ -1,5 +1,5 @@
 import { IJournal } from "../../types"
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function JournalList(props: JournalListProps) {
 
@@ -13,7 +13,7 @@ export default function JournalList(props: JournalListProps) {
           className={"journal-item"}
           key={journal.journalId}
         >
-          <p>{journal.date}</p>
+          <Link to={`./${journal.journalId}`}>{journal.date}</Link>
         </li>
       ))}
     </div>
