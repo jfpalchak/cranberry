@@ -1,5 +1,26 @@
+# Cranberry
 
-Can find the repository here: [CranberryAPI](https://github.com/jfpalchak/CranberryAPI.git).
+#### A daily tracker with motivating metrics to help users quit smoking. Cranberry is an API-consuming SPA built with TypeScript and React. Utilizes Cranberry API & implements JWT for user authentication.
+
+#### By Joey Palchak
+
+## Technologies Used
+
+- [CranberryAPI](https://github.com/jfpalchak/CranberryAPI.git)
+- TypeScript
+- React
+- React Router (v6.20.1)
+- Axios (v1.6.2)
+- Node.js (v18.17.1)
+- npm (v8.1.2)
+- HTML
+- CSS
+
+## Description
+
+## Setup & Installation
+
+## Known Bugs
 
 ## Research & Planning Log
 
@@ -71,7 +92,9 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 
 ### Tuesday, 12/12/2023
 ```
-* 10am-11am - review date-fns & other methods to create a counter to display the time since a user's last cigarette
-* 2pm-3pm   - plan out how to structure components for and calculate elapsed time, # cigs avoided, time saved, time gained, money saved, etc.
-* 5pm-7pm   - create custom hooks to calculate elapsed time & user progress data
+* 5pm-7pm  - create custom hooks to calculate elapsed time & user progress data
+```
+
+### Wednesday, 12/13/2023
+```
 ```
