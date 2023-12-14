@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './Dashboard/Profile';
 import JournalControl from './Dashboard/JournalControl';
 import JournalDetail from './Dashboard/JournalDetail';
+import Health from './Dashboard/Health';
+import Timeline from './Dashboard/Timeline';
 import { IUser } from "./../types";
 import AuthService from '../services/auth.service';
 
@@ -27,6 +29,11 @@ function App() {
     }
   }
 
+  const handleLoggingOut = () => {
+    setUser(null);
+    setLoggedIn(false);
+  }
+
   const authorized = user ? true : false;
   
   return (
@@ -34,13 +41,15 @@ function App() {
       <Router>
         <Header loggedIn={authorized} />
         <Routes>
-          <Route path='/' element={ user ? <Dashboard/> : <Home />} />
+          <Route path='/' element={ user ? <Dashboard logout={handleLoggingOut} /> : <Home />} />
           <Route path='/sign-in' element={<SignIn handleSetLoggedIn={handleLoggingIn} />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/dashboard' element={user ? <Dashboard /> : <SignIn handleSetLoggedIn={handleLoggingIn} />} >
+          <Route path='/dashboard' element={user ? <Dashboard logout={handleLoggingOut} /> : <SignIn handleSetLoggedIn={handleLoggingIn} />} >
             <Route index element={user ? <Profile user={user} /> : <p>Loading...</p>} />
             <Route path="profile" element={user ? <Profile user={user} /> : <p>Loading...</p>} />
-            <Route path="journals" element={user ? <JournalControl user={user} /> : <p>Loading...</p>} />
+            <Route path="journals/*" element={user ? <JournalControl user={user} /> : <p>Loading...</p>} />
+            <Route path="health" element={<Health />} />
+            <Route path="timeline" element={<Timeline />} />
           </Route>
         </Routes>
       </Router>
