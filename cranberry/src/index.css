@@ -19,7 +19,7 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 li {
@@ -140,6 +140,7 @@ header nav a:hover {
   border-radius: 25px;
   width: 100%;
   background: transparent;
+  overflow-x: hidden;
 }
 
 .sidebar a {
@@ -190,6 +191,19 @@ header nav a:hover {
   box-shadow: 20px -20px 0 whitesmoke;
   /* z-index: 1; */
 }
+
+.sidebar .logout-nav {
+  padding: 15px;
+  font-size: 1.1em;
+}
+/* MINIFY SIDEBAR */
+.sidebar.close{
+  width: 60px;
+}
+
+/* .sidebar.close~.content {
+  left: 60px;
+} */
 
 /* ####### */
 /* PROFILE */

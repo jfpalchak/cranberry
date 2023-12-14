@@ -13,7 +13,7 @@ export default function DashNav({ logout }: { logout: () => void }) {
   }
 
   return (
-    <div className="sidebar">
+    <div className="sidebar"> {/* toggle "close" class to shrink */}
       <nav className="dash-nav">
         <ul className="side-menu">
           <NavLink to="/dashboard/profile"><li>Profile</li></NavLink>
@@ -22,7 +22,7 @@ export default function DashNav({ logout }: { logout: () => void }) {
           <NavLink to="/dashboard/timeline"><li>Timeline</li></NavLink>
         </ul>
 
-        <ul className="side-menu">
+        <ul className="side-menu logout-nav">
           <li onClick={handleLogOut}>
             Log Out
           </li>
