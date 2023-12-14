@@ -7,7 +7,7 @@ import JournalControl from "./JournalControl";
 import { IUser } from "../../types";
 import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
 
-export default function Dashboard() {
+export default function Dashboard({ logout }: { logout: () => void }) {
 
   // const [user, setUser] = useState<IUser | null>(null);
   // const [status, setStatus] = useState("");
@@ -34,16 +34,13 @@ export default function Dashboard() {
 
   console.log("Dashboard rendered") // ! CONSOLE LOG
 
+  // TODO: Now that we've figured out the dynamic/nested routing, we can
+  // TODO: move the dashboard items back down here and keep the User state here as well?
+
   return (
     <main className="main-dashboard">
-      <DashNav />
-        <Outlet />
-      <div className="dash-content">
-      </div>
-      {/* <Routes>
-        <Route index element={user ? <Profile user={user} /> : <p> Loading... </p> } />
-        <Route path="dashboard/journals" element={<JournalControl />} />
-      </Routes> */}
+      <DashNav logout={logout} />
+      <Outlet />
     </main>
   );
 }
