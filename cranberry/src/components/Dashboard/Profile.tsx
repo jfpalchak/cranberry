@@ -16,8 +16,10 @@ export default function Profile(props: ProfileProps) {
   console.log("User progress data: ", userProgress);
 
   return (
-    <section className="user-profile">
-      <h1>Profile</h1>
+    <section className="user-profile dash-section">
+      <div className="section-header">
+        <h1>Profile</h1>
+      </div>
 
       <div className="profile-content">
 
@@ -25,17 +27,20 @@ export default function Profile(props: ProfileProps) {
           <ElapsedTime quitDate={user.quitDate} />
           <div className="progress-trackers">
             <div className="money-tracker tracker">
-              <h3>Money Saved:</h3>
-              <h4>${userProgress?.moneySaved.toFixed(2)}</h4>
+              <h3>${userProgress?.moneySaved.toFixed(2)}</h3>
+              <p>Money Saved</p>
             </div>
             <div className="avoided-tracker tracker">
-              Cigarettes Avoided: {userProgress?.cigsAvoided.toFixed(2)}
+              <h3>{userProgress?.cigsAvoided.toFixed(2)}</h3>
+              <p>Smokes Avoided</p>
             </div>
             <div className="time-gained-tracker tracker">
-              Time Spent Not Smoking: {(userProgress?.timeSaved! / 60).toFixed(2)}
+              <h3>{(userProgress?.timeSaved! / 60).toFixed(2)}</h3>
+              <p>Time Saved</p>
             </div>
             <div className="life-regained-tracker tracker">
-              Life Gained Back:
+              <h3>(TBD)</h3>
+              <p>Time Gained</p>
             </div>
           </div>
           <div className="breakdown">

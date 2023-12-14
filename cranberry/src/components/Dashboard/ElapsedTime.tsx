@@ -9,7 +9,27 @@ export default function ElapsedTime({ quitDate } : { quitDate: Date }) {
 
   return (
     <div className="time-elapsed">
-      <h1>{`D: ${elapsedTime.days} H: ${elapsedTime.hours} M: ${elapsedTime.minutes} S: ${elapsedTime.seconds}`}</h1>
+      <h1>Time Smoke Free</h1>
+      <br/>
+      <ul>
+        <li>
+          <h1>{elapsedTime.days}</h1>
+          <p>Days</p>
+        </li>
+        <li>
+          <h1>{elapsedTime.hours}</h1>
+          <p>Hours</p>
+        </li>
+        <li>
+          <h1>{elapsedTime.minutes}</h1>
+          <p>Minutes</p>
+        </li>
+        <li>
+          <h1>{elapsedTime.seconds}</h1>
+          <p>Seconds</p>
+        </li>
+
+      </ul>
     </div>
   );
 }

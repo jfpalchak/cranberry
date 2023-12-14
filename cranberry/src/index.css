@@ -1,4 +1,6 @@
+/* ######## */
 /* GENERAL */
+/* ######## */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,7 +26,17 @@ li {
   list-style: none;
 }
 
+/* ######## */
+/*   UTIL   */
+/* ######## */
+
+.center {
+  text-align: center;
+}
+
+/* ####################### */
 /* HEADER COMPONENT STYLES */
+/* ####################### */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -58,34 +70,57 @@ header nav a:hover {
   border-bottom: 1px solid black;
 }
 
-/* SPLASH */
+/* ########### */
+/* HERO/SPLASH */
+/* ########### */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero-text {
+  font-size: 2.5em;
+  width: 70%;
+  margin-top: 75px;
+}
 .splash-btn {
-  border: 2px red solid;
+  /* position: relative;
+  right: 200px;
+  top: 50px; */
+  margin-top: 20px;
+  border: 2px rgb(240, 88, 88) solid;
   font-size: 1.2em;
   padding: 1em;
   border-radius: 3px;
   background: white;
-  color: red;
-  transition: 0.3s
+  color: rgb(240, 88, 88);
+  transition: 0.3s;
 }
 .splash-btn:hover {
   cursor: pointer;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
+/* ######### */
 /* DASHBOARD */
+/* ######### */
 .main-dashboard {
   display: flex;
-  background: whitesmoke;
+  /* background: whitesmoke; */
+  height: 100vh;
+  /* width: 100%; */
 }
 
-
+/* ######## */
 /* DASH NAV */
+/* ######## */
 .sidebar {
   /* position: fixed; */
   background: white;
   /* border: 1px solid black; */
   height: 100%;
+  height: 100vh;
   width: 200px;
   transition: all 0.3s ease;
 }
@@ -119,7 +154,7 @@ header nav a:hover {
   color: black;
 }
 
-.sidebar a:hover {
+.sidebar li:hover {
   cursor: pointer;
 }
 
@@ -130,7 +165,7 @@ header nav a:hover {
 .sidebar a.active {
   background: whitesmoke;
   font-weight: bold;
-  color: darkred;
+  color: rgb(240, 88, 88);
   position: relative;
 }
 .sidebar ul a.active::before{
@@ -156,11 +191,22 @@ header nav a:hover {
   /* z-index: 1; */
 }
 
+/* ####### */
 /* PROFILE */
-.user-profile {
-  display: grid;
+/* ####### */
+.dash-section {
   padding: 20px;
   width: 100%;
+  border-radius: 10px;
+  background: whitesmoke;
+}
+
+.user-profile {
+  /* display: grid; */
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  background: whitesmoke;
 }
 
 .profile-content {
@@ -178,16 +224,24 @@ header nav a:hover {
 }
 
 .time-elapsed {
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 3px;
+  /* text-align: center; */
+  background: white;
+  border-radius: 20px;
   padding: 1em;
   width: 350px;
   margin: auto;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
+}
+
+.time-elapsed ul {
+  display: flex;
+  justify-content: space-around;
 }
 
 .progress-trackers {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -195,20 +249,97 @@ header nav a:hover {
 }
 
 .tracker {
+  cursor: pointer;
   padding: 1em;
-  width: 125px;
+  width: 160px;
   height: 100px;
-  border: 1px black solid;
+  background: white;
+  border-radius: 10px;
+  display: grid;
+  align-items: center;
 }
 
+/* ######## */
 /* JOURNALS */
+/* ######## */
 .user-journals {
   display: grid;
+  grid-template-rows: 50px 1fr;
   width: 100%;
   padding: 20px;
 }
 
 .journals-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.journal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.journal-item {
+  background: white;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.journal-detail {
+  background: white;
+  height: 350px;
+  width: 370px;
+  padding: 1em;
+}
+
+.journal-card {
+  height: 350px;
+  width: 370px;
+}
+
+/* JOURNAL FORM */
+.journal-create {
+  text-align: center;
+}
+
+.journal-form {
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.journal-form label {
+text-align: left;
+}
+
+/* ####### */
+/* HEALTH */
+/* ####### */
+.user-health {
+  display: grid;
+  width: 100%;
+  padding: 20px;
+}
+
+.health-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+/* ######## */
+/* TIMELINE */
+/* ######## */
+.user-timeline {
+  display: grid;
+  width: 100%;
+  padding: 20px;
+}
+
+.timeline-content {
   display: flex;
   justify-content: space-around;
   width: 100%;
