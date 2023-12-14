@@ -4,12 +4,13 @@ import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
 import { IUser, IJournal } from "../../types";
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 
 export default function JournalControl(props: JournalControlProps) {
 
-  const [userJournals, setUserJournals] = useState<IJournal[]>([]);
   const { user } = props;
+  const [userJournals, setUserJournals] = useState<IJournal[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchJournals = async () => {
@@ -17,7 +18,6 @@ export default function JournalControl(props: JournalControlProps) {
         .then((response) => {
           console.log("Fetch Journals success", response.data);
           setUserJournals(response.data.data);
-          console.log("State: ", userJournals)
         })
         .catch((error) => {
           console.log("Fetch Journals error: ", error);
@@ -27,9 +27,23 @@ export default function JournalControl(props: JournalControlProps) {
     fetchJournals();
   }, []);
 
+  const handleAddingNewJournal = async (journalData: IJournal) => {
+    JournalService.createUserJournal(user.userId!, journalData)
+    .then(response => {
+      const newJournal = response.data.data;
+      setUserJournals([...userJournals, newJournal]);
+      navigate(`/dashboard/journals/${newJournal.journalId}`)
+    })
+    .catch(error => {
+      console.log("Create Journal error: ", error);
+    })
+  }
+
   return  (
     <section className="user-journals dash-section">
       <h1>Journals</h1>
+
+      {user && (
       <div className="journals-content">
         <JournalList journals={userJournals} />
 
@@ -44,9 +58,10 @@ export default function JournalControl(props: JournalControlProps) {
             </div>
           } />
           <Route path="/:journalId" element={<JournalDetail journals={userJournals} />} />
-          <Route path="/new" element={<JournalCreate />} />
+          <Route path="/new" element={<JournalCreate user={user} onSubmission={handleAddingNewJournal} />} />
         </Routes>
       </div>
+      )}
     </section>
   );
 }

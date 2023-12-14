@@ -16,7 +16,7 @@ export interface ElapsedTime {
 }
 
 export interface IJournal {
-  journalId: number;
+  journalId?: number;
   date: string;
   cravingIntensity: number;
   cigsSmoked: number;
