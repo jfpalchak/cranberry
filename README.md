@@ -13,6 +13,7 @@
 - Axios (v1.6.2)
 - Node.js (v18.17.1)
 - npm (v8.1.2)
+- Material UI
 - HTML
 - CSS
 
@@ -95,6 +96,14 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 5pm-7pm  - create custom hooks to calculate elapsed time & user progress data
 ```
 
-### Wednesday, 12/13/2023
+### Thursday, 12/14/2023
 ```
+* 7pm-8pm  - resolve bug with Safari & Firefox not properly reading user quitDate date format
+* 8pm-12am - review using either Redux or Context for handling user state, which desperately needs to be refactored
+```
+
+### Friday, 12/15/2023
+```
+* 8:00am -
+
 ```
