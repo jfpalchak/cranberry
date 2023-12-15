@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import useElapsedTime from "../../hooks/useElapsedTime";
 
-export default function ElapsedTime({ quitDate } : { quitDate: Date }) {
+export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) {
 
+  quitDate = (typeof quitDate === 'string' ? new Date(quitDate) : quitDate);
+  
   const elapsedTime = useElapsedTime(quitDate);
   
   // console.log("ElapsedTime rendered.") // ! CONSOLE LOG

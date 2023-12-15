@@ -20,12 +20,13 @@ export default function useElapsedTime(quitDate: Date) {
   }, [quitDate])
 
   const calculateElapsedTime = (startDate: Date | string): ElapsedTime => {
+
     startDate = (typeof startDate === 'string' ? new Date(startDate) : startDate);
+
     const currentTime = new Date();
 
     // get difference in seconds between now and given date
     const difference = Math.floor((currentTime.getTime() - startDate.getTime()) / 1000);
-
     // calculate the time that has passed in days / hours / minutes / seconds
     const days = Math.floor(difference / (24 * 60 * 60));
     const hours = Math.floor((difference % (24 * 60 * 60)) / (60 * 60));
