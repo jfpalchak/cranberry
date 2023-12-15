@@ -98,12 +98,12 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 
 ### Thursday, 12/14/2023
 ```
-* 7pm-8pm  - resolve bug with Safari & Firefox not properly reading user quitDate date format
+* 7pm-8pm  - resolve bug with Safari & Firefox not properly reading certain Date formats
 * 8pm-12am - review using either Redux or Context for handling user state, which desperately needs to be refactored
 ```
 
 ### Friday, 12/15/2023
 ```
-* 8:00am -
+* 8:00am - change Date types for API User & Journal Entity fields
 
 ```
