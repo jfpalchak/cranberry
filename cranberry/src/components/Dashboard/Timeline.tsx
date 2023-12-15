@@ -23,13 +23,27 @@ ChartJS.register(
 export default function Timeline() {
 
   const data = {
-    labels: ['2023-12-11T11:58', '2023-12-10T11:58', '2023-12-09T11:58'], // dates
+    labels: ['2023-12-11T11:58', '2023-12-10T11:58', '2023-12-09T11:58'], // journal dates
     datasets: [
       {
         label: 'Cravings',
         data: [8, 2, 6], // smoked
+        backgroundColor: 'darkgreen',
+        borderColor: 'green',
+        tension: 0.4
+      },
+      {
+        label: 'Craving Intensity',
+        data: [1, 4, 4], // smoked
         backgroundColor: 'blue',
-        borderColor: 'black',
+        borderColor: 'lightblue',
+        tension: 0.4
+      },
+      {
+        label: 'Smoked',
+        data: [1, 1, 3], // smoked
+        backgroundColor: 'red',
+        borderColor: 'orange',
         tension: 0.4
       }
     ]
