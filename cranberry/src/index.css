@@ -466,21 +466,6 @@ text-align: left;
   width: 100%;
 }
 
-/* ######## */
-/* TIMELINE */
-/* ######## */
-.user-timeline {
-  display: grid;
-  width: 100%;
-  padding: 20px;
-}
-
-.timeline-content {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
 
 /* ########## */
 /* RESPONSIVE */
