@@ -5,6 +5,9 @@ export default function Timeline() {
       <h1>Timeline</h1>
       <div className="timeline-content">
         <h1>Data Visualization Here</h1>
+        <div>
+          <canvas id="userChart"></canvas>
+        </div>
       </div>
     </section>
   );
