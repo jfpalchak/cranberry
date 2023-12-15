@@ -38,45 +38,58 @@ export default function Register() {
   }
 
   return (
-    <section>
+    <section className="auth-main">
 
-      <h1>Register:</h1>
-      {registerSuccess}
-      <form className="register-form" onSubmit={handleRegister}>
-      <input 
-          type="text" 
-          id="userName" 
-          name="userName" 
-          placeholder="User Name" 
-          required
-          onChange={handleChange}
-        />
-        <br/>
-        <input 
-          type="text"
-          id="registerEmail"
-          name="email"
-          placeholder="Email"
-          required
-          onChange={handleChange}
-        />
-        <br/>
-        <input 
-          type="password" 
-          id="registerPassword" 
-          name="password" 
-          placeholder="Password" 
-          required
-          onChange={handleChange}
-        />
-        <br/>
-        <button>Register</button>
-      </form>
+      <div className="auth-card">
 
-      <div className="callout">
-        <p>Already have an account? <Link to="/sign-in">Sign in.</Link></p>
+        <div className="card-header">
+          <h1>welcome to Cranberry</h1>
+        </div>
+
+        <div className="card-body">
+          {registerSuccess &&
+            <div className="error-message">
+              <p>* {registerSuccess}</p>
+            </div>
+          }
+
+          <form className="register-form auth-form" onSubmit={handleRegister}>
+          <input 
+              type="text" 
+              id="userName" 
+              name="userName" 
+              placeholder="User Name" 
+              required
+              onChange={handleChange}
+            />
+            <br/>
+            <input 
+              type="text"
+              id="registerEmail"
+              name="email"
+              placeholder="Email"
+              required
+              onChange={handleChange}
+            />
+            <br/>
+            <input 
+              type="password" 
+              id="registerPassword" 
+              name="password" 
+              placeholder="Password" 
+              required
+              onChange={handleChange}
+            />
+            <br/>
+            <button className="btn primary-btn">Register</button>
+          </form>
+
+          <div className="callout">
+            <p>Already have an account? <Link to="/sign-in">Sign in.</Link></p>
+          </div>
+        </div>
+
       </div>
-      
     </section>
   );
 } 

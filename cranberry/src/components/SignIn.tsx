@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import { TextField } from "@mui/material";
 
 const BASE_URL = "http://localhost:5000/api";
 
@@ -40,45 +41,62 @@ export default function SignIn(props: SignInProps) {
       })
       .catch((error) => {
         console.log("Error logging in: ", error); // ! CONSOLE LOG
-        const message = error.response.data.message 
+        let message = error.response.data.message 
         || error.response.data[0]?.description
         || error.response.data.errors.Email
         || error.response.data.errors.Password
-        console.log("The error message: ", message); // ! CONSOLE LOG
+        message = message.includes("Unable") 
+          ? message.concat(" Please make sure your email or password are correct.")
+          : message.concat("");
         setSignInSuccess(message);
       });
 
   }
 
   return (
-    <section>
-      <h1>Sign In</h1>
-      {signInSuccess}
-      <form className="signin-form" onSubmit={handleSignIn}>
-        <input 
-          type="text"
-          id="signinEmail"
-          name="email"
-          placeholder="Email"
-          required
-          onChange={handleChange}
-        />
-        <br/>
-        <input 
-          type="password" 
-          id="signinPassword" 
-          name="password" 
-          placeholder="Password" 
-          required
-          onChange={handleChange}
-        />
-        <br/>
-        <button type="submit">Log In</button>
-      </form>
+    <section className="auth-main">
 
-      <div className="callout">
-        <p>New to Cranberry? <Link to="/register">Register here.</Link></p>
+      <div className="auth-card">
+
+        <div className="card-header">
+          <h1>Cranberry</h1>
+        </div>
+
+        <div className="card-body">
+          {signInSuccess &&
+            <div className="error-message">
+              <p>* {signInSuccess}</p>
+            </div>
+          }
+          <form className="signin-form auth-form" onSubmit={handleSignIn}>
+            <input 
+              type="text"
+              id="signinEmail"
+              name="email"
+              placeholder="Email"
+              required
+              onChange={handleChange}
+            />
+            <br/>
+            <input 
+              type="password" 
+              id="signinPassword" 
+              name="password" 
+              placeholder="Password" 
+              required
+              onChange={handleChange}
+            />
+            <br/>
+            <button className="btn primary-btn" type="submit">SIGN IN</button>
+          </form>
+
+          <div className="callout">
+            <p>New to Cranberry? <Link to="/register">Register here.</Link></p>
+          </div>
+        </div>
+
       </div>
+  
     </section>
   );
 }
