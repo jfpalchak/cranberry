@@ -179,11 +179,11 @@ export default function Register() {
               required 
             />
             <br/>
-            <button className="btn primary-btn">Register</button>
+            <button className="btn primary-btn">SUBMIT</button>
           </form>
         </DialogContent>
         <DialogActions>
-          <button className="btn" onClick={handleCancel}>Cancel</button>
+          <button className="btn cancel-btn" onClick={handleCancel}>Cancel</button>
         </DialogActions>
       </Dialog>
     </section>

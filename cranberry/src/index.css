@@ -50,11 +50,6 @@ a {
   transition: all .4s ease-in-out;
 }
 
-.btn:hover {
-  color: white;
-  background: rgb(240, 88, 88);
-}
-
 /* ####################### */
 /* HEADER COMPONENT STYLES */
 /* ####################### */
@@ -195,6 +190,14 @@ header nav a:hover {
 .callout a {
   color: rgb(240, 88, 88);
   font-weight: bold;
+}
+
+.cancel-btn {
+  border: none;
+}
+
+.cancel-btn:hover {
+  background:rgba(235, 81, 89, 0.38);
 }
 
 /* ######### */
