@@ -104,7 +104,8 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 
 ### Friday, 12/15/2023
 ```
-* 8:00am - change Date types for API User & Journal Entity fields
+* 8:00am   - change Date types for API User & Journal Entity fields
 * 8am-10am - review Material UI & Chakra UI docs for inspiration
 * 10am-1pm - update login & registration styles + add second registration step
+* 1pm-pm   - look into Chart.js, D3.js, to chart user progress
 ```

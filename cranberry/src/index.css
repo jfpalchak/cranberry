@@ -298,8 +298,14 @@ header nav a:hover {
   font-size: 1.1em;
 }
 
+.sidebar .logout-nav li {
+  display: flex;
+  align-items: center;
+}
+
 .sidebar .logout-red {
   color: darkred;
+  margin-top: 3px;
 }
 /* MINIFY SIDEBAR */
 .sidebar.close{
