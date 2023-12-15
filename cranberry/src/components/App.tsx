@@ -34,7 +34,7 @@ function App() {
     setLoggedIn(false);
   }
 
-  const authorized = user ? true : false;
+  const authorized = sessionStorage.getItem('token') ? true : false;
   
   return (
     <div className="App">

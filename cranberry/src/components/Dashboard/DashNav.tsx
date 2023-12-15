@@ -39,7 +39,7 @@ export default function DashNav({ logout }: { logout: () => void }) {
 
         <ul className="side-menu logout-nav">
           <li onClick={handleLogOut}>
-            <LogoutIcon/> &nbsp;&nbsp; Log Out
+            <span className="logout-red" ><LogoutIcon /></span> &nbsp;&nbsp; Log Out
           </li>
         </ul>
       </nav>

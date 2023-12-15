@@ -86,7 +86,7 @@ export default function JournalControl(props: JournalControlProps) {
             <div className="journal-card center">
               {userJournals.length > 0 
                 ? <h1>Select a journal.</h1>
-                : <h1>Start your Journal:</h1>
+                : <h1>Start your Journals:</h1>
               }
               <br/>
               <br/>

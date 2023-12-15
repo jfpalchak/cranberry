@@ -33,7 +33,7 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
       <form onSubmit={handleUpdateJournal}>
       <div className="journal-form">
         <label>Entry Date:</label>
-        <p>{((new Date(formData.date)).toLocaleString())}</p>
+        <p>{((new Date(formData.date)).toLocaleDateString())}</p>
         <label>Craving Intensity:</label>
         <input 
           min={0} max={10}

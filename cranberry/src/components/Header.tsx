@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Header(props: HeaderProps) {
-  const { loggedIn } = props;
+export default function Header({ loggedIn }: HeaderProps) {
 
   return (
     <header>
