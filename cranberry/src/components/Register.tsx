@@ -1,12 +1,18 @@
 import AuthService from '../services/auth.service';
 import React, { useState } from 'react';
 import { Route, Link } from 'react-router-dom';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const BASE_URL = "http://localhost:5000/api";
 
 export default function Register() {
 
   const [registerSuccess, setRegisterSuccess] = useState<string | null>(null);
+  const [nextStep, setNextStep] = useState(false);
   const [formData, setFormData] = useState<RegisterFormState>({
     userName: '',
     email: '',
@@ -37,6 +43,15 @@ export default function Register() {
       });
   }
 
+  const handleNextStep = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setNextStep(true);
+  }
+
+  const handleCancel = () => {
+    setNextStep(false);
+  }
+
   return (
     <section className="auth-main">
 
@@ -53,7 +68,8 @@ export default function Register() {
             </div>
           }
 
-          <form className="register-form auth-form" onSubmit={handleRegister}>
+          {/* onSubmit={handleRegister} */}
+          <form className="register-form auth-form" onSubmit={handleNextStep} >
           <input 
               type="text" 
               id="userName" 
@@ -90,6 +106,22 @@ export default function Register() {
         </div>
 
       </div>
+
+      <Dialog open={nextStep} onClose={handleCancel}>
+        <DialogTitle>User Information</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To finish registration, we just need a little more information.
+          </DialogContentText>
+          <form className="register-form auth-form">
+          
+          <button className="btn primary-btn">Register</button>
+          </form>
+        </DialogContent>
+        <DialogActions>
+          <button className="btn" onClick={handleCancel}>Cancel</button>
+        </DialogActions>
+      </Dialog>
     </section>
   );
 } 

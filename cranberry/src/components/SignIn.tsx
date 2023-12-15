@@ -59,7 +59,7 @@ export default function SignIn(props: SignInProps) {
       <div className="auth-card">
 
         <div className="card-header">
-          <h1>Cranberry</h1>
+          <h1>just breathe</h1>
         </div>
 
         <div className="card-body">

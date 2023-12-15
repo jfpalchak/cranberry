@@ -41,10 +41,18 @@ a {
 .btn {
   padding: 1em;
   border-radius: 3px;
+  border: rgb(240, 88, 88) 2px solid;
+  color: rgb(240, 88, 88);
+  background: white;
   cursor: pointer;
   -o-transition: all .4s ease-in-out;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
+}
+
+.btn:hover {
+  color: white;
+  background: rgb(240, 88, 88);
 }
 
 /* ####################### */
