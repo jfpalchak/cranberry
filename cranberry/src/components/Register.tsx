@@ -6,29 +6,21 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { Input } from '@chakra-ui/react'
-import {
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-} from '@chakra-ui/react'
-
+import { Input } from '@chakra-ui/react';
 
 const BASE_URL = "http://localhost:5000/api";
 
 export default function Register() {
 
   const [registerSuccess, setRegisterSuccess] = useState<string | null>(null);
-  const [nextStep, setNextStep] = useState(true); // ! DEFAULT IS FALSE
+  const [nextStep, setNextStep] = useState(false);
   const [formData, setFormData] = useState<RegisterFormState>({
     userName: '',
     email: '',
     password: '',
     quitDate: '',
     avgSmokedDaily: 0,
-    cigsPerPack: 0,
+    cigsPerPack: 20,
     pricePerPack: 0
   });
 
@@ -68,6 +60,8 @@ export default function Register() {
   const handleCancel = () => {
     setNextStep(false);
   }
+
+  // TODO: Refactor into smaller components
 
   return (
     <section className="auth-main">
@@ -113,6 +107,15 @@ export default function Register() {
               required
               onChange={handleChange}
             />
+            {/* <br/>
+            <input 
+              type="password" 
+              id="confirmPassword" 
+              name="confirmPassword" 
+              placeholder="Confirm Password" 
+              required
+              onChange={handleChange}
+            /> */}
             <br/>
             <button className="btn primary-btn">Register</button>
           </form>
@@ -135,6 +138,7 @@ export default function Register() {
             <label htmlFor="quitDate">When is (or was) your quit date?</label>
             <Input 
               type="datetime-local"
+              value={formData.quitDate}
               id="quitDate"
               name="quitDate"
               onChange={handleChange} 
@@ -155,7 +159,7 @@ export default function Register() {
             <input 
               type="number" 
               min={1.00} 
-              step={0.01} 
+              step={0.01}
               placeholder={'$ 0.00'}
               id="pricePerPack" 
               name="pricePerPack" 
@@ -166,10 +170,11 @@ export default function Register() {
             <label htmlFor="cigsPerPack">How many cigarettes are in a packet?</label>
             <input 
               type="number"
-              defaultValue={20}
-              min={0} 
+              min={1} 
+              value={formData.cigsPerPack}
               id="cigsPerPack" 
-              name="cigsPerPack" 
+              name="cigsPerPack"
+              placeholder="There is usually 20 in a pack."
               onChange={handleChange} 
               required 
             />
