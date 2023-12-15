@@ -19,6 +19,7 @@ export interface IJournal {
   journalId?: number;
   date: string;
   cravingIntensity: number;
+  didSmoke?: boolean;
   cigsSmoked: number;
   notes: string;
   userId: string;

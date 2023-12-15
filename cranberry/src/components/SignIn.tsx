@@ -52,7 +52,6 @@ export default function SignIn(props: SignInProps) {
 
   return (
     <section>
-
       <h1>Sign In</h1>
       {signInSuccess}
       <form className="signin-form" onSubmit={handleSignIn}>

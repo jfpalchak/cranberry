@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IJournal, IUser } from "../../types";
+import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 
 export default function JournalCreate(props: JournalCreateProps) {
 
