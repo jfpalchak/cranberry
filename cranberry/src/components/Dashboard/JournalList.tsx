@@ -7,13 +7,19 @@ export default function JournalList(props: JournalListProps) {
 
   return (
     <div className="journal-list">
-      <h1>Journal List</h1>
+      {journals.length === 0 &&
+        <div>
+          <h2>Track your journey! </h2>
+        </div>
+      }
       {journals.map((journal: IJournal, index: number) => (
         <li
           className={"journal-item"}
           key={journal.journalId}
         >
-          <Link to={`./${journal.journalId}`}>{journal.date}</Link>
+          <Link to={`./${journal.journalId}`}>
+            {((new Date(journal.date)).toDateString())}
+          </Link>
         </li>
       ))}
     </div>

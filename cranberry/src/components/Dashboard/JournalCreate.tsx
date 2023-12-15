@@ -20,7 +20,6 @@ export default function JournalCreate(props: JournalCreateProps) {
 
   const handleCreateJournal = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     onSubmission(formData);
   }
 
@@ -40,7 +39,7 @@ export default function JournalCreate(props: JournalCreateProps) {
           min={0} max={10}
           type="number" 
           name="cravingIntensity"
-          value={0}
+          placeholder="Between 1 - 10."
           required
           onChange={handleChange}
         />
@@ -52,12 +51,14 @@ export default function JournalCreate(props: JournalCreateProps) {
         <input 
           type="number"
           name="cigsSmoked"
-          value={0}
+          placeholder="How many cigarettes did you smoke?"
+          required
           onChange={handleChange}
         />
         <label>Notes:</label>
         <textarea 
           name="notes"
+          placeholder="Enter comments here."
           onChange={handleChange}
         />
         </div>

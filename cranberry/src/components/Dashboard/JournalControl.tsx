@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import JournalService from '../../services/journal.service';
 import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
+import JournalEdit from './JournalEdit';
 import { IUser, IJournal } from "../../types";
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 
@@ -12,6 +14,7 @@ export default function JournalControl(props: JournalControlProps) {
   const [userJournals, setUserJournals] = useState<IJournal[]>([]);
   const navigate = useNavigate();
 
+  // fetch user's journals
   useEffect(() => {
     const fetchJournals = async () => {
       JournalService.getUserJournals(user.userId!)
@@ -23,10 +26,10 @@ export default function JournalControl(props: JournalControlProps) {
           console.log("Fetch Journals error: ", error);
         })
     };
-
     fetchJournals();
   }, []);
 
+  
   const handleAddingNewJournal = async (journalData: IJournal) => {
     JournalService.createUserJournal(user.userId!, journalData)
     .then(response => {
@@ -36,8 +39,38 @@ export default function JournalControl(props: JournalControlProps) {
     })
     .catch(error => {
       console.log("Create Journal error: ", error);
-    })
+    });
+  };
+
+  // I need to use Redux.
+  const handleEditingJournal = async(journalData: IJournal) => {
+    JournalService.updateUserJournal(journalData)
+      .then(response => {
+        const jIndex = userJournals.findIndex(journal => journal.journalId === journalData.journalId);
+        const newJournalList = [...userJournals];
+        newJournalList[jIndex] = journalData;
+        setUserJournals(newJournalList);
+        console.log("Edit Journal success.");
+        navigate(`/dashboard/journals/${journalData.journalId}`)
+      })
+      .catch(error => {
+        console.log("Edit Journal error: ", error);
+      })
   }
+
+  const handleDeletingJournal = async(userId: string, journalId: number) => {
+    JournalService.deleteUserJournal(userId, journalId)
+      .then(response => {
+        setUserJournals(userJournals.filter((journal => journal.journalId != journalId)));
+        console.log(`JOURNAL ${journalId} DELETED.`)
+        navigate("/dashboard/journals/");
+      })
+      .catch(error => {
+        console.log("Delete Journal error: ", error);
+      });
+  };
+
+
 
   return  (
     <section className="user-journals dash-section">
@@ -51,14 +84,22 @@ export default function JournalControl(props: JournalControlProps) {
         <Routes>
           <Route index path="/" element={
             <div className="journal-card center">
-              <h1>Select a journal.</h1>
+              {userJournals.length > 0 
+                ? <h1>Select a journal.</h1>
+                : <h1>Start your Journal:</h1>
+              }
               <br/>
               <br/>
-              <Link to="/dashboard/journals/new">Add Journal</Link>
+              <Link to="/dashboard/journals/new">
+                <AddCircleOutlineIcon />
+                <br/>
+                Add Journal
+              </Link>
             </div>
           } />
-          <Route path="/:journalId" element={<JournalDetail journals={userJournals} />} />
           <Route path="/new" element={<JournalCreate user={user} onSubmission={handleAddingNewJournal} />} />
+          <Route path="/:journalId" element={<JournalDetail journals={userJournals} onClickingDelete={handleDeletingJournal}/>} />
+          <Route path="/:journalId/edit" element={<JournalEdit journals={userJournals} onSubmission={handleEditingJournal} />} />
         </Routes>
       </div>
       )}
