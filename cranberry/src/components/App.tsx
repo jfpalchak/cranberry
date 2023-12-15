@@ -41,16 +41,16 @@ function App() {
       <Router>
         <Header loggedIn={authorized} />
         <Routes>
-          <Route path='/' element={ user ? <Dashboard logout={handleLoggingOut} /> : <Home />} />
+          <Route path='/' element={ user ? <Dashboard user={user} logout={handleLoggingOut} /> : <Home />} />
           <Route path='/sign-in' element={<SignIn handleSetLoggedIn={handleLoggingIn} />} />
           <Route path='/register' element={<Register />} />
-          <Route path='/dashboard' element={user ? <Dashboard logout={handleLoggingOut} /> : <SignIn handleSetLoggedIn={handleLoggingIn} />} >
-            <Route index element={user ? <Profile user={user} /> : <p>Loading...</p>} />
-            <Route path="profile" element={user ? <Profile user={user} /> : <p>Loading...</p>} />
-            <Route path="journals/*" element={user ? <JournalControl user={user} /> : <p>Loading...</p>} />
-            <Route path="health" element={<Health />} />
-            <Route path="timeline" element={<Timeline />} />
-          </Route>
+          <Route path='/dashboard/*' 
+            element={
+              user 
+              ? <Dashboard user={user} logout={handleLoggingOut} /> 
+              : <SignIn handleSetLoggedIn={handleLoggingIn} />
+            } 
+          />
         </Routes>
       </Router>
     </div>
