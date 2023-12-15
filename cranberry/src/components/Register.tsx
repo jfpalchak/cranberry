@@ -6,17 +6,30 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { Input } from '@chakra-ui/react'
+import {
+  NumberInput,
+  NumberInputField,
+  NumberInputStepper,
+  NumberIncrementStepper,
+  NumberDecrementStepper,
+} from '@chakra-ui/react'
+
 
 const BASE_URL = "http://localhost:5000/api";
 
 export default function Register() {
 
   const [registerSuccess, setRegisterSuccess] = useState<string | null>(null);
-  const [nextStep, setNextStep] = useState(false);
+  const [nextStep, setNextStep] = useState(true); // ! DEFAULT IS FALSE
   const [formData, setFormData] = useState<RegisterFormState>({
     userName: '',
     email: '',
-    password: ''
+    password: '',
+    quitDate: '',
+    avgSmokedDaily: 0,
+    cigsPerPack: 0,
+    pricePerPack: 0
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,9 +40,12 @@ export default function Register() {
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    console.log(formData);
+
     AuthService.register(formData)
       .then(response => {
         setRegisterSuccess(`${response.data.status}: ${response.data.message}`);
+        setNextStep(false);
         // redirect user
       })
       .catch((error) => {
@@ -40,6 +56,7 @@ export default function Register() {
         || error.response.data.errors.Password
         || error.response.data.errors.UserName
         setRegisterSuccess(message);
+        setNextStep(false);
       });
   }
 
@@ -113,9 +130,51 @@ export default function Register() {
           <DialogContentText>
             To finish registration, we just need a little more information.
           </DialogContentText>
-          <form className="register-form auth-form">
-          
-          <button className="btn primary-btn">Register</button>
+          <form className="register-form auth-form" onSubmit={handleRegister}>
+            <br/>
+            <label htmlFor="quitDate">When is (or was) your quit date?</label>
+            <Input 
+              type="datetime-local"
+              id="quitDate"
+              name="quitDate"
+              onChange={handleChange} 
+              isRequired={true}
+            />
+            <br/>
+            <label htmlFor="avgSmokedDaily">About how many cigarettes do (or did) you smoke a day?</label>
+            <input 
+              type="number" 
+              id="avgSmokedDaily" 
+              name="avgSmokedDaily" 
+              placeholder="It's okay to give an approximate number."
+              onChange={handleChange} 
+              required 
+            />
+            <br/>
+            <label htmlFor="pricePerPack">How much does a packet of cigarettes typically cost?</label>
+            <input 
+              type="number" 
+              min={1.00} 
+              step={0.01} 
+              placeholder={'$ 0.00'}
+              id="pricePerPack" 
+              name="pricePerPack" 
+              onChange={handleChange} 
+              required 
+            />
+            <br/>
+            <label htmlFor="cigsPerPack">How many cigarettes are in a packet?</label>
+            <input 
+              type="number"
+              defaultValue={20}
+              min={0} 
+              id="cigsPerPack" 
+              name="cigsPerPack" 
+              onChange={handleChange} 
+              required 
+            />
+            <br/>
+            <button className="btn primary-btn">Register</button>
           </form>
         </DialogContent>
         <DialogActions>
@@ -130,4 +189,8 @@ interface RegisterFormState {
   userName: string;
   email: string;
   password: string;
+  quitDate: string;
+  avgSmokedDaily: number;
+  cigsPerPack: number;
+  pricePerPack: number;
 }

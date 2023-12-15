@@ -15,9 +15,9 @@ export default function Profile(props: ProfileProps) {
 
   // SAFARI & FIREFOX DIDN'T LIKE THE PREVIOUS FORMAT.
   // When registering users, let's make sure to do this if necessary: 
-  const fixDateForAllBrowsers = (dateString: string) => dateString.replace(/-/g, '/');
+  // const fixDateForAllBrowsers = (dateString: string) => dateString.replace(/-/g, '/');
 
-  user.quitDate = fixDateForAllBrowsers("12-11-2023"); // ! NEED TO ADD ABILITY TO SET QUIT DATE
+  // user.quitDate = fixDateForAllBrowsers("12-11-2023"); // ! NEED TO ADD ABILITY TO SET QUIT DATE
   
   const userProgress = useDataCalculations(user);
 
