@@ -105,5 +105,6 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 ### Friday, 12/15/2023
 ```
 * 8:00am - change Date types for API User & Journal Entity fields
+* 8am-9am - review Material UI & Chakra UI docs for inspiration
 
 ```
