@@ -2,13 +2,23 @@ import { IUser } from "../../types";
 import React, { useState, useEffect } from "react";
 import ElapsedTime from "./ElapsedTime";
 import useDataCalculations from "../../hooks/useDataCalculations";
+import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+import MoreTimeIcon from '@mui/icons-material/MoreTime';
+import { Tooltip } from "@mui/material";
+
+const moneyTrackerText = "This is calculated by multiplying the number of cigarettes you would have otherwise have smoked by the cost of one cigarette per pack, according to your registration data.";
 
 export default function Profile(props: ProfileProps) {
 
   const { user } = props;
 
-  user.quitDate = new Date("12-11-2023"); // ! NEED TO ADD ABILITY TO SET QUIT DATE
+  // SAFARI & FIREFOX DIDN'T LIKE THE PREVIOUS FORMAT.
+  // When registering user's, let's make sure to do this if necessary: 
+  const fixDateForAllBrowsers = (dateString: string) => dateString.replace(/-/g, '/');
 
+  user.quitDate = fixDateForAllBrowsers("12-11-2023"); // ! NEED TO ADD ABILITY TO SET QUIT DATE
+  
   const userProgress = useDataCalculations(user);
 
   console.log("Profile Rendered.")
@@ -25,16 +35,26 @@ export default function Profile(props: ProfileProps) {
 
         <div className="profile-col">
           <ElapsedTime quitDate={user.quitDate} />
+
           <div className="progress-trackers">
+          <Tooltip title={moneyTrackerText} >
             <div className="money-tracker tracker">
-              <h3>${userProgress?.moneySaved.toFixed(2)}</h3>
-              <p>Money Saved</p>
+              <AttachMoneyIcon />
+              <div className="info">
+                <h3>${userProgress?.moneySaved.toFixed(2)}</h3>
+                <p>Money Saved</p>
+              </div>
             </div>
+            </Tooltip>
             <div className="avoided-tracker tracker">
-              <h3>{userProgress?.cigsAvoided.toFixed(2)}</h3>
-              <p>Smokes Avoided</p>
+              <SmokeFreeIcon />
+              <div className="info">
+                <h3>{userProgress?.cigsAvoided.toFixed(2)}</h3>
+                <p>Smokes Avoided</p>
+              </div>
             </div>
             <div className="time-gained-tracker tracker">
+              <MoreTimeIcon />
               <h3>{(userProgress?.timeSaved! / 60).toFixed(2)}</h3>
               <p>Time Saved</p>
             </div>
