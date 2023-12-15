@@ -22,11 +22,11 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
   //       const user = await AuthService.getUserProfile()
   //       setStatus("Success");
   //       setUser(user.data)
-  //       console.log("Fetched user: ", user); // ! CONSOLE LOG
+  //       console.log("Fetched user: ", user);
   //     }
   //     catch (error) {
   //       setStatus("Error.")
-  //       console.log("Error fetching user info: ", error); // ! CONSOLE LOG
+  //       console.log("Error fetching user info: ", error);
   //     }
   //   }
 
