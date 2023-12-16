@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { calculateElapsedDays } from '../util/time-calculation';
 import type { IUser } from "../types";
 
-
+// Calculates the following information...
 export default function useDataCalculations(userData: IUser) {
 
   const [userProgress, setUserProgress] = useState<ProgressData | null>(null);
