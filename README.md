@@ -115,4 +115,6 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 10am-1pm - update login & registration styles + add second registration step
 * 1pm-3pm  - look into Chart.js to chart user progress, implement react-chartjs-2
 * 3pm-4pm  - refactor nested routes, move user journal fetch up to dashboard, sort journal list display, implement journal data with line chart for Timeline component
+* 4pm-6pm  - research into the body's reaction over time for those who quit smoking
+* 6pm-7pm  - create dataset of health benefits to the body, use for placeholder Heath Progress component
 ```
