@@ -1,7 +1,7 @@
 import './Health.css';
 import { LinearProgress } from '@mui/material';
 import { healthBenefitsOverTime } from '../../data/health-benefits';
-import differenceInHours from 'date-fns/differenceInHours';
+import differenceInMinutes from 'date-fns/differenceInMinutes';
 import type { IUser } from '../../types';
 
 export default function Health({ user }: { user: IUser }) {
@@ -10,13 +10,14 @@ export default function Health({ user }: { user: IUser }) {
   // we calculate the difference in hours between now and the user's quit date,
   // and compare with the number of hours needed to reach a benefit
 
-  const elapsedTime = differenceInHours(new Date(), new Date(user.quitDate));
+  // Make this a hook?
+  let elapsedTime = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
 
   const healthProgress = (elapsedHours: number, targetHours: number) => {
     const progress = (elapsedHours / targetHours) * 100;
     return progress > 100 ? 100 : progress;
   };
-
+  
   // TODO: refactor into smaller components
 
   return  (

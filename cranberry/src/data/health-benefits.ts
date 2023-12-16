@@ -26,7 +26,7 @@ export const healthBenefitsOverTime = [
     time: 336 // hours, or 2 weeks
   },
   {
-    benefit: 'Coughing and shortness of breath decrease: clear and deeper breathing gradually returns; you regain the ability to cough productively instead of hacking, which cleans your lungs and reduce your risk of infection.',
+    benefit: 'Coughing and shortness of breath decrease; clear and deeper breathing gradually returns.',
     time: 730 // hours, or 1 month
   },
   {

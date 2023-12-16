@@ -72,12 +72,19 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
       </div>
 
       <div className="timeline-content">
+      {userJournals.length > 1 
+        ? (
         <div className="time-scale">
           <Line
             data={data}
             options={options}
           ></Line>
         </div>
+        ) : (
+          <div className="time-scale">
+            <h1>You'll need to add a couple journals before there can be data to plot!</h1>
+          </div>
+      )}
       </div>
     </section>
   );

@@ -20,6 +20,7 @@
   width: auto;
   max-width: 550px;
   margin: auto;
+  transition: all 0.3s ease-in;
 }
 
 .health-item {
