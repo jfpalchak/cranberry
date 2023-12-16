@@ -8,7 +8,7 @@
 
 - [CranberryAPI](https://github.com/jfpalchak/CranberryAPI.git)
 - TypeScript
-- React
+- React (v18.2.0)
 - React Router (v6.20.1)
 - Axios (v1.6.2)
 - Chart.js (v4.4.1)
