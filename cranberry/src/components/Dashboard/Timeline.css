@@ -17,10 +17,10 @@
 .time-scale {
   display: flex;
   justify-content: center;
+  width: 95%;
   max-width: 990px;
   max-height: 500px;
   background: white;
   border-radius: 10px;
   padding: 1em;
 }
-

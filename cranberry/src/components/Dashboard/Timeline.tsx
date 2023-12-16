@@ -63,7 +63,8 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
         beginAtZero: true
       }
     }
-  }
+  };
+
   return  (
     <section className="user-timeline dash-section">
       <div className="section-header">
