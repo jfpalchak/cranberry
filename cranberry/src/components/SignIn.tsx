@@ -46,7 +46,7 @@ export default function SignIn(props: SignInProps) {
         || error.response.data.errors.Email
         || error.response.data.errors.Password
         message = message.includes("Unable") 
-          ? message.concat(" Please make sure your email or password are correct.")
+          ? message.concat(" Please make sure your email or password is correct.")
           : message.concat("");
         setSignInSuccess(message);
       });

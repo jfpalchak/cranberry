@@ -5,11 +5,6 @@ import SignIn from './SignIn';
 import Register from './Register';
 import Dashboard from './Dashboard/Dashboard';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Profile from './Dashboard/Profile';
-import JournalControl from './Dashboard/JournalControl';
-import JournalDetail from './Dashboard/JournalDetail';
-import Health from './Dashboard/Health';
-import Timeline from './Dashboard/Timeline';
 import AuthService from '../services/auth.service';
 import type { IUser } from "./../types";
 

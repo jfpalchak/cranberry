@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import intervalToDuration from 'date-fns/intervalToDuration';
 
 // Every second, calculate the amount of time that has passed
-// since the User's given quitDate. Depends on the user.quitDate.
-// Returns an Duration object containing the number of days passed,
+// since the User's given quitDate. 
+// Returns a Duration object containing the number of days passed,
 // as well as a count for hours, minutes, and seconds until the next 24 hours passes.
 export default function useElapsedTime(quitDate: Date) {
   

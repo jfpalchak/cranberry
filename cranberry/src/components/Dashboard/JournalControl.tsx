@@ -28,7 +28,7 @@ export default function JournalControl(props: JournalControlProps) {
       navigate(`/dashboard/journals/${newJournal.journalId}`)
     })
     .catch(error => {
-      console.log("Create Journal error: ", error);
+      console.log("Create Journal error: ", error); // ! CONSOLE LOG
     });
   };
 

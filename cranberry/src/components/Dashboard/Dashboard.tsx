@@ -43,19 +43,17 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
     const fetchJournals = async () => {
       JournalService.getUserJournals(user.userId!)
         .then((response) => {
-          console.log("Fetch Journals success", response.data);
+          console.log("Fetch Journals success", response.data); // ! CONSOLE LOG
           const journals = response.data.data
             .sort((a: IJournal, b: IJournal) => compareDesc(new Date(a.date) , new Date(b.date)));
           setUserJournals(journals);
         })
         .catch((error) => {
-          console.log("Fetch Journals error: ", error);
+          console.log("Fetch Journals error: ", error); // ! CONSOLE LOG
         })
     };
     fetchJournals();
   }, []);
-
-  console.log("Dashboard rendered") // ! CONSOLE LOG
 
   return (
     <main className="main-dashboard">

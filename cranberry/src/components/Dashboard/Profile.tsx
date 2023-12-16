@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import ElapsedTime from "./ElapsedTime";
-import useDataCalculations from "../../hooks/useDataCalculations";
+import useProgressCalculations from "../../hooks/useDataCalculations";
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import { Tooltip } from "@mui/material";
 import type { IUser } from "../../types";
 
-const moneyTrackerText = "This is calculated by multiplying the number of cigarettes you would have otherwise have smoked by the cost of one cigarette per pack, according to your registration data.";
+const moneyTrackerText = "This is calculated by multiplying the number of cigarettes you would have otherwise smoked by the cost of one cigarette per pack, according to your registration data.";
 
 export default function Profile(props: ProfileProps) {
 
   const { user } = props;
   
-  const userProgress = useDataCalculations(user);
+  const userProgress = useProgressCalculations(user);
 
-  console.log("Profile Rendered.")
-  console.log(user)
-  console.log("User progress data: ", userProgress);
+  console.log("User: ", user) // ! CONSOLE LOG
+  console.log("User progress data: ", userProgress); // ! CONSOLE LOG
 
   return (
     <section className="user-profile dash-section">
@@ -28,6 +27,7 @@ export default function Profile(props: ProfileProps) {
       <div className="profile-content">
 
         <div className="profile-col">
+
           <ElapsedTime quitDate={user.quitDate} />
 
           <div className="progress-trackers">

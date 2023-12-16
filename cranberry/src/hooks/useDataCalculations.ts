@@ -5,7 +5,7 @@ import type { IUser } from "../types";
 const AVG_MINUTES_PER_CIG = 5;
 
 // Calculates the following information...
-export default function useDataCalculations(userData: IUser) {
+function useProgressCalculations(userData: IUser) {
 
   const [userProgress, setUserProgress] = useState<ProgressData | null>(null);
 
@@ -36,3 +36,5 @@ interface ProgressData {
 }
 
 type Minutes = number;
+
+export default useProgressCalculations;

@@ -8,13 +8,6 @@ export interface IUser {
   quitDate: string | Date;
 }
 
-export interface IElapsedTime {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
-}
-
 export interface IJournal {
   journalId?: number;
   date: string;
