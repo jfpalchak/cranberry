@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
 import { Line } from 'react-chartjs-2';
+import { IJournal } from '../../types';
 
 ChartJS.register(
   LineElement, 
@@ -20,28 +21,28 @@ ChartJS.register(
   Legend
 );
 
-export default function Timeline() {
+export default function Timeline({ userJournals }: { userJournals: IJournal[] }) {
 
   const data = {
-    labels: ['2023-12-11T11:58', '2023-12-10T11:58', '2023-12-09T11:58'], // journal dates
+    labels: userJournals.map(journal => journal.date), // journal dates
     datasets: [
-      {
-        label: 'Cravings',
-        data: [8, 2, 6], // smoked
-        backgroundColor: 'darkgreen',
-        borderColor: 'green',
-        tension: 0.4
-      },
+      // {
+      //   label: 'Cravings',
+      //   data: [8, 2, 6],
+      //   backgroundColor: 'darkgreen',
+      //   borderColor: 'green',
+      //   tension: 0.4
+      // },
       {
         label: 'Craving Intensity',
-        data: [1, 4, 4], // smoked
+        data: userJournals.map(journal => journal.cravingIntensity),
         backgroundColor: 'blue',
         borderColor: 'lightblue',
         tension: 0.4
       },
       {
         label: 'Smoked',
-        data: [1, 1, 3], // smoked
+        data: userJournals.map(journal => journal.cigsSmoked),
         backgroundColor: 'red',
         borderColor: 'orange',
         tension: 0.4
