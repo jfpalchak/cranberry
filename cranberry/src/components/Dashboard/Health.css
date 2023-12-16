@@ -1,0 +1,48 @@
+/* ####### */
+/* HEALTH */
+/* ####### */
+
+.user-health {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  width: 100%;
+  padding: 20px;
+}
+
+.health-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+
+.health-progress {
+  width: auto;
+  max-width: 550px;
+  margin: auto;
+}
+
+.health-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.progress-bar {
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.references {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.references p {
+  color: rgb(86, 85, 85);
+}
+.references a {
+  text-decoration: none;
+  color: rgb(246, 116, 116);
+}
