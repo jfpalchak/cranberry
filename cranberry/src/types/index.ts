@@ -8,7 +8,7 @@ export interface IUser {
   quitDate: string | Date;
 }
 
-export interface ElapsedTime {
+export interface IElapsedTime {
   days: number;
   hours: number;
   minutes: number;

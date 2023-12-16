@@ -8,10 +8,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
 
-import PersonIcon from '@mui/icons-material/Person';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-
 export default function DashNav({ logout }: { logout: () => void }) {
 
   const [isMini, setIsMini] = useState(false);

@@ -1,4 +1,3 @@
-import { IUser } from "../../types";
 import React, { useState, useEffect } from "react";
 import ElapsedTime from "./ElapsedTime";
 import useDataCalculations from "../../hooks/useDataCalculations";
@@ -6,6 +5,7 @@ import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import { Tooltip } from "@mui/material";
+import type { IUser } from "../../types";
 
 const moneyTrackerText = "This is calculated by multiplying the number of cigarettes you would have otherwise have smoked by the cost of one cigarette per pack, according to your registration data.";
 

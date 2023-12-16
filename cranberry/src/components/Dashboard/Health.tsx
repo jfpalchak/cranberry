@@ -1,15 +1,21 @@
 import './Health.css';
 import { LinearProgress } from '@mui/material';
 import { healthBenefitsOverTime } from '../../data/health-benefits';
+import { calculateElapsedTime } from '../../util/time-calculation';
+import type { IUser } from '../../types';
 
-export default function Health() {
+export default function Health({ user }: { user: IUser }) {
+
+  const elapsedTime = calculateElapsedTime(user.quitDate);
+
+
   return  (
     <section className="user-health dash-section">
       <h1>Health Progress</h1>
       <div className="health-content">
         <div className="health-progress">
-          {healthBenefitsOverTime.map(item => (
-            <div className="health-item">
+          {healthBenefitsOverTime.map((item, index) => (
+            <div className="health-item" key={index} >
               <h4>{item.benefit}</h4>
               <LinearProgress className="progress-bar" variant='determinate' value={30} />
             </div>

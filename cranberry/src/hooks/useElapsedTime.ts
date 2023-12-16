@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import calculateElapsedTime from '../util/calcElapsedTime';
+import { calculateElapsedTime } from '../util/time-calculation';
+import type { IElapsedTime } from '../types';
 
 export default function useElapsedTime(quitDate: Date) {
   
-  const [elapsedTime, setElapsedTime] = useState<ElapsedTime>({
+  const [elapsedTime, setElapsedTime] = useState<IElapsedTime>({
     days: 0,
     hours: 0,
     minutes: 0,
@@ -21,11 +22,4 @@ export default function useElapsedTime(quitDate: Date) {
   }, [quitDate])
 
   return elapsedTime;
-}
-
-interface ElapsedTime {
-  days: number;
-  hours: number;
-  minutes: number;
-  seconds: number;
 }

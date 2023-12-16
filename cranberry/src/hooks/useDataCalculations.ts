@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ElapsedTime, IUser } from "../types";
+import { calculateElapsedDays } from '../util/time-calculation';
+import type { IUser } from "../types";
 
 
 export default function useDataCalculations(userData: IUser) {
@@ -24,18 +25,6 @@ export default function useDataCalculations(userData: IUser) {
     }
   }, [userData]);
 
-  console.log("Called useDataCalculations") // ! CONSOLE LOG
-
-  const calculateElapsedDays = (startDate: Date | string) => {
-    startDate = (typeof startDate === 'string' ? new Date(startDate) : startDate);
-    const currentTime = new Date();
-    // get difference in seconds between now and given date
-    const difference = Math.floor((currentTime.getTime() - startDate.getTime()) / 1000);
-
-    const daysSince = (difference / (24 * 60 * 60));
-
-    return daysSince;
-  };
 
   // TODO: Refactor out of using these functions to shorten our hook down a bit.
 

@@ -10,8 +10,8 @@ import JournalControl from './Dashboard/JournalControl';
 import JournalDetail from './Dashboard/JournalDetail';
 import Health from './Dashboard/Health';
 import Timeline from './Dashboard/Timeline';
-import { IUser } from "./../types";
 import AuthService from '../services/auth.service';
+import type { IUser } from "./../types";
 
 function App() {
   const [user, setUser] = useState<IUser | null>(null);

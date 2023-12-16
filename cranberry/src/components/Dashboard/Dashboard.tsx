@@ -7,8 +7,8 @@ import Profile from "./Profile";
 import Health from './Health';
 import Timeline from './Timeline';
 import JournalControl from "./JournalControl";
-import { IUser, IJournal } from "../../types";
 import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
+import type { IUser, IJournal } from "../../types";
 
 export default function Dashboard({ logout, user }: { logout: () => void, user: IUser }) {
 
@@ -66,8 +66,14 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
       <Routes>
         <Route index path="/" element={<Profile user={user} />} />
         <Route path="/profile" element={<Profile user={user} />} />
-        <Route path="/journals/*" element={<JournalControl userJournals={userJournals} setUserJournals={setUserJournals} user={user} />} />
-        <Route path="/health" element={<Health />} />
+        <Route path="/journals/*" element={
+          <JournalControl 
+            userJournals={userJournals} 
+            setUserJournals={setUserJournals} 
+            user={user} 
+          />} 
+        />
+        <Route path="/health" element={<Health user={user} />} />
         <Route path="/timeline" element={<Timeline userJournals={userJournals} />} />
       </Routes>
     </main>

@@ -11,7 +11,7 @@ import {
 import 'chartjs-adapter-date-fns';
 import { Line } from 'react-chartjs-2';
 import type { ChartData, ChartOptions } from 'chart.js';
-import { IJournal } from '../../types';
+import type { IJournal } from '../../types';
 
 ChartJS.register(
   LineElement, 
