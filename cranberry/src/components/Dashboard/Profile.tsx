@@ -12,12 +12,6 @@ const moneyTrackerText = "This is calculated by multiplying the number of cigare
 export default function Profile(props: ProfileProps) {
 
   const { user } = props;
-
-  // SAFARI & FIREFOX DIDN'T LIKE THE PREVIOUS FORMAT.
-  // When registering users, let's make sure to do this if necessary: 
-  // const fixDateForAllBrowsers = (dateString: string) => dateString.replace(/-/g, '/');
-
-  // user.quitDate = fixDateForAllBrowsers("12-11-2023"); // ! NEED TO ADD ABILITY TO SET QUIT DATE
   
   const userProgress = useDataCalculations(user);
 

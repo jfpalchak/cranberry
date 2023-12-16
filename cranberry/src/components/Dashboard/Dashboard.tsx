@@ -9,6 +9,7 @@ import Timeline from './Timeline';
 import JournalControl from "./JournalControl";
 import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
 import type { IUser, IJournal } from "../../types";
+import compareDesc from 'date-fns/compareDesc';
 
 export default function Dashboard({ logout, user }: { logout: () => void, user: IUser }) {
 
@@ -44,11 +45,7 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
         .then((response) => {
           console.log("Fetch Journals success", response.data);
           const journals = response.data.data
-            .sort(function(a: IJournal, b: IJournal) { // most recent first
-              const dateA = Date.parse(a.date);
-              const dateB = Date.parse(b.date);
-              return (dateB - dateA);
-            });
+            .sort((a: IJournal, b: IJournal) => compareDesc(new Date(a.date) , new Date(b.date)));
           setUserJournals(journals);
         })
         .catch((error) => {

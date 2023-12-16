@@ -1,12 +1,12 @@
 import './Health.css';
 import { LinearProgress } from '@mui/material';
 import { healthBenefitsOverTime } from '../../data/health-benefits';
-import { calculateElapsedTime } from '../../util/time-calculation';
+import intervalToDuration from 'date-fns/intervalToDuration';
 import type { IUser } from '../../types';
 
 export default function Health({ user }: { user: IUser }) {
 
-  const elapsedTime = calculateElapsedTime(user.quitDate);
+  const elapsedTime = intervalToDuration({ start: new Date(user.quitDate), end: new Date() })
 
 
   return  (

@@ -6,6 +6,7 @@ import JournalEdit from './JournalEdit';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useState, useEffect } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
+import compareDesc from 'date-fns/compareDesc';
 import type { IUser, IJournal } from "../../types";
 
 
@@ -22,11 +23,7 @@ export default function JournalControl(props: JournalControlProps) {
     .then(response => {
       const newJournal = response.data.data;
       const updatedJournalList = [...userJournals, newJournal]
-        .sort((a: IJournal, b: IJournal)=> { // most recent first
-          const dateA = Date.parse(a.date);
-          const dateB = Date.parse(b.date);
-          return (dateB - dateA); 
-        });
+        .sort((a: IJournal, b: IJournal) => compareDesc(new Date(a.date) , new Date(b.date)));
       setUserJournals(updatedJournalList);
       navigate(`/dashboard/journals/${newJournal.journalId}`)
     })
@@ -90,9 +87,24 @@ export default function JournalControl(props: JournalControlProps) {
               </Link>
             </div>
           } />
-          <Route path="/new" element={<JournalCreate user={user} onSubmission={handleAddingNewJournal} />} />
-          <Route path="/:journalId" element={<JournalDetail journals={userJournals} onClickingDelete={handleDeletingJournal}/>} />
-          <Route path="/:journalId/edit" element={<JournalEdit journals={userJournals} onSubmission={handleEditingJournal} />} />
+          <Route path="/new" element={
+            <JournalCreate 
+              user={user} 
+              onSubmission={handleAddingNewJournal} 
+            />} 
+          />
+          <Route path="/:journalId" element={
+            <JournalDetail 
+              journals={userJournals} 
+              onClickingDelete={handleDeletingJournal}
+            />} 
+          />
+          <Route path="/:journalId/edit" element={
+            <JournalEdit 
+              journals={userJournals} 
+              onSubmission={handleEditingJournal} 
+            />} 
+          />
         </Routes>
       </div>
       )}
