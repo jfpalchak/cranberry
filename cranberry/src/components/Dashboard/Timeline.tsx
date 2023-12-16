@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
 import { Line } from 'react-chartjs-2';
+import type { ChartData, ChartOptions } from 'chart.js';
 import { IJournal } from '../../types';
 
 ChartJS.register(
@@ -23,7 +24,7 @@ ChartJS.register(
 
 export default function Timeline({ userJournals }: { userJournals: IJournal[] }) {
 
-  const data = {
+  const data: ChartData<'line'> = {
     labels: userJournals.map(journal => journal.date), // journal dates
     datasets: [
       // {
@@ -50,7 +51,7 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
     ]
   };
 
-  const options = {
+  const options: ChartOptions<'line'> = {
     scales: {
       x: {
         type: 'time',
@@ -73,7 +74,7 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
         <div className="time-scale">
           <Line
             data={data}
-            options={options as any}
+            options={options}
           ></Line>
         </div>
       </div>
