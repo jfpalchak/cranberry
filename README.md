@@ -108,5 +108,5 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 8am-10am - review Material UI & Chakra UI docs for inspiration
 * 10am-1pm - update login & registration styles + add second registration step
 * 1pm-3pm  - look into Chart.js to chart user progress, implement react-chartjs-2
-* 3pm      - refactor nested routes
+* 3pm-4pm  - refactor nested routes, move user journal fetch up to dashboard, sort journal list display, implement journal data with line chart for Timeline component
 ```
