@@ -11,11 +11,17 @@
 - React
 - React Router (v6.20.1)
 - Axios (v1.6.2)
+- Chart.js (v4.4.1)
+- react-chartjs-2 (v5.2.0)
+- chartjs-adapter-date-fns (v3.0.0)
+- date-fns (v2.30.0)
 - Node.js (v18.17.1)
 - npm (v8.1.2)
 - Material UI
+- Chakra UI
 - HTML
 - CSS
+- miro
 
 ## Description
 
