@@ -8,33 +8,26 @@ import JournalEdit from './JournalEdit';
 import { IUser, IJournal } from "../../types";
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 
+
 export default function JournalControl(props: JournalControlProps) {
 
-  const { user } = props;
-  const [userJournals, setUserJournals] = useState<IJournal[]>([]);
+  const { user, userJournals, setUserJournals } = props;
+  // const [userJournals, setUserJournals] = useState<IJournal[]>([]);
   const navigate = useNavigate();
 
-  // fetch user's journals
-  useEffect(() => {
-    const fetchJournals = async () => {
-      JournalService.getUserJournals(user.userId!)
-        .then((response) => {
-          console.log("Fetch Journals success", response.data);
-          setUserJournals(response.data.data);
-        })
-        .catch((error) => {
-          console.log("Fetch Journals error: ", error);
-        })
-    };
-    fetchJournals();
-  }, []);
+  // fetch user journals
 
-  
   const handleAddingNewJournal = async (journalData: IJournal) => {
     JournalService.createUserJournal(user.userId!, journalData)
     .then(response => {
       const newJournal = response.data.data;
-      setUserJournals([...userJournals, newJournal]);
+      const updatedJournalList = [...userJournals, newJournal]
+        .sort((a: IJournal, b: IJournal)=> { // most recent first
+          const dateA = Date.parse(a.date);
+          const dateB = Date.parse(b.date);
+          return (dateB - dateA); 
+        });
+      setUserJournals(updatedJournalList);
       navigate(`/dashboard/journals/${newJournal.journalId}`)
     })
     .catch(error => {
@@ -109,5 +102,7 @@ export default function JournalControl(props: JournalControlProps) {
 
 type JournalControlProps = {
   user: IUser;
+  userJournals: IJournal[];
+  setUserJournals: (data: IJournal[]) => void;
 }
 

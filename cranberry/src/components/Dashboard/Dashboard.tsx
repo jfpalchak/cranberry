@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AuthService from "../../services/auth.service";
+import JournalService from "../../services/journal.service";
 import DashNav from "./DashNav";
 import Profile from "./Profile";
 import Health from './Health';
 import Timeline from './Timeline';
 import JournalControl from "./JournalControl";
-import { IUser } from "../../types";
+import { IUser, IJournal } from "../../types";
 import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
 
 export default function Dashboard({ logout, user }: { logout: () => void, user: IUser }) {
@@ -34,6 +35,29 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
 
   // }, [])
 
+  const [userJournals, setUserJournals] = useState<IJournal[]>([]);
+
+  // fetch user's journals
+  useEffect(() => {
+    const fetchJournals = async () => {
+      JournalService.getUserJournals(user.userId!)
+        .then((response) => {
+          console.log("Fetch Journals success", response.data);
+          const journals = response.data.data
+            .sort(function(a: IJournal, b: IJournal) { // most recent first
+              const dateA = Date.parse(a.date);
+              const dateB = Date.parse(b.date);
+              return (dateB - dateA);
+            });
+          setUserJournals(journals);
+        })
+        .catch((error) => {
+          console.log("Fetch Journals error: ", error);
+        })
+    };
+    fetchJournals();
+  }, []);
+
   console.log("Dashboard rendered") // ! CONSOLE LOG
 
   return (
@@ -42,9 +66,9 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
       <Routes>
         <Route index path="/" element={<Profile user={user} />} />
         <Route path="/profile" element={<Profile user={user} />} />
-        <Route path="/journals/*" element={<JournalControl user={user} />} />
+        <Route path="/journals/*" element={<JournalControl userJournals={userJournals} setUserJournals={setUserJournals} user={user} />} />
         <Route path="/health" element={<Health />} />
-        <Route path="/timeline" element={<Timeline />} />
+        <Route path="/timeline" element={<Timeline userJournals={userJournals} />} />
       </Routes>
     </main>
   );

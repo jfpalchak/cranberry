@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IJournal, IUser } from "../../types";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Input } from '@chakra-ui/react';
 
 export default function JournalCreate(props: JournalCreateProps) {
 
@@ -29,11 +30,12 @@ export default function JournalCreate(props: JournalCreateProps) {
       <form onSubmit={handleCreateJournal}>
         <div className="journal-form">
         <label>Entry Date:</label>
-        <input 
-          type="date" 
+        <Input 
+          type="datetime-local"
+          id="date"
           name="date"
-          required
-          onChange={handleChange}
+          onChange={handleChange} 
+          isRequired={true}
         />
         <label>Craving Intensity:</label>
         <input 
