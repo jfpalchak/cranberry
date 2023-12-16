@@ -117,4 +117,5 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 3pm-4pm  - refactor nested routes, move user journal fetch up to dashboard, sort journal list display, implement journal data with line chart for Timeline component
 * 4pm-6pm  - research into the body's reaction over time for those who quit smoking
 * 6pm-7pm  - create dataset of health benefits to the body, use for placeholder Heath Progress component
+* 7:20pm   - add comments for functions & hooks to improve readability
 ```
