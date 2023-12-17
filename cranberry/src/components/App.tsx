@@ -8,9 +8,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AuthService from '../services/auth.service';
 import type { IUser } from "./../types";
 
+import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { fetchUserData } from '../store/authActions';
+
 function App() {
   const [user, setUser] = useState<IUser | null>(null);
   const [loggedIn, setLoggedIn] = useState(false);
+
+  const { isLoggedIn, userData } = useAppSelector(state => state.auth);
+  const dispatch = useAppDispatch();
 
   const handleLoggingIn = async () => {
     try {
@@ -24,6 +30,12 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    if(isLoggedIn){
+      dispatch(fetchUserData())
+    }
+  }, [isLoggedIn])
+
   const handleLoggingOut = () => {
     setUser(null);
     setLoggedIn(false);
@@ -34,15 +46,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header loggedIn={authorized} />
+        <Header loggedIn={isLoggedIn} />
         <Routes>
-          <Route path='/' element={ user ? <Dashboard user={user} logout={handleLoggingOut} /> : <Home />} />
+          <Route path='/' element={ isLoggedIn ? <Dashboard logout={handleLoggingOut} /> : <Home />} />
           <Route path='/sign-in' element={<SignIn handleSetLoggedIn={handleLoggingIn} />} />
           <Route path='/register' element={<Register />} />
           <Route path='/dashboard/*' 
             element={
-              user 
-              ? <Dashboard user={user} logout={handleLoggingOut} /> 
+              isLoggedIn 
+              ? <Dashboard logout={handleLoggingOut} /> 
               : <SignIn handleSetLoggedIn={handleLoggingIn} />
             } 
           />

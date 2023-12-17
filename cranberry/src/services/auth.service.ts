@@ -1,30 +1,26 @@
 import axios from "axios";
 import api from "./api";
-
-const BASE_URL = "http://localhost:5000/api";
+import { removeCredentials, getCredentials } from "../utils/CredentialHelpers";
 
 const register = (credentials: { userName: string, email: string, password: string }) => {
-  return axios.post(`${BASE_URL}/users/register`, credentials);
+  return api.post(`/users/register`, credentials);
 }
 
 const signin = (credentials: { email: string, password: string }) => {
-  return axios.post(`${BASE_URL}/users/signin`, credentials);
+  return api.post(`/users/signin`, credentials);
 }
 
 const signout = () => {
-  sessionStorage.removeItem("user");
-  sessionStorage.removeItem("token");
+  removeCredentials();
 }
 
 const getCurrentUser = () => {
-  const token = sessionStorage.getItem("token");
-  const userId = sessionStorage.getItem("user");
-  return { token, userId };
+  return getCredentials();
 }
 
 const getUserProfile = async () => {
 
-  const { token, userId } = getCurrentUser();
+  const { token, userId } = getCredentials();
 
   const response = await api.get(`/users/${userId}`)
 

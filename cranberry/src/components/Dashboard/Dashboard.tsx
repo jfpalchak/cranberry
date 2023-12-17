@@ -10,8 +10,9 @@ import JournalControl from "./JournalControl";
 import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
 import type { IUser, IJournal } from "../../types";
 import compareDesc from 'date-fns/compareDesc';
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
-export default function Dashboard({ logout, user }: { logout: () => void, user: IUser }) {
+export default function Dashboard({ logout }: { logout: () => void }) {
 
   // const [user, setUser] = useState<IUser | null>(null);
   // const [status, setStatus] = useState("");
@@ -35,6 +36,10 @@ export default function Dashboard({ logout, user }: { logout: () => void, user: 
   //   fetchProfile();
 
   // }, [])
+
+  const { userData } = useAppSelector(state => state.auth);
+  const dispatch = useAppDispatch();
+  const user = userData as IUser;
 
   const [userJournals, setUserJournals] = useState<IJournal[]>([]);
 

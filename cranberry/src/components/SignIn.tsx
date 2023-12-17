@@ -4,6 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import AuthService from "../services/auth.service";
 import { TextField } from "@mui/material";
 
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+// import { selectAuth } from "../store/authSlice";
+import { signIn, fetchUserData } from "../store/authActions";
+
 const BASE_URL = "http://localhost:5000/api";
 
 export default function SignIn(props: SignInProps) {
@@ -17,6 +21,8 @@ export default function SignIn(props: SignInProps) {
   });
 
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const { error } = useAppSelector(state => state.auth);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -26,30 +32,42 @@ export default function SignIn(props: SignInProps) {
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    axios.post(`${BASE_URL}/users/signin`, { email: formData.email, password: formData.password })
-      .then(response => {
-        setSignInSuccess(`${response.data.status}: ${response.data.message}`);
-        const { token, userId }= response.data;
-
-        console.log("Log in successful: ", response); // ! CONSOLE LOG
-
-        sessionStorage.setItem("token", token);
-        sessionStorage.setItem("user", userId);
-        
-        handleSetLoggedIn();
+    dispatch(signIn({ email: formData.email, password: formData.password}))
+      .unwrap()
+      .then((response) => {
+        console.log("Sign in success: ", response);
+        // handleSetLoggedIn();
+        dispatch(fetchUserData());
         navigate("/dashboard/profile");
       })
       .catch((error) => {
         console.log("Error logging in: ", error); // ! CONSOLE LOG
-        let message = error.response.data.message 
-        || error.response.data[0]?.description
-        || error.response.data.errors.Email
-        || error.response.data.errors.Password
-        message = message.includes("Unable") 
-          ? message.concat(" Please make sure your email or password is correct.")
-          : message.concat("");
-        setSignInSuccess(message);
-      });
+        setSignInSuccess(error);
+      })
+    // axios.post(`${BASE_URL}/users/signin`, { email: formData.email, password: formData.password })
+    //   .then(response => {
+    //     setSignInSuccess(`${response.data.status}: ${response.data.message}`);
+    //     const { token, userId }= response.data;
+
+    //     console.log("Log in successful: ", response); // ! CONSOLE LOG
+
+    //     sessionStorage.setItem("token", token);
+    //     sessionStorage.setItem("user", userId);
+        
+    //     handleSetLoggedIn();
+    //     navigate("/dashboard/profile");
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error logging in: ", error); // ! CONSOLE LOG
+    //     let message = error.response.data.message 
+    //     || error.response.data[0]?.description
+    //     || error.response.data.errors.Email
+    //     || error.response.data.errors.Password
+    //     message = message.includes("Unable") 
+    //       ? message.concat(" Please make sure your email or password is correct.")
+    //       : message.concat("");
+    //     setSignInSuccess(message);
+    //   });
 
   }
 
