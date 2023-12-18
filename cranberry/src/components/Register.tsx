@@ -3,10 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { registerUser, signIn } from '../store/authActions';
 import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
 import { Input } from '@chakra-ui/react';
 
 
@@ -22,6 +22,7 @@ function Register() {
     userName: '',
     email: '',
     password: '',
+    confirmPassword: '',
     quitDate: '',
     avgSmokedDaily: 0,
     cigsPerPack: 20,
@@ -54,13 +55,13 @@ function Register() {
           .catch((error) => {
             setNextStep(false);
             setLoading(false);
-            console.log("Error signing in from registration: ", error);
+            console.log("Error signing in from registration: ", error); // ! CONSOLE LOG
           });
       })
       .catch((error) => {
         setNextStep(false);
         setLoading(false);
-        console.log("Error registering user: ", error)
+        console.log("Error registering user: ", error); // ! CONSOLE LOG
       });
   }
 
@@ -91,7 +92,6 @@ function Register() {
             </div>
           }
 
-          {/* onSubmit={handleRegister} */}
           <form className="register-form auth-form" onSubmit={handleNextStep} >
           <input 
               type="text" 
@@ -101,16 +101,14 @@ function Register() {
               required
               onChange={handleChange}
             />
-            <br/>
             <input 
-              type="text"
+              type="email"
               id="registerEmail"
               name="email"
               placeholder="Email"
               required
               onChange={handleChange}
             />
-            <br/>
             <input 
               type="password" 
               id="registerPassword" 
@@ -119,7 +117,6 @@ function Register() {
               required
               onChange={handleChange}
             />
-            {/* <br/>
             <input 
               type="password" 
               id="confirmPassword" 
@@ -127,8 +124,7 @@ function Register() {
               placeholder="Confirm Password" 
               required
               onChange={handleChange}
-            /> */}
-            <br/>
+            />
             <button className="btn primary-btn">Register</button>
           </form>
 
@@ -145,8 +141,8 @@ function Register() {
           <DialogContentText>
             To finish registration, we just need a little more information.
           </DialogContentText>
-          <form className="register-form auth-form" onSubmit={handleRegister}>
             <br/>
+          <form className="register-form auth-form" onSubmit={handleRegister}>
             <label htmlFor="quitDate">When is (or was) your quit date?</label>
             <Input 
               type="datetime-local"
@@ -156,7 +152,6 @@ function Register() {
               onChange={handleChange} 
               isRequired={true}
             />
-            <br/>
             <label htmlFor="avgSmokedDaily">About how many cigarettes do (or did) you smoke a day?</label>
             <input 
               type="number" 
@@ -166,7 +161,6 @@ function Register() {
               onChange={handleChange} 
               required 
             />
-            <br/>
             <label htmlFor="pricePerPack">How much does a packet of cigarettes typically cost?</label>
             <input 
               type="number" 
@@ -178,7 +172,6 @@ function Register() {
               onChange={handleChange} 
               required 
             />
-            <br/>
             <label htmlFor="cigsPerPack">How many cigarettes are in a packet?</label>
             <input 
               type="number"
@@ -190,7 +183,6 @@ function Register() {
               onChange={handleChange} 
               required 
             />
-            <br/>
             <button className="btn primary-btn">SUBMIT</button>
           </form>
         </DialogContent>
@@ -206,6 +198,7 @@ interface RegisterFormState {
   userName: string;
   email: string;
   password: string;
+  confirmPassword: string;
   quitDate: string;
   avgSmokedDaily: number;
   cigsPerPack: number;

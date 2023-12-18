@@ -123,6 +123,10 @@ header nav a:hover {
 /* ##################### */
 /*  SIGN-IN / REGISTER   */
 /* ##################### */
+.signin-card {
+  margin-top: 100px;
+}
+
 .auth-main {
   display: flex;
   /* align-items: center; */
@@ -133,12 +137,12 @@ header nav a:hover {
   text-align: center;
   margin-bottom: 50px;
   font-size: 2.5em;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 .card-body {
   padding: 50px 50px 10px 50px;
-  width: 400px;
+  width: 450px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -146,10 +150,25 @@ header nav a:hover {
 .auth-form {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
+.auth-form label {
+  margin-bottom: -15px;
+}
 .auth-form input {
-  padding: .8em;
+  display: block;
+  padding: 1em;
+  border: 1px rgb(159, 157, 157) solid;
+  border-radius: 5px;
+}
+.auth-form input:focus {
+  /* border: rgb(240, 88, 88) 1px solid; */
+  outline: rgb(240, 88, 88) 2px solid;
+  outline-offset: -2px;
+}
+.auth-form button {
+  margin-top: 10px;
 }
 
 .primary-btn {
@@ -185,6 +204,7 @@ header nav a:hover {
 .callout {
   padding: 20px;
   width: 350px;
+  text-align: center;
 }
 
 .callout a {

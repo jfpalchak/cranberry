@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { signIn} from "../store/authActions";
 
 function SignIn() {
 
   const navigate = useNavigate();
-  const location = useLocation();
   const dispatch = useAppDispatch();
   const { error } = useAppSelector(state => state.auth);
 
@@ -36,7 +35,7 @@ function SignIn() {
   return (
     <section className="auth-main">
 
-      <div className="auth-card">
+      <div className="auth-card signin-card">
 
         <div className="card-header">
           <h1>just breathe</h1>
@@ -57,7 +56,6 @@ function SignIn() {
               required
               onChange={handleChange}
             />
-            <br/>
             <input 
               type="password" 
               id="signinPassword" 
@@ -66,7 +64,6 @@ function SignIn() {
               required
               onChange={handleChange}
             />
-            <br/>
             <button className="btn primary-btn" type="submit">SIGN IN</button>
           </form>
 
