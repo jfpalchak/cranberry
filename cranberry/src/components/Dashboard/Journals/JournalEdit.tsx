@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import type { IJournal } from "../../types";
+import type { IJournal } from "../../../types";
 
 export default function JournalEdit({ journals, onSubmission }: JournalEditProps) {
 

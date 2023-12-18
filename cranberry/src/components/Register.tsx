@@ -1,6 +1,7 @@
-import AuthService from '../services/auth.service';
 import React, { useState } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { registerUser, signIn } from '../store/authActions';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -8,11 +9,14 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { Input } from '@chakra-ui/react';
 
-const BASE_URL = "http://localhost:5000/api";
 
-export default function Register() {
+function Register() {
+  
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { error } = useAppSelector(state => state.auth);
 
-  const [registerSuccess, setRegisterSuccess] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
   const [nextStep, setNextStep] = useState(false);
   const [formData, setFormData] = useState<RegisterFormState>({
     userName: '',
@@ -24,6 +28,7 @@ export default function Register() {
     pricePerPack: 0
   });
 
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prevData => ({...prevData, [name]: value}));
@@ -34,21 +39,28 @@ export default function Register() {
 
     console.log(formData);
 
-    AuthService.register(formData)
-      .then(response => {
-        setRegisterSuccess(`${response.data.status}: ${response.data.message}`);
-        setNextStep(false);
-        // redirect user
+      setLoading(true);
+
+      dispatch(registerUser(formData))
+      .unwrap()
+      .then(() => {
+        dispatch(signIn({ email: formData.email, password: formData.password }))
+          .unwrap()
+          .then(() => {
+            setNextStep(false);
+            setLoading(false);
+            navigate("/dashboard/profile");
+          })
+          .catch((error) => {
+            setNextStep(false);
+            setLoading(false);
+            console.log("Error signing in from registration: ", error);
+          });
       })
       .catch((error) => {
-        console.log("Registration error: ", error) // ! CONSOLE LOG
-        const message = error.response.data.message 
-        || error.response.data[0]?.description
-        || error.response.data.errors.Email
-        || error.response.data.errors.Password
-        || error.response.data.errors.UserName
-        setRegisterSuccess(message);
         setNextStep(false);
+        setLoading(false);
+        console.log("Error registering user: ", error)
       });
   }
 
@@ -73,9 +85,9 @@ export default function Register() {
         </div>
 
         <div className="card-body">
-          {registerSuccess &&
+          {error &&
             <div className="error-message">
-              <p>* {registerSuccess}</p>
+              <p>* {error}</p>
             </div>
           }
 
@@ -199,3 +211,5 @@ interface RegisterFormState {
   cigsPerPack: number;
   pricePerPack: number;
 }
+
+export default Register;

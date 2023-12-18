@@ -1,3 +1,4 @@
+import './Timeline.css';
 import { 
   Chart as ChartJS,
   LineElement, 
@@ -10,7 +11,7 @@ import {
 import 'chartjs-adapter-date-fns';
 import { Line } from 'react-chartjs-2';
 import type { ChartData, ChartOptions } from 'chart.js';
-import type { IJournal } from '../../types';
+import type { IJournal } from '../../../types';
 
 ChartJS.register(
   LineElement, 
@@ -21,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-function LineGraph({ userJournals }: { userJournals: IJournal[] }) {
+export default function Timeline({ userJournals }: { userJournals: IJournal[] }) {
 
   const data: ChartData<'line'> = {
     labels: userJournals.map(journal => journal.date), // journal dates
@@ -65,9 +66,26 @@ function LineGraph({ userJournals }: { userJournals: IJournal[] }) {
   };
 
   return  (
-    <Line
-      data={data}
-      options={options}
-    ></Line>
+    <section className="user-timeline dash-section">
+      <div className="section-header">
+        <h1>Timeline</h1>
+      </div>
+
+      <div className="timeline-content">
+      {userJournals.length > 1 
+        ? (
+        <div className="time-scale">
+          <Line
+            data={data}
+            options={options}
+          ></Line>
+        </div>
+        ) : (
+          <div className="time-scale">
+            <h1>You'll need to add a couple journals before there can be data to plot!</h1>
+          </div>
+      )}
+      </div>
+    </section>
   );
 }

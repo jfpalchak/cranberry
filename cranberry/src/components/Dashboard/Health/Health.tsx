@@ -1,8 +1,8 @@
 import './Health.css';
 import { LinearProgress } from '@mui/material';
-import { healthBenefitsOverTime } from '../../data/health-benefits';
+import { healthBenefitsOverTime } from '../../../data/health-benefits';
 import differenceInMinutes from 'date-fns/differenceInMinutes';
-import type { IUser } from '../../types';
+import type { IUser } from '../../../types';
 
 export default function Health({ user }: { user: IUser }) {
 

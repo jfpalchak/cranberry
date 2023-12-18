@@ -1,4 +1,4 @@
-import useElapsedTime from "../../hooks/useElapsedTime";
+import useElapsedTime from "../../../hooks/useElapsedTime";
 
 export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) {
 

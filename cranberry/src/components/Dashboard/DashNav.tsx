@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import AuthService from "../../services/auth.service";
+import { useAppDispatch } from "../../store/hooks";
+import { signOut } from "../../store/authActions";
 import LogoutIcon from '@mui/icons-material/Logout';
 import InsightsIcon from '@mui/icons-material/Insights';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useAppDispatch } from "../../store/hooks";
-import { signOut } from "../../store/authActions";
 
-export default function DashNav({ logout }: { logout: () => void }) {
+export default function DashNav() {
 
   const [isMini, setIsMini] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const handleLogOut = () => {
-    // AuthService.signout();
-    // logout();
     dispatch(signOut());
     navigate("/");
+    window.location.reload();
   }
 
   return (

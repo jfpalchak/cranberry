@@ -3,50 +3,27 @@ import axios from "axios";
 import AuthService from "../../services/auth.service";
 import JournalService from "../../services/journal.service";
 import DashNav from "./DashNav";
-import Profile from "./Profile";
-import Health from './Health';
-import Timeline from './Timeline';
-import JournalControl from "./JournalControl";
+import Profile from "./Profile/Profile";
+import Health from './Health/Health';
+import Timeline from './Timeline/Timeline';
+import JournalControl from "./Journals/JournalControl";
 import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
 import type { IUser, IJournal } from "../../types";
 import compareDesc from 'date-fns/compareDesc';
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 
-export default function Dashboard({ logout }: { logout: () => void }) {
+export default function Dashboard() {
 
-  // const [user, setUser] = useState<IUser | null>(null);
-  // const [status, setStatus] = useState("");
-  // const [isLoading, setIsLoading] = useState(false);
-
-
-  // useEffect(() => {
-  //   const fetchProfile = async () => {
-  //     try {
-  //       const user = await AuthService.getUserProfile()
-  //       setStatus("Success");
-  //       setUser(user.data)
-  //       console.log("Fetched user: ", user);
-  //     }
-  //     catch (error) {
-  //       setStatus("Error.")
-  //       console.log("Error fetching user info: ", error);
-  //     }
-  //   }
-
-  //   fetchProfile();
-
-  // }, [])
-
-  const { userData } = useAppSelector(state => state.auth);
-  const dispatch = useAppDispatch();
-  const user = userData as IUser;
+  const { userData, userId } = useAppSelector(state => state.auth);
 
   const [userJournals, setUserJournals] = useState<IJournal[]>([]);
 
-  // fetch user's journals
+
+  console.log("User Id: ", userId);
+  console.log("User Data: ", userData)
   useEffect(() => {
     const fetchJournals = async () => {
-      JournalService.getUserJournals(user.userId!)
+      JournalService.getUserJournals(userId)
         .then((response) => {
           console.log("Fetch Journals success", response.data); // ! CONSOLE LOG
           const journals = response.data.data
@@ -62,20 +39,24 @@ export default function Dashboard({ logout }: { logout: () => void }) {
 
   return (
     <main className="main-dashboard">
-      <DashNav logout={logout} />
+      <DashNav />
+      {userData ? (
       <Routes>
-        <Route index path="/" element={<Profile user={user} />} />
-        <Route path="/profile" element={<Profile user={user} />} />
+        <Route index path="/" element={<Profile user={userData} />} />
+        <Route path="/profile" element={<Profile user={userData} />} />
         <Route path="/journals/*" element={
           <JournalControl 
             userJournals={userJournals} 
             setUserJournals={setUserJournals} 
-            user={user} 
+            user={userData} 
           />} 
         />
-        <Route path="/health" element={<Health user={user} />} />
+        <Route path="/health" element={<Health user={userData} />} />
         <Route path="/timeline" element={<Timeline userJournals={userJournals} />} />
       </Routes>
+      ) : (
+        <p>Loading.. </p>
+      )}
     </main>
   );
 }

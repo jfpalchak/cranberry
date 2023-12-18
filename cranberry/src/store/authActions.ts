@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getCredentials, removeCredentials, setCredentials } from "../utils/CredentialHelpers";
+import { getCredentials, removeCredentials, setCredentials } from "../utils/credentials-helper";
 import AuthService from "../services/auth.service";
 import { setError } from "./authSlice";
 import { IUser } from "../types";
@@ -46,6 +46,7 @@ export const signIn = createAsyncThunk(
       const { token, userId } = response.data;
       
       setCredentials(token, userId);
+      console.log( "Sign in response: ", response)
 
       return response.data;
     }

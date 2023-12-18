@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { Input } from '@chakra-ui/react';
-import type { IJournal, IUser } from "../../types";
+import type { IJournal, IUser } from "../../../types";
 
 export default function JournalCreate(props: JournalCreateProps) {
 

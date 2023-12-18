@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import type { IJournal } from "../../types"
+import type { IJournal } from "../../../types"
 
 export default function JournalList(props: JournalListProps) {
 

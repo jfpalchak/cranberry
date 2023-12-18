@@ -1,6 +1,5 @@
-import axios from "axios";
 import api from "./api";
-import { removeCredentials, getCredentials } from "../utils/CredentialHelpers";
+import { removeCredentials, getCredentials } from "../utils/credentials-helper";
 
 const register = (credentials: { userName: string, email: string, password: string }) => {
   return api.post(`/users/register`, credentials);
@@ -14,13 +13,8 @@ const signout = () => {
   removeCredentials();
 }
 
-const getCurrentUser = () => {
-  return getCredentials();
-}
-
 const getUserProfile = async () => {
-
-  const { token, userId } = getCredentials();
+  const { userId } = getCredentials();
 
   const response = await api.get(`/users/${userId}`)
 
@@ -31,7 +25,6 @@ const AuthService = {
   register, 
   signin,
   signout,
-  getCurrentUser,
   getUserProfile
 };
 

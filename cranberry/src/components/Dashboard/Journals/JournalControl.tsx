@@ -1,4 +1,4 @@
-import JournalService from '../../services/journal.service';
+import JournalService from '../../../services/journal.service';
 import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
@@ -7,7 +7,7 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useState, useEffect } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import compareDesc from 'date-fns/compareDesc';
-import type { IUser, IJournal } from "../../types";
+import type { IUser, IJournal } from "../../../types";
 
 
 export default function JournalControl(props: JournalControlProps) {

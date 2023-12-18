@@ -13,8 +13,9 @@ export default function Header({ loggedIn }: HeaderProps) {
         <ul>
           <li>
             {!loggedIn 
-            ? (<Link to="/sign-in">Sign In</Link>) 
-            : (<Link to="/account">Account</Link>)}
+              ? (<Link to="/sign-in">Sign In</Link>) 
+              : (<Link to="/account">Account</Link>)
+            }
           </li>
         </ul>
       </nav>

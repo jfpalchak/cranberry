@@ -6,8 +6,8 @@ import type { RootState } from "./store";
 import type { IUser } from "../types";
 
 const initialState: IState = {
-  token: '',
-  userId: '',
+  token: sessionStorage.getItem('token') || '',
+  userId: sessionStorage.getItem('user') || '',
   userData: null,
   isLoggedIn: false,
   error: ''
@@ -37,7 +37,11 @@ const authSlice = createSlice({
         state.isLoggedIn = false;
       })
       .addCase(signOut.fulfilled, (state) => {
-        state = initialState;
+        state.token = '';
+        state.userId = '';
+        state.userData = null;
+        state.isLoggedIn = false;
+        state.error = '';
       })
       .addCase(fetchUserData.fulfilled, (state, { payload }) => {
         state.userData = payload;

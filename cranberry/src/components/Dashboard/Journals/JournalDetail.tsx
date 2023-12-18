@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import type { IJournal } from "../../types";
+import type { IJournal } from "../../../types";
 
 export default function JournalDetail({ journals, onClickingDelete }: JournalDetailProps) {
 

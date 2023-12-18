@@ -1,28 +1,19 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import AuthService from "../services/auth.service";
-import { TextField } from "@mui/material";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
-// import { selectAuth } from "../store/authSlice";
-import { signIn, fetchUserData } from "../store/authActions";
+import { signIn} from "../store/authActions";
 
-const BASE_URL = "http://localhost:5000/api";
+function SignIn() {
 
-export default function SignIn(props: SignInProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const dispatch = useAppDispatch();
+  const { error } = useAppSelector(state => state.auth);
 
-  const { handleSetLoggedIn } = props;
-
-  const [signInSuccess, setSignInSuccess] = useState<string | null>(null);
   const [formData, setFormData] = useState<SignInFormState>({
     email: '',
     password: ''
   });
-
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const { error } = useAppSelector(state => state.auth);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -34,41 +25,12 @@ export default function SignIn(props: SignInProps) {
 
     dispatch(signIn({ email: formData.email, password: formData.password}))
       .unwrap()
-      .then((response) => {
-        console.log("Sign in success: ", response);
-        // handleSetLoggedIn();
-        dispatch(fetchUserData());
+      .then(() => {
         navigate("/dashboard/profile");
       })
       .catch((error) => {
         console.log("Error logging in: ", error); // ! CONSOLE LOG
-        setSignInSuccess(error);
       })
-    // axios.post(`${BASE_URL}/users/signin`, { email: formData.email, password: formData.password })
-    //   .then(response => {
-    //     setSignInSuccess(`${response.data.status}: ${response.data.message}`);
-    //     const { token, userId }= response.data;
-
-    //     console.log("Log in successful: ", response); // ! CONSOLE LOG
-
-    //     sessionStorage.setItem("token", token);
-    //     sessionStorage.setItem("user", userId);
-        
-    //     handleSetLoggedIn();
-    //     navigate("/dashboard/profile");
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error logging in: ", error); // ! CONSOLE LOG
-    //     let message = error.response.data.message 
-    //     || error.response.data[0]?.description
-    //     || error.response.data.errors.Email
-    //     || error.response.data.errors.Password
-    //     message = message.includes("Unable") 
-    //       ? message.concat(" Please make sure your email or password is correct.")
-    //       : message.concat("");
-    //     setSignInSuccess(message);
-    //   });
-
   }
 
   return (
@@ -81,9 +43,9 @@ export default function SignIn(props: SignInProps) {
         </div>
 
         <div className="card-body">
-          {signInSuccess &&
+          {error &&
             <div className="error-message">
-              <p>* {signInSuccess}</p>
+              <p>* {error}</p>
             </div>
           }
           <form className="signin-form auth-form" onSubmit={handleSignIn}>
@@ -124,6 +86,4 @@ interface SignInFormState {
   password: string;
 }
 
-type SignInProps = {
-  handleSetLoggedIn: () => void;
-}
+export default SignIn;
