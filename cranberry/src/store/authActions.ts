@@ -1,11 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getCredentials, removeCredentials, setCredentials } from "../utils/credentials-helper";
+import { setCredentials } from "../utils/credentials-helper";
 import AuthService from "../services/auth.service";
 import { setError } from "./authSlice";
-import { IUser } from "../types";
+import type { IRegistrationData } from "../types";
 
 interface IUserCredentials {
-  userName: string;
   email: string;
   password: string;
 }
@@ -17,10 +16,14 @@ export interface IAuthentication {
 
 export const registerUser = createAsyncThunk(
   'auth/register',
-  async (userRegistration: IUserCredentials, thunkAPI) => {
+  async (userRegistration: IRegistrationData, thunkAPI) => {
+    if (userRegistration.password !== userRegistration.confirmPassword) {
+      thunkAPI.dispatch(setError("Both Password fields must be exactly the same."));
+      return thunkAPI.rejectWithValue("Both Password fields must be exactly the same.");
+    }
     try {
       const response = await AuthService.register(userRegistration);
-      console.log("Register success: ", response)
+      console.log("Register success: ", response) // ! CONSOLE LOG
       return response.data;
     }
     catch(error: any) {
@@ -30,7 +33,7 @@ export const registerUser = createAsyncThunk(
         || error.response.data.errors.Password
         || error.response.data.errors.UserName
       
-      console.log("Register error: ", error)
+      console.log("Register error: ", error) // ! CONSOLE LOG
 
       thunkAPI.dispatch(setError(message))
       return thunkAPI.rejectWithValue(message as string );
@@ -40,13 +43,14 @@ export const registerUser = createAsyncThunk(
 
 export const signIn = createAsyncThunk(
   'auth/login',
-  async (userCredentials: Omit<IUserCredentials, "userName">, thunkAPI ) => {
+  async (userCredentials: IUserCredentials, thunkAPI ) => {
     try {
       const response = await AuthService.signin(userCredentials);
       const { token, userId } = response.data;
       
       setCredentials(token, userId);
-      console.log( "Sign in response: ", response)
+      
+      console.log( "Sign in response: ", response) // ! CONSOLE LOG
 
       return response.data;
     }
@@ -74,10 +78,13 @@ export const signOut = createAsyncThunk(
 export const fetchUserData = createAsyncThunk(
   'auth/fetchUserData',
   async (_, thunkAPI) => {
+
     try {
       const { data } = await AuthService.getUserProfile();
-      console.log("User Data", data)
+
+      console.log("User Data", data) // ! CONSOLE LOG
       return data;
+
     }
     catch (error: any) {
       if (error.response && error.response.data.message) {

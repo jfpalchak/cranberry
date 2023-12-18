@@ -1,8 +1,9 @@
 import api from "./api";
 import { removeCredentials, getCredentials } from "../utils/credentials-helper";
+import type { IRegistrationData } from "../types";
 
-const register = (credentials: { userName: string, email: string, password: string }) => {
-  return api.post(`/users/register`, credentials);
+const register = (userRegistration: IRegistrationData) => {
+  return api.post(`/users/register`, userRegistration);
 }
 
 const signin = (credentials: { email: string, password: string }) => {
