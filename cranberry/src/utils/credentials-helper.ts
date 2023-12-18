@@ -4,6 +4,7 @@
 export const getCredentials = () => {
   const token = sessionStorage.getItem('token');
   const userId = sessionStorage.getItem('user');
+  
   return { token, userId }
 }
 

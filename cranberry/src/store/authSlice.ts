@@ -4,14 +4,27 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 import type { IAuthentication } from "./authActions";
 import type { RootState } from "./store";
 import type { IUser } from "../types";
+import { getCredentials } from "../utils/credentials-helper";
 
-const initialState: IState = {
-  token: sessionStorage.getItem('token') || '',
-  userId: sessionStorage.getItem('user') || '',
-  userData: null,
-  isLoggedIn: false,
-  error: ''
-};
+// initialize state:
+// if user is still logged in local storage, keep isLoggedIn true,
+// otherwise initialize empty user state
+const userAuth = getCredentials();
+const initialState: IState = userAuth.token && userAuth.userId
+  ? {
+      token: userAuth.token,
+      userId: userAuth.userId,
+      userData: null,
+      isLoggedIn: true,
+      error: ''
+    }
+  : {
+      token: '',
+      userId: '',
+      userData: null,
+      isLoggedIn: false,
+      error: ''
+    };
 
 const authSlice = createSlice({
   name: 'auth',
