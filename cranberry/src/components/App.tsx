@@ -2,13 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { fetchUserData } from '../store/authActions';
+import { getCredentials } from '../utils/credentials-helper';
 import Dashboard from './Dashboard/Dashboard';
 import Register from './Register';
 import SignIn from './SignIn';
 import Home from './Home';
 import Header from './Header';
-
-
 
 function App() {
 
@@ -16,7 +15,7 @@ function App() {
   const dispatch = useAppDispatch();
   
   useEffect(() => {
-    if(isLoggedIn){
+    if(isLoggedIn || getCredentials().token){
       dispatch(fetchUserData())
     }
   }, [isLoggedIn])
