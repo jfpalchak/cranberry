@@ -7,14 +7,7 @@ import intervalToDuration from 'date-fns/intervalToDuration';
 // as well as a count for hours, minutes, and seconds until the next 24 hours passes.
 export default function useElapsedTime(quitDate: Date) {
   
-  const [elapsedTime, setElapsedTime] = useState<Duration>({
-    years: 0,
-    months: 0,
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  const [elapsedTime, setElapsedTime] = useState<Duration>(intervalToDuration({ start: quitDate, end: new Date() }));
 
   useEffect(() => {
 
@@ -23,10 +16,10 @@ export default function useElapsedTime(quitDate: Date) {
       }, 1000 // every second
     );
 
-    console.log("tick") // ! CONSOLE LOG
+    console.log("tick", elapsedTime) // ! CONSOLE LOG
 
     return () => clearInterval(timeInterval);
-  }, [quitDate])
+  }, [])
 
   return elapsedTime;
 }
