@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import AuthService from "../../services/auth.service";
-import JournalService from "../../services/journal.service";
+import { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
+import compareDesc from 'date-fns/compareDesc';
+import { useAppSelector } from "../../store/hooks";
 import DashNav from "./DashNav";
 import Profile from "./Profile/Profile";
 import Health from './Health/Health';
 import Timeline from './Timeline/Timeline';
 import JournalControl from "./Journals/JournalControl";
-import { Route, Routes, Outlet, useOutletContext } from "react-router-dom";
-import type { IUser, IJournal } from "../../types";
-import compareDesc from 'date-fns/compareDesc';
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import JournalService from "../../services/journal.service";
+import type { IJournal } from "../../types";
 
 export default function Dashboard() {
 
@@ -18,9 +16,6 @@ export default function Dashboard() {
 
   const [userJournals, setUserJournals] = useState<IJournal[]>([]);
 
-
-  console.log("User Id: ", userId);
-  console.log("User Data: ", userData)
   useEffect(() => {
     const fetchJournals = async () => {
       JournalService.getUserJournals(userId)
@@ -42,8 +37,7 @@ export default function Dashboard() {
       <DashNav />
       {userData ? (
       <Routes>
-        <Route index path="/" element={<Profile user={userData} />} />
-        <Route path="/profile" element={<Profile user={userData} />} />
+        <Route index path="/*" element={<Profile user={userData} />} />
         <Route path="/journals/*" element={
           <JournalControl 
             userJournals={userJournals} 
