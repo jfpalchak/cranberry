@@ -30,7 +30,7 @@ export default function Dashboard() {
         })
     };
     fetchJournals();
-  }, []);
+  }, [userId]);
 
   return (
     <main className="main-dashboard">
@@ -49,7 +49,9 @@ export default function Dashboard() {
         <Route path="/timeline" element={<Timeline userJournals={userJournals} />} />
       </Routes>
       ) : (
-        <p>Loading.. </p>
+        <div className="dash-section">
+          <h1>Loading... </h1>
+        </div>
       )}
     </main>
   );

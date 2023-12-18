@@ -230,6 +230,13 @@ header nav a:hover {
   /* width: 100%; */
 }
 
+.dash-section {
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  background: whitesmoke;
+}
+
 /* ######## */
 /* DASH NAV */
 /* ######## */
@@ -341,20 +348,13 @@ header nav a:hover {
 /* ####### */
 /* PROFILE */
 /* ####### */
-.dash-section {
+/* .user-profile {
+  display: grid;
   padding: 20px;
   width: 100%;
   border-radius: 10px;
   background: whitesmoke;
-}
-
-.user-profile {
-  /* display: grid; */
-  padding: 20px;
-  width: 100%;
-  border-radius: 10px;
-  background: whitesmoke;
-}
+} */
 
 .profile-content {
   display: flex;

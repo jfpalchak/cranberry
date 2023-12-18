@@ -18,7 +18,7 @@ function App() {
     if(isLoggedIn || getCredentials().token){
       dispatch(fetchUserData())
     }
-  }, [isLoggedIn])
+  }, [isLoggedIn, dispatch])
 
   return (
     <div className="App">
