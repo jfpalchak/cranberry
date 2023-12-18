@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import compareDesc from 'date-fns/compareDesc';
 import type { IUser, IJournal } from "../../../types";
+import './Journals.css';
 
 
 export default function JournalControl(props: JournalControlProps) {
@@ -16,7 +17,7 @@ export default function JournalControl(props: JournalControlProps) {
   // const [userJournals, setUserJournals] = useState<IJournal[]>([]);
   const navigate = useNavigate();
 
-  // fetch user journals
+  // TODO : create Journal reducer w/ redux tk
 
   const handleAddingNewJournal = async (journalData: IJournal) => {
     JournalService.createUserJournal(user.userId!, journalData)

@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserData, registerUser, signIn, signOut } from "./authActions";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { IAuthentication } from "./authActions";
-import type { RootState } from "./store";
 import type { IUser } from "../types";
-import { getCredentials } from "../utils/credentials-helper";
+import { getCredentials } from "../helpers/credentials-helper";
 
 // initialize state:
 // if user is still logged in local storage, keep isLoggedIn true,
@@ -76,9 +74,5 @@ interface IState {
   error: string;
 }
 
-
-export const selectAuth = (state: RootState) => state.auth;
-
 export const { setError } = authSlice.actions;
-
 export default authSlice.reducer;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { calculateElapsedDays } from '../utils/time-calculation';
+import { calculateElapsedDays } from '../helpers/calculations-helper';
 import type { IUser } from "../types";
 
 const AVG_MINUTES_PER_CIG = 5;

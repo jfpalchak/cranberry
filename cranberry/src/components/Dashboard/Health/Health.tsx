@@ -1,5 +1,5 @@
 import './Health.css';
-import { CircularProgress, LinearProgress } from '@mui/material';
+import { LinearProgress } from '@mui/material';
 import { healthBenefitsOverTime } from '../../../data/health-benefits';
 import differenceInMinutes from 'date-fns/differenceInMinutes';
 import type { IUser } from '../../../types';

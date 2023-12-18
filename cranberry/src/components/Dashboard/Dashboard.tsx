@@ -9,6 +9,7 @@ import Timeline from './Timeline/Timeline';
 import JournalControl from "./Journals/JournalControl";
 import JournalService from "../../services/journal.service";
 import type { IJournal } from "../../types";
+import './Dashboard.css';
 
 export default function Dashboard() {
 

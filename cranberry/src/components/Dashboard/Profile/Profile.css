@@ -1,0 +1,63 @@
+/* ####### */
+/* PROFILE */
+/* ####### */
+
+/* .user-profile {
+  display: grid;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+  background: whitesmoke;
+} */
+
+.profile-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.profile-col {
+  display: grid;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.time-elapsed {
+  /* text-align: center; */
+  background: white;
+  border-radius: 20px;
+  padding: 1em;
+  width: 350px;
+  margin: auto;
+  margin-bottom: 5px;
+
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.time-elapsed ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.progress-trackers {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tracker {
+  cursor: pointer;
+  padding: 1em;
+  width: 160px;
+  height: 100px;
+  background: white;
+  border-radius: 10px;
+  display: grid;
+  align-items: center;
+}

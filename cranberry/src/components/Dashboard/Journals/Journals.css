@@ -1,0 +1,63 @@
+/* ######## */
+/* JOURNALS */
+/* ######## */
+
+.user-journals {
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  width: 100%;
+  padding: 20px;
+}
+
+.journals-content {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.journal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.journal-item {
+  background: white;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.journal-detail {
+  background: white;
+  height: 350px;
+  width: 370px;
+  padding: 1em;
+}
+
+.journal-card {
+  height: 350px;
+  width: 370px;
+}
+
+.journal-card a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(240, 88, 88);
+  transition: 0.3s ease;
+}
+
+/* JOURNAL FORM */
+.journal-create {
+  text-align: center;
+}
+
+.journal-form {
+  display: grid;
+  grid-template-columns: .5fr 1fr;
+  gap: 5px;
+  margin-bottom: 15px;
+}
+
+.journal-form label {
+text-align: left;
+}

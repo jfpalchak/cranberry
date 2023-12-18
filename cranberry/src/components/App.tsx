@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { fetchUserData } from '../store/authActions';
-import { getCredentials } from '../utils/credentials-helper';
+import { getCredentials } from '../helpers/credentials-helper';
 import Dashboard from './Dashboard/Dashboard';
 import Register from './Register';
 import SignIn from './SignIn';
@@ -25,22 +25,18 @@ function App() {
       <Router>
         <Header loggedIn={isLoggedIn} />
         <Routes>
-          <Route 
-            path='/' 
-            element={ 
-              isLoggedIn 
-                ? <Dashboard /> 
-                : <Home />
+          <Route path='/' element={ 
+            isLoggedIn 
+              ? <Dashboard /> 
+              : <Home />
             } 
           />
           <Route path='/sign-in' element={<SignIn />} />
           <Route path='/register' element={<Register />} />
-          <Route 
-            path='/dashboard/*' 
-            element={
-              isLoggedIn 
-                ? <Dashboard /> 
-                : <SignIn />
+          <Route path='/dashboard/*' element={
+            isLoggedIn 
+              ? <Dashboard /> 
+              : <SignIn />
             } 
           />
         </Routes>
