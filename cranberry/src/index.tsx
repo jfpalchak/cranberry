@@ -7,10 +7,6 @@ import { fetchUserData } from './store/authActions';
 import { store } from './store/store';
 import './index.css';
 
-if(getCredentials().token) {
-  store.dispatch(fetchUserData());
-}
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

@@ -119,3 +119,10 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 6pm-7pm  - create dataset of health benefits to the body, use for placeholder Heath Progress component
 * 7:20pm   - add comments for functions & hooks to improve readability
 ```
+
+### Sunday, 12/17/2023
+```
+* 1pm-5pm - refactor user auth & state management and implement Redux Toolkit
+* 5pm-6pm - edit auth form styles & add confirmation password to registration
+* 6pm-7pm - clean up custom hooks and fix minor render bugs
+```
