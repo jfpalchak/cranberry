@@ -161,12 +161,14 @@ header nav a:hover {
   padding: 1em;
   border: 1px rgb(159, 157, 157) solid;
   border-radius: 5px;
+
+  &:focus {
+    /* box-shadow: 0px 0px .5px .5px rgb(240, 88, 88); */
+    outline: rgb(240, 88, 88) 2px solid;
+    outline-offset: -2px;
+  }
 }
-.auth-form input:focus {
-  /* border: rgb(240, 88, 88) 1px solid; */
-  outline: rgb(240, 88, 88) 2px solid;
-  outline-offset: -2px;
-}
+
 .auth-form button {
   margin-top: 10px;
 }

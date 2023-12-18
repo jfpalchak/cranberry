@@ -10,6 +10,8 @@
 - TypeScript
 - React (v18.2.0)
 - React Router (v6.20.1)
+- Redux Toolkit (v2.0.1)
+- React-Redux (v9.0.4)
 - Axios (v1.6.2)
 - Chart.js (v4.4.1)
 - react-chartjs-2 (v5.2.0)
@@ -21,7 +23,6 @@
 - Chakra UI
 - HTML
 - CSS
-- miro
 
 ## Description
 
