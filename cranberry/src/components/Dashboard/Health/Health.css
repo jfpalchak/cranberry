@@ -29,8 +29,23 @@
 }
 
 .progress-bar {
-  border-radius: 5px;
-  padding: 4px;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+}
+.health-item p {
+  text-align: center;
+  width: 50px;
+  font-weight: bold;
+}
+.progress-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mobile-progress {
+  display: none;
 }
 
 .references {
