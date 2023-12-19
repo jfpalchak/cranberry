@@ -18,8 +18,8 @@ export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) 
           } else {
           return (
             <li key={unit}>
-              <h1>{time}</h1>
-              <p>{unit}</p>
+              <h1 className="time">{time}</h1>
+              <p className="unit">{unit}</p>
             </li>
           );
         }})}

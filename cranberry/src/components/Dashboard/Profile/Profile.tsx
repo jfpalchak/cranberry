@@ -40,7 +40,7 @@ export default function Profile({ user }: ProfileProps) {
               <SmokeFreeIcon />
               <div className="info">
                 <h3>{userProgress?.cigsAvoided.toFixed()}</h3>
-                <p>smokes avoided</p>
+                <p>cigarettes avoided</p>
               </div>
             </div>
             <div className="time-gained-tracker tracker">

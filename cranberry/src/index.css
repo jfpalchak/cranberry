@@ -83,6 +83,7 @@ header a {
   border-bottom: 1px solid transparent;
   transition: 0.2s;
 }
+
 header nav a:hover {
   border-bottom: 1px solid black;
 }
@@ -94,39 +95,52 @@ header nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  height: 650px;
+  padding-top: 50px;
+  background: url(./img/splash-2.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 75%;
 }
+
 .hero-text {
   font-size: 2.5em;
   width: 70%;
-  margin-top: 75px;
+  margin-top: 70px;
+  margin-left: 15px;
+  letter-spacing: 2px;
 }
+
 .splash-btn {
-  /* position: relative;
-  right: 200px;
-  top: 50px; */
+  position: relative;
   margin-top: 20px;
-  border: 2px rgb(240, 86, 86) solid;
+  margin-left: 15px;
   font-size: 1.2em;
-  padding: 1em;
-  border-radius: 3px;
-  background: rgb(240, 88, 88);
   color: white;
+  background: rgb(240, 88, 88);
+  border: 2px rgb(240, 86, 86) solid;
+  border-radius: 3px;
   transition: all 0.3s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    background: white;
+    color: rgb(240, 88, 88);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
 }
-.splash-btn:hover {
-  cursor: pointer;
-  background: white;
-  color: rgb(240, 88, 88);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
+
 
 /* ##################### */
 /*  SIGN-IN / REGISTER   */
 /* ##################### */
 .signin-card {
-  margin-top: 100px;
+  margin-top: 75px;
 }
+
+/* .auth-card {
+  margin-top: 20px;
+} */
 
 .auth-main {
   display: flex;
@@ -164,7 +178,6 @@ header nav a:hover {
   border-radius: 5px;
 
   &:focus {
-    /* box-shadow: 0px 0px .5px .5px rgb(240, 88, 88); */
     outline: rgb(240, 88, 88) 2px solid;
     outline-offset: -2px;
   }
@@ -182,19 +195,21 @@ header nav a:hover {
   background-size: 300% 100%;
   background-image: linear-gradient(to right, #f05858, #f15e64, #e14e53, #e2373f);  
   transition: all .4s ease-in-out;
+
+  &:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    background: #e2373f;
+  }
 }
-.primary-btn:hover {
-  background-position: 100% 0;
-  -o-transition: all .4s ease-in-out;
-  -webkit-transition: all .4s ease-in-out;
-  transition: all .4s ease-in-out;
-}
-.primary-btn:focus {
-  outline: none;
-}
-.primary-btn:active {
-  background: #e2373f;
-}
+
 
 .error-message {
   background: rgba(240, 88, 88, 0.284);
@@ -217,10 +232,10 @@ header nav a:hover {
 
 .cancel-btn {
   border: none;
-}
 
-.cancel-btn:hover {
-  background:rgba(235, 81, 89, 0.38);
+  &:hover {
+    background: rgba(235, 81, 89, 0.38);
+  }
 }
 
 /* ########## */
@@ -228,39 +243,24 @@ header nav a:hover {
 /* ########## */
 
 @media screen and (max-width: 750px) {
-  .sidebar {
-      width: 60px;
+
+  .hero {
+    background: none;
+    text-align: center;
   }
+
+  .hero-text {
+    width: 100%;
+    margin-top: -15px;
+  }
+
 
 }
 
-@media screen and (max-width: 650px) and (min-width: 475px) {
-  .sidebar {
-      width: 60px;
-  }
+/* @media screen and (max-width: 650px) and (min-width: 475px) {
 
-  .money-tracker {
-    height: 150px;
-  }
-
-  .life-regained-tracker {
-    height: 150px;
-    position: relative;
-    bottom: 50px;
-  }
 }
 
 @media screen and (max-width: 475px) {
-  .sidebar {
-    width: 60px;
-  }
 
-  .time-elapsed {
-    width: 100%;
-  }
-
-  .tracker {
-    width: 85%;
-    justify-content: space-around;
-  }
-}
+} */

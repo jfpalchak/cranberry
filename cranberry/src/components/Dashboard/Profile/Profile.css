@@ -4,7 +4,7 @@
 
 .user-profile {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px .8fr;
   padding: 20px;
   width: 100%;
   border-radius: 10px;
@@ -22,7 +22,8 @@
   display: grid;
   text-align: center;
   flex-wrap: wrap;
-  gap: 2px;
+  gap: 3px;
+  align-items: center;
 }
 
 .time-elapsed {
@@ -30,11 +31,15 @@
   background: white;
   border-radius: 20px;
   padding: 1em;
-  width: 350px;
+  /* width: 350px; */
+  width: 75%;
+  /* height: 75%; */
   margin: auto;
   margin-bottom: 5px;
 
-  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
 }
 
 .time-elapsed ul {
@@ -42,51 +47,128 @@
   justify-content: space-around;
 }
 
+.time-elapsed .time {
+  color: rgb(240, 88, 88);;
+}
+
 .progress-trackers {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   transition: all 0.3s ease;
 
 }
 
 .tracker {
+  /* box-sizing: border-box; */
   cursor: pointer;
   padding: 1em;
-  width: 180px;
+  width: 45%;
   height: 100px;
   background: white;
   border-radius: 10px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   gap: 10px;
   transition: all 0.3s ease;
+  /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+
+  &:hover {
+    /* transform: translateY(-1px); */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+  }
+}
+
+.info {
+  width: 55%;
 }
 
 .info p{
   padding-top: 5px;
-  font-size: .9em;
+  /* font-size: .9em; */
 }
 
 .tracker svg {
-  font-size: 2.2em;
+  /* box-sizing: border-box; */
+  font-size: 2.3em;
 }
 
 .money-tracker {
-  background: rgb(212, 255, 208);
-  color: rgb(17, 130, 17);
+  background: rgba(212, 255, 208, 0.501);
+  color: rgb(71, 174, 97);
 }
 
 .avoided-tracker {
-  background: rgb(255, 214, 214);
-  color: rgb(213, 73, 73);
+  background: rgb(255, 214, 214, 0.501);
+  color: rgb(226, 94, 94);
 }
 
 .time-gained-tracker {
-  background: rgb(250, 244, 179);
-  color: rgb(237, 174, 74);
+  background: rgb(250, 244, 179, 0.501);
+  color: rgb(240, 181, 87);
+}
+
+.life-regained-tracker {
+  background: rgba(202, 235, 255, 0.501);
+  color: rgb(89, 114, 213);
+}
+
+/* ########## */
+/* RESPONSIVE */
+/* ########## */
+
+@media screen and (max-width: 1050px) and (min-width: 475px){
+  .time-elapsed {
+    width: 90%;
+  }
+
+  .tracker {
+    /* width: 45%; */
+    justify-content: space-around;
+  }
+  
+  .money-tracker {
+    background: rgba(212, 255, 208, 0.501);
+    color: rgb(71, 174, 97);
+  }
+
+  .avoided-tracker {
+    height: 150px;
+    background: rgb(255, 214, 214, 0.501);
+    color: rgb(226, 94, 94);
+  }
+
+  .time-gained-tracker {
+    height: 150px;
+    position: relative;
+    bottom: 50px;
+
+    background: rgb(250, 244, 179, 0.501);
+    color: rgb(240, 181, 87);
+  }
+
+  .life-regained-tracker {
+    background: rgba(202, 235, 255, 0.501);
+    color: rgb(89, 114, 213);
+  }
+
+}
+
+@media screen and (max-width: 475px) {
+
+  .time-elapsed {
+    width: 100%;
+  }
+
+  .tracker {
+    width: 85%;
+    justify-content: space-around;
+  }
 }

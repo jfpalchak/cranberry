@@ -17,10 +17,16 @@
   flex-wrap: wrap;
 }
 
+.introduction {
+  width: 100%;
+}
 .journal-list {
   display: flex;
   flex-direction: column;
+  width: 30%;
   gap: 10px;
+  height: 80%;
+  overflow-y: auto;
 }
 
 .journal-item {
@@ -39,7 +45,8 @@
 .journal-card {
   height: 350px;
   width: 370px;
-  background: white;
+  /* background: white; */
+  /* border: 2px dashed grey; */
 }
 
 .journal-card a {

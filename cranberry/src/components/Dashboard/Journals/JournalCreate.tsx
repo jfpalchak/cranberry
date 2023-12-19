@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { Input } from '@chakra-ui/react';
 import type { IJournal, IUser } from "../../../types";
@@ -6,7 +7,7 @@ import type { IJournal, IUser } from "../../../types";
 export default function JournalCreate(props: JournalCreateProps) {
 
   const { user, onSubmission } = props;
-
+  const navigate =useNavigate();
   const [formData, setFormData] = useState<IJournal>({
     date: "",
     cravingIntensity: 0,
@@ -66,6 +67,7 @@ export default function JournalCreate(props: JournalCreateProps) {
         />
         </div>
         <button type="submit">Submit</button>
+        <button onClick={() => navigate(`/dashboard/journals/`)}>Cancel</button>
       </form>
     </div>
   );

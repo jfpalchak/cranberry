@@ -69,7 +69,8 @@ export default function JournalControl(props: JournalControlProps) {
 
       {user && (
       <div className="journals-content">
-        <JournalList journals={userJournals} />
+
+          <JournalList journals={userJournals} />
 
         {/* Dynamically render the chosen journal entries using our router parameters. */}
         <Routes>

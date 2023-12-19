@@ -128,3 +128,12 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 6pm-7pm  - clean up custom hooks and fix minor render bugs
 * 8pm-11pm - spend time cleaning up & refactoring client code, spend time on API README
 ```
+
+### Monday, 12/18/2023
+```
+* 1pm-3pm - research design ideas for landing page / UI
+* 4pm-5pm - experiment with styling the UI, and play with responsive styles
+* 5pm-6pm - continue updating styles for dashboard navigation & dash components
+* 6pm-9pm - update hero page styles, WIP Journal component styles; need to add a couple more analytics to Timeline + styles for Health + a few more metrics for the Profile
+```
+ 
