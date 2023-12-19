@@ -80,7 +80,7 @@
 }
 
 .journal-card {
-  height: 450px; 
+  height: 485px; 
   width: 40%;
   padding: 25px;
   background: white;
@@ -109,6 +109,18 @@
   transition: 0.3s ease;
 }
 
+.add-journal {
+  .action-button {
+    background-color: rgb(240, 88, 88);
+    /* background: rgb(240, 88, 88); */
+    color: white;
+  }
+
+  & button.action-button:hover {
+    background: rgb(199, 35, 35);
+  }
+}
+
 /* JOURNAL FORM */
 .journal-create, .journal-edit {
   text-align: center;
@@ -123,6 +135,12 @@
   & label {
     text-align: left;
   }
+
+  & p {
+    color: rgb(240, 88, 88);
+    font-weight: bold;
+    padding: 2px;
+  }
 }
 
 /* ########## */
@@ -130,12 +148,36 @@
 /* ########## */
 
 @media screen and (max-width: 1000px) {
+  
+  .journal-list {
+    width: 80%;
+  }
+
+  .mobile-only {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: block !important;
+  }
+  
   .journal-card {
-    height: 400px;
+    /* height: 485px; */
     width: 65%;
   }
 
+  .journal-form {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .journal-display-index {
+    display: none;
+  }
+
   .journal-create, .journal-detail, .journal-edit {
+    height: auto;
+    width: 65%;
     position: absolute;
     /* width: 75%; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;  

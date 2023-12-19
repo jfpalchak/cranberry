@@ -82,6 +82,10 @@ input, textarea {
   }
 }
 
+.mobile-only {
+  display: none;
+}
+
 /* ####################### */
 /* HEADER COMPONENT STYLES */
 /* ####################### */

@@ -3,12 +3,15 @@ import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
 import JournalEdit from './JournalEdit';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import AddIcon from '@mui/icons-material/Add';
 import { useState, useEffect } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import compareDesc from 'date-fns/compareDesc';
 import type { IUser, IJournal } from "../../../types";
 import './Journals.css';
+import { Fab } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 export default function JournalControl(props: JournalControlProps) {
@@ -75,6 +78,7 @@ export default function JournalControl(props: JournalControlProps) {
         {/* Dynamically render the chosen journal entries using our router parameters. */}
         <Routes>
           <Route index path="/" element={
+            <>
             <div className="journal-card center journal-display-index">
               {userJournals.length > 0 
                 ? <h1>Select a journal.</h1>
@@ -82,12 +86,20 @@ export default function JournalControl(props: JournalControlProps) {
               }
               <br/>
               <br/>
-              <Link to="/dashboard/journals/new">
-                <AddCircleOutlineIcon />
-                <br/>
-                Add Journal
+              <Link className="add-journal" to="/dashboard/journals/new">
+                <Fab className="action-button" aria-label="edit">
+                  <AddIcon />
+                </Fab>
               </Link>
             </div>
+            <div className="mobile-only add-journal" >
+              <Link to="/dashboard/journals/new">
+                <Fab className="action-button" aria-label="edit">
+                  <AddIcon />
+                </Fab>
+              </Link>
+            </div>
+            </>
           } />
           <Route path="/new" element={
             <JournalCreate 
