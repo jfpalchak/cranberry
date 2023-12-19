@@ -149,7 +149,7 @@
   background: white;
   border-radius: 10px;
   width: 80%;
-  max-width: 300px;
+  max-width: 255px;
   min-width: 100px;
 
   /* display: flex; */
@@ -159,7 +159,7 @@
   & .date-card {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 10px;
   }
 
