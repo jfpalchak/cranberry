@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import type { IJournal } from "../../../types";
+import { Slider } from "@mui/material";
 
 export default function JournalEdit({ journals, onSubmission }: JournalEditProps) {
 
@@ -23,6 +24,10 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
     setFormData(prevData => ({...prevData, [name]: value}));
   }
 
+  const handleSliderChange = (e: Event, newValue: number | number[]) => {
+    setFormData(prevData => ({...prevData, cravingIntensity: newValue as number}));
+  }
+
   const handleUpdateJournal = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmission(formData);
@@ -35,13 +40,15 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
           <label>Entry Date:</label>
           <p>{((new Date(formData.date)).toLocaleDateString())}</p>
           <label>Craving Intensity:</label>
-          <input 
-            min={0} max={10}
-            type="number" 
-            name="cravingIntensity"
-            value={formData.cravingIntensity}
-            required
-            onChange={handleChange}
+          <Slider
+            color="error"
+            defaultValue={formData.cravingIntensity}
+            valueLabelDisplay="auto"
+            step={1}
+            marks
+            min={0}
+            max={10}
+            onChange={handleSliderChange}
           />
           <label>Did you smoke?</label>
           <input 

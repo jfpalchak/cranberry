@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToggleButton, ToggleButtonGroup } from "@mui/material";
+import { Slider } from "@mui/material";
 import { Input } from '@chakra-ui/react';
 import type { IJournal, IUser } from "../../../types";
 
@@ -21,6 +21,10 @@ export default function JournalCreate(props: JournalCreateProps) {
     setFormData(prevData => ({...prevData, [name]: value}));
   }
 
+  const handleSliderChange = (e: Event, newValue: number | number[]) => {
+    setFormData(prevData => ({...prevData, cravingIntensity: newValue as number}));
+  }
+
   const handleCreateJournal = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmission(formData);
@@ -39,14 +43,25 @@ export default function JournalCreate(props: JournalCreateProps) {
             isRequired={true}
           />
           <label>Craving Intensity:</label>
-          <input 
+          {/* <input 
             min={0} max={10}
             type="number" 
             name="cravingIntensity"
             placeholder="Between 1 - 10."
             required
             onChange={handleChange}
+          /> */}
+          <Slider
+            color="error"
+            defaultValue={formData.cravingIntensity}
+            valueLabelDisplay="auto"
+            step={1}
+            marks
+            min={0}
+            max={10}
+            onChange={handleSliderChange}
           />
+
           <label>Did you smoke?</label>
           <input 
             type="checkbox" 

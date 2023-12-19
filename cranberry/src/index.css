@@ -51,6 +51,25 @@ a {
   transition: all .4s ease-in-out;
 }
 
+.alternate-btn {
+  color: #e2373f;
+  background: white;
+  border: rgb(240, 88, 88) 2px solid;
+  font-weight: bold;
+  transition: all .4s ease-in-out;
+
+  &:hover {
+    color: white;
+    background: rgb(240, 88, 88);
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    background: #e2373f;
+  }
+}
+
 /* ####################### */
 /* HEADER COMPONENT STYLES */
 /* ####################### */

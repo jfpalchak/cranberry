@@ -35,7 +35,7 @@ export default function JournalDetail({ journals, onClickingDelete }: JournalDet
           <div className="buttons">
             <div className="crud-btn">
               <button className="btn primary-btn" onClick={() => navigate(`/dashboard/journals/${params.journalId}/edit`)}>Edit</button>
-              <button className="btn" onClick={() => onClickingDelete(journal.userId, journal.journalId!)}>Delete</button>
+              <button className="btn alternate-btn" onClick={() => onClickingDelete(journal.userId, journal.journalId!)}>Delete</button>
             </div>
             <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/`)}>Close</button>
           </div>

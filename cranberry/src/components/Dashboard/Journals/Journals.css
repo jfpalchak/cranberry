@@ -54,7 +54,7 @@
 
 .journal-detail {
   height: 350px;
-  width: 370px;
+  /* width: 400px; */
   padding: 1em;
   background: white;
 
@@ -73,10 +73,14 @@
       width: 45%;
     }
   }
+
+  & li {
+    margin: 5px
+  }
 }
 
 .journal-card {
-  height: 400px; 
+  height: 450px; 
   width: 40%;
   padding: 25px;
   background: white;
@@ -85,9 +89,8 @@
 
   & .primary-btn {
     width: 100%;
-    margin-top: 10px;
   }
-  & .cancel-btn {
+  & .btn {
     margin-top: 10px;
   }
 
