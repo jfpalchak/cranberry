@@ -12,32 +12,69 @@
 .health-content {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 85%;
   margin: auto;
+
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .health-progress {
-  width: auto;
-  max-width: 550px;
+  width: 85%;
+  /* max-width: 550px; */
   margin: auto;
   transition: all 0.3s ease-in;
+  border-left: 2px solid rgb(240, 181, 87);
+  border-left: 2px solid rgb(244, 233, 158);
 }
 
 .health-item {
   padding-top: 10px;
   padding-bottom: 10px;
+
+  width: 100%;
+
+  display: flex;
+  /* gap: 10px; */
+  align-items: center;
+
+  & .progress-marker {
+    background: rgb(255, 245, 181);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    margin-left: -11px;
+    /* box-shadow: 20px 20px 0 yellowgreen; */
+  }
+
+  & .health-item-info {
+    width: 100%;
+    margin-left: 25px;
+
+    & h4 {
+      width: 80%;
+    }
+  }
+  
+  & p {
+    text-align: center;
+    width: 50px;
+    font-weight: bold;
+  }
+
 }
+
 
 .progress-bar {
   border-radius: 10px;
-  padding: 5px;
+  padding: 3.5px;
   width: 100%;
 }
-.health-item p {
-  text-align: center;
-  width: 50px;
-  font-weight: bold;
-}
+
 .progress-label {
   display: flex;
   align-items: center;
@@ -54,11 +91,13 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-.references p {
-  color: rgb(86, 85, 85);
-}
-.references a {
-  text-decoration: none;
-  color: rgb(246, 116, 116);
+
+  & p {
+    color: rgb(86, 85, 85);
+  }
+
+  & a {
+    text-decoration: none;
+    color: rgb(246, 116, 116);
+  }
 }

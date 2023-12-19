@@ -29,16 +29,22 @@ export default function Health({ user }: { user: IUser }) {
 
           {healthBenefitsOverTime.map((item, index) => (
             <div className="health-item" key={index} >
-              <div className="progress-label">
-                <LinearProgress 
-                  className="progress-bar" 
-                  variant='determinate' 
-                  value={healthProgress(item.time)} 
-                  color={(healthProgress(item.time) > 99 ? 'success' : 'primary')}
-                  />
-                <p>{healthProgress(item.time).toFixed()}%</p>
+
+              <div className="progress-marker"></div>
+
+              <div className="health-item-info">
+                <h4>{item.benefit}</h4>
+                <div className="progress-label">
+                  <LinearProgress 
+                    className="progress-bar" 
+                    variant='determinate' 
+                    value={healthProgress(item.time)} 
+                    color={(healthProgress(item.time) > 99 ? 'success' : 'primary')}
+                    />
+                    <p>{healthProgress(item.time).toFixed()}</p>
+                </div>
               </div>
-                  <h4>{item.benefit}</h4>
+
             </div>
           ))}
 
