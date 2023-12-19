@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import type { IJournal } from "../../../types";
-import { Slider } from "@mui/material";
+import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
 
 export default function JournalEdit({ journals, onSubmission }: JournalEditProps) {
 
@@ -16,6 +16,7 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
     notes: journal!.notes,
     userId: journal!.userId
   });
+  const [didSmoke, setDidSmoke] = useState<boolean>(formData.cigsSmoked > 0 ? true : false);
   
   const navigate = useNavigate();
   
@@ -26,6 +27,9 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
 
   const handleSliderChange = (e: Event, newValue: number | number[]) => {
     setFormData(prevData => ({...prevData, cravingIntensity: newValue as number}));
+  }
+  const handleToggleChange = (e: React.MouseEvent<HTMLElement>, newValue: boolean) => {
+    setDidSmoke(newValue);
   }
 
   const handleUpdateJournal = (e: React.FormEvent<HTMLFormElement>) => {
@@ -51,16 +55,32 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
             onChange={handleSliderChange}
           />
           <label>Did you smoke?</label>
-          <input 
-            type="checkbox" 
-          />
-          <label>How many?</label>
-          <input 
-            type="number"
-            name="cigsSmoked"
-            value={formData.cigsSmoked}
-            onChange={handleChange}
-          />
+          <ToggleButtonGroup
+            color="error"
+            value={didSmoke}
+            exclusive
+            onChange={handleToggleChange}
+          > 
+            <ToggleButton value={true} >
+              Yes
+            </ToggleButton>
+            <ToggleButton value={false} >
+              No
+            </ToggleButton>
+          </ToggleButtonGroup>
+          {didSmoke && 
+            <>
+              <label>How many?</label>
+              <input 
+                type="number"
+                name="cigsSmoked"
+                placeholder="How many cigarettes did you smoke?"
+                value={formData.cigsSmoked > 0 ? formData.cigsSmoked : ""}
+                required={ didSmoke ? true : false }
+                onChange={handleChange}
+              />
+            </>
+          }
           <label>Notes:</label>
           <textarea 
             name="notes"

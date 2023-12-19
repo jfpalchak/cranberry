@@ -31,6 +31,18 @@ a {
   text-decoration: none;
 }
 
+input, textarea {
+  display: block;
+  padding: 1em;
+  border: 1px rgb(159, 157, 157) solid;
+  border-radius: 5px;
+
+  &:focus {
+    outline: rgb(240, 88, 88) 2px solid;
+    outline-offset: -2px;
+  }
+}
+
 /* ######## */
 /*   UTIL   */
 /* ######## */
@@ -189,17 +201,6 @@ header nav a:hover {
 
 .auth-form label {
   margin-bottom: -15px;
-}
-.auth-form input {
-  display: block;
-  padding: 1em;
-  border: 1px rgb(159, 157, 157) solid;
-  border-radius: 5px;
-
-  &:focus {
-    outline: rgb(240, 88, 88) 2px solid;
-    outline-offset: -2px;
-  }
 }
 
 .auth-form button {

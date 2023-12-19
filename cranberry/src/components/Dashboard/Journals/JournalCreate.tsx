@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Slider } from "@mui/material";
+import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
+// import ToggleButton from '@mui/material/ToggleButton';
+// import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { Input } from '@chakra-ui/react';
 import type { IJournal, IUser } from "../../../types";
 
 export default function JournalCreate(props: JournalCreateProps) {
 
   const { user, onSubmission } = props;
-  const navigate =useNavigate();
+
+  const navigate = useNavigate();
+  const [didSmoke, setDidSmoke] = useState<boolean | null>(null);
   const [formData, setFormData] = useState<IJournal>({
     date: "",
     cravingIntensity: 0,
@@ -23,6 +27,10 @@ export default function JournalCreate(props: JournalCreateProps) {
 
   const handleSliderChange = (e: Event, newValue: number | number[]) => {
     setFormData(prevData => ({...prevData, cravingIntensity: newValue as number}));
+  }
+
+  const handleToggleChange = (e: React.MouseEvent<HTMLElement>, newValue: boolean) => {
+    setDidSmoke(newValue);
   }
 
   const handleCreateJournal = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,14 +51,6 @@ export default function JournalCreate(props: JournalCreateProps) {
             isRequired={true}
           />
           <label>Craving Intensity:</label>
-          {/* <input 
-            min={0} max={10}
-            type="number" 
-            name="cravingIntensity"
-            placeholder="Between 1 - 10."
-            required
-            onChange={handleChange}
-          /> */}
           <Slider
             color="error"
             defaultValue={formData.cravingIntensity}
@@ -61,19 +61,36 @@ export default function JournalCreate(props: JournalCreateProps) {
             max={10}
             onChange={handleSliderChange}
           />
-
           <label>Did you smoke?</label>
-          <input 
-            type="checkbox" 
-          />
-          <label>How many?</label>
-          <input 
-            type="number"
-            name="cigsSmoked"
-            placeholder="How many cigarettes did you smoke?"
-            required
-            onChange={handleChange}
-          />
+          <ToggleButtonGroup
+            color="error"
+            value={didSmoke}
+            exclusive
+            onChange={handleToggleChange}
+          > 
+            <ToggleButton value={true} >
+              Yes
+            </ToggleButton>
+            <ToggleButton value={false} >
+              No
+            </ToggleButton>
+            {(didSmoke && <p>That's okay! It's not a linear process.</p>) 
+              ||
+              (didSmoke != null && <p>Hell yeah! You're doing fantastic!</p>)}
+          </ToggleButtonGroup>
+          {didSmoke && 
+            <>
+              <label>How many?</label>
+              <input 
+                type="number"
+                name="cigsSmoked"
+                placeholder="How many cigarettes did you smoke?"
+                value={formData.cigsSmoked > 0 ? formData.cigsSmoked : ""}
+                required={ didSmoke ? true : false }
+                onChange={handleChange}
+              />
+            </>
+          }
           <label>Notes:</label>
           <textarea 
             name="notes"
