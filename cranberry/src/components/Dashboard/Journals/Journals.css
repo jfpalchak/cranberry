@@ -34,35 +34,25 @@
   padding: 10px;
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
 
-}
-
-.journal-item {
-  background: white;
-  padding: 1em;
-  border-radius: 10px;
-  width: 85%;
-  max-width: 250px;
-  min-width: 100px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
-  & a {
-    font-weight: bold;
-    color: rgb(240, 88, 88);
-    transition: 0.3s ease;
+  & .introduction {
+    margin: 10px 0 10px 0
   }
+
 }
 
 .journal-card {
-  height: 485px;
+  height: 480px;
   width: 45%;
-  padding: 20px;
+  padding: 15px;
   background: white;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  /* align-items: center; */
+  /* justify-content: safe; */
 
   & .primary-btn, 
   .cancel-btn,
@@ -135,8 +125,9 @@
 .journal-form {
   display: grid;
   grid-template-columns: .5fr 1fr;
-  gap: 15px;
+  gap: 5px;
   margin-bottom: 10px;
+  padding: 10px;
 
   & label {
     text-align: left;
@@ -146,6 +137,37 @@
     color: rgb(240, 88, 88);
     font-weight: bold;
     padding: 2px;
+  }
+}
+
+/* ############ */
+/* JOURNAL ITEM */
+/* ############ */
+
+.journal-item {
+  padding: 1em;
+  background: white;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 300px;
+  min-width: 100px;
+
+  /* display: flex; */
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  & .date-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  & a {
+    font-weight: bold;
+    color: rgb(240, 88, 88);
+    transition: 0.3s ease;
+    width: 100%;
   }
 }
 
@@ -164,11 +186,6 @@
     bottom: 30px;
     right: 30px;
     display: block !important;
-  }
-  
-  .journal-card {
-    /* height: 485px; */
-    width: 65%;
   }
 
   .journal-form {

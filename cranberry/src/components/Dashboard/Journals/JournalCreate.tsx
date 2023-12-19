@@ -40,6 +40,7 @@ export default function JournalCreate(props: JournalCreateProps) {
 
   return (
     <div className="journal-create journal-card">
+      <h2>New Journal</h2>
       <form onSubmit={handleCreateJournal}>
         <div className="journal-form">
           <label>Entry Date:</label>

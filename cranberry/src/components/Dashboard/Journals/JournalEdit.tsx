@@ -39,6 +39,7 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
 
   return (
     <div className="journal-edit journal-card">
+      <h2>Edit Journal</h2>
       <form onSubmit={handleUpdateJournal}>
         <div className="journal-form">
           <label>Entry Date:</label>
