@@ -46,7 +46,7 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
           <label>Craving Intensity:</label>
           <Slider
             color="error"
-            defaultValue={formData.cravingIntensity}
+            value={formData.cravingIntensity}
             valueLabelDisplay="auto"
             step={1}
             marks

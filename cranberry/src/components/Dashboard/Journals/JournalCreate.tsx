@@ -53,7 +53,7 @@ export default function JournalCreate(props: JournalCreateProps) {
           <label>Craving Intensity:</label>
           <Slider
             color="error"
-            defaultValue={formData.cravingIntensity}
+            value={formData.cravingIntensity}
             valueLabelDisplay="auto"
             step={1}
             marks

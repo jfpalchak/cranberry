@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Card } from "@mui/material";
+import format from "date-fns/format";
 import type { IJournal } from "../../../types"
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 export default function JournalList(props: JournalListProps) {
 
@@ -29,8 +30,9 @@ export default function JournalList(props: JournalListProps) {
         >
           <Link to={`./${journal.journalId}`}>
             <div className="date-card">
+              <CalendarTodayIcon/>
               <div className="date-card-head">
-                {((new Date(journal.date)).toDateString())}
+                {format(new Date(journal.date), 'PPP')}
               </div>
               {/* <div className="date-card-body">
                 {(new Date(journal.date)).getDate()}

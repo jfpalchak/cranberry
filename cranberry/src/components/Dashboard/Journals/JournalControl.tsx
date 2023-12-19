@@ -1,17 +1,15 @@
+import { useState, useEffect } from 'react';
+import { Route, Routes, Link, useNavigate } from 'react-router-dom';
+import { compareDesc } from 'date-fns';
 import JournalService from '../../../services/journal.service';
 import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
 import JournalEdit from './JournalEdit';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { Fab } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import { useState, useEffect } from 'react';
-import { Route, Routes, Link, useNavigate } from 'react-router-dom';
-import compareDesc from 'date-fns/compareDesc';
 import type { IUser, IJournal } from "../../../types";
 import './Journals.css';
-import { Fab } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit';
 
 
 export default function JournalControl(props: JournalControlProps) {
@@ -36,7 +34,6 @@ export default function JournalControl(props: JournalControlProps) {
     });
   };
 
-  // I need to use Redux.
   const handleEditingJournal = async(journalData: IJournal) => {
     JournalService.updateUserJournal(journalData)
       .then(response => {
@@ -81,8 +78,8 @@ export default function JournalControl(props: JournalControlProps) {
             <>
             <div className="journal-card center journal-display-index">
               {userJournals.length > 0 
-                ? <h1>Select a journal.</h1>
-                : <h1>Start your Journals:</h1>
+                ? <h1>Select a Journal</h1>
+                : <><h1>Start your Journals:</h1></>
               }
               <br/>
               <br/>
