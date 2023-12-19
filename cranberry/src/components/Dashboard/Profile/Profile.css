@@ -2,13 +2,14 @@
 /* PROFILE */
 /* ####### */
 
-/* .user-profile {
+.user-profile {
   display: grid;
+  grid-template-rows: 50px 1fr;
   padding: 20px;
   width: 100%;
   border-radius: 10px;
   background: whitesmoke;
-} */
+}
 
 .profile-content {
   display: flex;
@@ -49,15 +50,43 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  transition: all 0.3s ease;
+
 }
 
 .tracker {
   cursor: pointer;
   padding: 1em;
-  width: 160px;
+  width: 180px;
   height: 100px;
   background: white;
   border-radius: 10px;
-  display: grid;
+  display: flex;
   align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.info p{
+  padding-top: 5px;
+  font-size: .9em;
+}
+
+.tracker svg {
+  font-size: 2.2em;
+}
+
+.money-tracker {
+  background: rgb(212, 255, 208);
+  color: rgb(17, 130, 17);
+}
+
+.avoided-tracker {
+  background: rgb(255, 214, 214);
+  color: rgb(213, 73, 73);
+}
+
+.time-gained-tracker {
+  background: rgb(250, 244, 179);
+  color: rgb(237, 174, 74);
 }

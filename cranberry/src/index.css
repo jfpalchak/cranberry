@@ -226,9 +226,41 @@ header nav a:hover {
 /* ########## */
 /* RESPONSIVE */
 /* ########## */
+
 @media screen and (max-width: 750px) {
   .sidebar {
       width: 60px;
   }
 
+}
+
+@media screen and (max-width: 650px) and (min-width: 475px) {
+  .sidebar {
+      width: 60px;
+  }
+
+  .money-tracker {
+    height: 150px;
+  }
+
+  .life-regained-tracker {
+    height: 150px;
+    position: relative;
+    bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .time-elapsed {
+    width: 100%;
+  }
+
+  .tracker {
+    width: 85%;
+    justify-content: space-around;
+  }
 }

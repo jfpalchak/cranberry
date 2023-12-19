@@ -7,12 +7,14 @@
   grid-template-rows: 50px 1fr;
   width: 100%;
   padding: 20px;
+  /* flex-wrap: wrap; */
 }
 
 .journals-content {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .journal-list {
@@ -37,6 +39,7 @@
 .journal-card {
   height: 350px;
   width: 370px;
+  background: white;
 }
 
 .journal-card a {
@@ -61,3 +64,26 @@
 .journal-form label {
 text-align: left;
 }
+
+/* ########## */
+/* RESPONSIVE */
+/* ########## */
+
+@media screen and (max-width: 750px) {
+  .journal-card {
+    height: 350px;
+    width: 80%;
+  }
+
+  .journal-create, .journal-detail {
+    position: absolute;
+  }
+}
+
+/* @media screen and (max-width: 650px) and (min-width: 475px) {
+
+}
+
+@media screen and (max-width: 475px) {
+
+} */

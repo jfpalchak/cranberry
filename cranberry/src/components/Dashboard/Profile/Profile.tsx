@@ -31,30 +31,35 @@ export default function Profile({ user }: ProfileProps) {
             <div className="money-tracker tracker">
               <AttachMoneyIcon />
               <div className="info">
-                <h3>${userProgress?.moneySaved.toFixed(2)}</h3>
-                <p>Money Saved</p>
+                <h3>{userProgress?.moneySaved.toFixed(2)}</h3>
+                <p>money saved</p>
               </div>
             </div>
             </Tooltip>
             <div className="avoided-tracker tracker">
               <SmokeFreeIcon />
               <div className="info">
-                <h3>{userProgress?.cigsAvoided.toFixed(2)}</h3>
-                <p>Smokes Avoided</p>
+                <h3>{userProgress?.cigsAvoided.toFixed()}</h3>
+                <p>smokes avoided</p>
               </div>
             </div>
             <div className="time-gained-tracker tracker">
               <MoreTimeIcon />
-              <h3>{(userProgress?.timeSaved! / 60).toFixed(2)}</h3>
-              <p>Time Saved</p>
+              <div className="info">
+                <h3>{(userProgress?.timeSaved! / 60).toFixed(2)}</h3>
+                <p>time saved (hours)</p>
+              </div>
             </div>
             <div className="life-regained-tracker tracker">
-              <h3>(TBD)</h3>
-              <p>Time Gained</p>
+              <div className="info">
+                <h3>(TBD)</h3>
+                <p>time gained</p>
+              </div>
             </div>
           </div>
-          <div className="breakdown">
-            Stat Breakdown / Recent Journals(?)
+          <div className="milestones">
+            Milestones
+
           </div>
         </div>
 
