@@ -127,3 +127,18 @@
   margin-right: 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 750px) {
+  .sidebar {
+    width: 60px;
+  }
+
+}
+
+/* @media screen and (max-width: 650px) and (min-width: 475px) {
+
+}
+
+@media screen and (max-width: 475px) {
+
+} */

@@ -31,39 +31,39 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
   return (
     <div className="journal-edit journal-card">
       <form onSubmit={handleUpdateJournal}>
-      <div className="journal-form">
-        <label>Entry Date:</label>
-        <p>{((new Date(formData.date)).toLocaleDateString())}</p>
-        <label>Craving Intensity:</label>
-        <input 
-          min={0} max={10}
-          type="number" 
-          name="cravingIntensity"
-          value={formData.cravingIntensity}
-          required
-          onChange={handleChange}
-        />
-        <label>Did you smoke?</label>
-        <input 
-          type="checkbox" 
-        />
-        <label>How many?</label>
-        <input 
-          type="number"
-          name="cigsSmoked"
-          value={formData.cigsSmoked}
-          onChange={handleChange}
-        />
-        <label>Notes:</label>
-        <textarea 
-          name="notes"
-          value={formData.notes}
-          onChange={handleChange}
-        />
+        <div className="journal-form">
+          <label>Entry Date:</label>
+          <p>{((new Date(formData.date)).toLocaleDateString())}</p>
+          <label>Craving Intensity:</label>
+          <input 
+            min={0} max={10}
+            type="number" 
+            name="cravingIntensity"
+            value={formData.cravingIntensity}
+            required
+            onChange={handleChange}
+          />
+          <label>Did you smoke?</label>
+          <input 
+            type="checkbox" 
+          />
+          <label>How many?</label>
+          <input 
+            type="number"
+            name="cigsSmoked"
+            value={formData.cigsSmoked}
+            onChange={handleChange}
+          />
+          <label>Notes:</label>
+          <textarea 
+            name="notes"
+            value={formData.notes}
+            onChange={handleChange}
+          />
         </div>
-        <button type="submit">Update</button>
-        <button onClick={() => navigate(`/dashboard/journals/${journal!.journalId}`)}>Cancel</button>
+        <button className="btn primary-btn" type="submit">Update</button>
       </form>
+        <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/${journal!.journalId}`)}>Cancel</button>
     </div>
   );
 }

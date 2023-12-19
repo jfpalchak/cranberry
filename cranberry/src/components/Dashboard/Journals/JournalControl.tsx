@@ -75,7 +75,7 @@ export default function JournalControl(props: JournalControlProps) {
         {/* Dynamically render the chosen journal entries using our router parameters. */}
         <Routes>
           <Route index path="/" element={
-            <div className="journal-card center">
+            <div className="journal-card center journal-display-index">
               {userJournals.length > 0 
                 ? <h1>Select a journal.</h1>
                 : <h1>Start your Journals:</h1>

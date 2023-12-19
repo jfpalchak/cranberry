@@ -20,33 +20,83 @@
 .introduction {
   width: 100%;
 }
+
 .journal-list {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  align-items: center;
+  width: 50%;
+  min-width: 30%;
   gap: 10px;
   height: 80%;
   overflow-y: auto;
+  border-radius: 3px;
+  padding: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
+
 }
 
 .journal-item {
   background: white;
   padding: 1em;
   border-radius: 10px;
+  width: 80%;
+  max-width: 250px;
+  min-width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  & a {
+    font-weight: bold;
+    color: rgb(240, 88, 88);
+    transition: 0.3s ease;
+  }
 }
 
 .journal-detail {
-  background: white;
   height: 350px;
   width: 370px;
   padding: 1em;
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & .buttons {
+    margin-top: 30px;
+    text-align: center;
+  }
+  & .crud-btn {
+    display: flex;
+    justify-content: space-between;
+    .btn {
+      width: 45%;
+    }
+  }
 }
 
 .journal-card {
-  height: 350px;
-  width: 370px;
-  /* background: white; */
-  /* border: 2px dashed grey; */
+  height: 400px; 
+  width: 40%;
+  padding: 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  & .primary-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  & .cancel-btn {
+    margin-top: 10px;
+  }
+
+  & a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(240, 88, 88);
+    transition: 0.3s ease;
+  }
 }
 
 .journal-card a {
@@ -57,33 +107,35 @@
 }
 
 /* JOURNAL FORM */
-.journal-create {
+.journal-create, .journal-edit {
   text-align: center;
 }
 
 .journal-form {
   display: grid;
   grid-template-columns: .5fr 1fr;
-  gap: 5px;
+  gap: 15px;
   margin-bottom: 15px;
-}
 
-.journal-form label {
-text-align: left;
+  & label {
+    text-align: left;
+  }
 }
 
 /* ########## */
 /* RESPONSIVE */
 /* ########## */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1000px) {
   .journal-card {
-    height: 350px;
-    width: 80%;
+    height: 400px;
+    width: 65%;
   }
 
-  .journal-create, .journal-detail {
+  .journal-create, .journal-detail, .journal-edit {
     position: absolute;
+    /* width: 75%; */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;  
   }
 }
 

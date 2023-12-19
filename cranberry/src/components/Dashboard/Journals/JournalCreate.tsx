@@ -30,45 +30,45 @@ export default function JournalCreate(props: JournalCreateProps) {
     <div className="journal-create journal-card">
       <form onSubmit={handleCreateJournal}>
         <div className="journal-form">
-        <label>Entry Date:</label>
-        <Input 
-          type="datetime-local"
-          id="date"
-          name="date"
-          onChange={handleChange} 
-          isRequired={true}
-        />
-        <label>Craving Intensity:</label>
-        <input 
-          min={0} max={10}
-          type="number" 
-          name="cravingIntensity"
-          placeholder="Between 1 - 10."
-          required
-          onChange={handleChange}
-        />
-        <label>Did you smoke?</label>
-        <input 
-          type="checkbox" 
-        />
-        <label>How many?</label>
-        <input 
-          type="number"
-          name="cigsSmoked"
-          placeholder="How many cigarettes did you smoke?"
-          required
-          onChange={handleChange}
-        />
-        <label>Notes:</label>
-        <textarea 
-          name="notes"
-          placeholder="Enter comments here."
-          onChange={handleChange}
-        />
+          <label>Entry Date:</label>
+          <Input 
+            type="datetime-local"
+            id="date"
+            name="date"
+            onChange={handleChange} 
+            isRequired={true}
+          />
+          <label>Craving Intensity:</label>
+          <input 
+            min={0} max={10}
+            type="number" 
+            name="cravingIntensity"
+            placeholder="Between 1 - 10."
+            required
+            onChange={handleChange}
+          />
+          <label>Did you smoke?</label>
+          <input 
+            type="checkbox" 
+          />
+          <label>How many?</label>
+          <input 
+            type="number"
+            name="cigsSmoked"
+            placeholder="How many cigarettes did you smoke?"
+            required
+            onChange={handleChange}
+          />
+          <label>Notes:</label>
+          <textarea 
+            name="notes"
+            placeholder="Enter comments here."
+            onChange={handleChange}
+          />
         </div>
-        <button type="submit">Submit</button>
-        <button onClick={() => navigate(`/dashboard/journals/`)}>Cancel</button>
+        <button className="btn primary-btn" type="submit">Submit</button>
       </form>
+        <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/`)}>Cancel</button>
     </div>
   );
 }

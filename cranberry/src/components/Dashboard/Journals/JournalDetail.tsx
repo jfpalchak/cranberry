@@ -10,7 +10,7 @@ export default function JournalDetail({ journals, onClickingDelete }: JournalDet
   const navigate = useNavigate();
 
   return (
-    <div className="journal-detail">
+    <div className="journal-detail journal-card">
       <h1 className="center">Journal</h1>
       {journal && (
         <div className="details">
@@ -32,9 +32,13 @@ export default function JournalDetail({ journals, onClickingDelete }: JournalDet
               <p>{journal?.notes}</p>
             </li>
           </ul>
-          <button onClick={() => navigate(`/dashboard/journals/`)}>Close</button>
-          <button onClick={() => navigate(`/dashboard/journals/${params.journalId}/edit`)}>Edit</button>
-          <button onClick={() => onClickingDelete(journal.userId, journal.journalId!)}>Delete</button>
+          <div className="buttons">
+            <div className="crud-btn">
+              <button className="btn primary-btn" onClick={() => navigate(`/dashboard/journals/${params.journalId}/edit`)}>Edit</button>
+              <button className="btn" onClick={() => onClickingDelete(journal.userId, journal.journalId!)}>Delete</button>
+            </div>
+            <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/`)}>Close</button>
+          </div>
         </div>
       )}
     </div>
