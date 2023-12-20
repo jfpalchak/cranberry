@@ -28,7 +28,7 @@
   display: grid;
   text-align: center;
   flex-wrap: wrap;
-  gap: 3px;
+  gap: 5px;
   align-items: center;
 }
 
@@ -193,20 +193,61 @@
 
 }
 
+.aside {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  /* gap: 50px; */
+}
+
+.side-tracker {
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  border-left: 3px solid var(--primary);
+  padding-left: 10px;
+}
+
+.side-tracker-header {
+  /* background: var(--light);
+  border-radius: 10px;
+  padding: 10px; */
+}
+
+.side-tracker-content {
+  background: var(--light);
+  border-radius: 10px;
+  padding: 10px;
+}
+
 /* ########## */
 /* RESPONSIVE */
 /* ########## */
 
-@media screen and (max-width: 1050px) and (min-width: 475px){
+@media screen and (max-width: 1350px) and (min-width: 475px){
+
   .time-elapsed {
     width: 90%;
   }
 
+  .aside {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .side-tracker {
+    /* margin-top: 20px; */
+    /* width: 50%; */
+  }
+  
   .tracker {
     /* width: 45%; */
     justify-content: space-around;
   }
-  
+
   .money-tracker {
     background: rgba(212, 255, 208, 0.501);
     color: rgb(71, 174, 97);

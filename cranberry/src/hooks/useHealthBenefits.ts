@@ -12,9 +12,9 @@ export default function useHealthBenefits(userQuitDate: string) {
   });
 
   useEffect(() => {
+    console.log("Benefits hook is rendering.")
     if (userQuitDate){
 
-      console.log("Benefits hook is rendering.")
       const getHealthItemProgress = (benefitTargetHours: number) => {
         const elapsedTime = (differenceInMinutes(new Date(), new Date(userQuitDate)) / 60);
         const progress = (elapsedTime / benefitTargetHours) * 100;
@@ -41,7 +41,7 @@ export default function useHealthBenefits(userQuitDate: string) {
 
       setUserHealthBenefits(userHealthProgress);
     }
-  }, [userQuitDate]);
+  }, []);
 
   return userHealthBenefits;
 }

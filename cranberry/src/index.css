@@ -183,10 +183,9 @@ header nav a:hover {
 
 .hero-cloud {
   position: absolute;
-  left: 500px;
+  right: 600px;
   z-index: -1;
   width: 100px;
-
 }
 
 /* ##################### */

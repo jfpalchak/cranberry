@@ -15,7 +15,6 @@ import './Journals.css';
 export default function JournalControl(props: JournalControlProps) {
 
   const { user, userJournals, setUserJournals } = props;
-  // const [userJournals, setUserJournals] = useState<IJournal[]>([]);
   const navigate = useNavigate();
 
   // TODO : create Journal reducer w/ redux tk

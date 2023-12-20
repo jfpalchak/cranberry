@@ -1,22 +1,17 @@
+import { useNavigate } from "react-router-dom";
 import ElapsedTime from "./ElapsedTime";
+import useHealthBenefits from "../../../hooks/useHealthBenefits";
 import useProgressCalculations from "../../../hooks/useDataCalculations";
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import RestoreIcon from '@mui/icons-material/Restore';
+import { LinearProgress } from '@mui/material';
 import { Tooltip } from "@mui/material";
 import type { IUser } from "../../../types";
 import './Profile.css';
-
-import { LinearProgress } from '@mui/material';
-import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
-
-import useHealthBenefits from "../../../hooks/useHealthBenefits";
-
-import { useNavigate } from "react-router-dom";
-
-
-
 
 const moneyTrackerText = "This is calculated by multiplying the number of cigarettes you would have otherwise smoked by the cost of one cigarette per pack, according to your registration data.";
 
@@ -92,9 +87,16 @@ export default function Profile({ user }: ProfileProps) {
           </div>
         </div>
 
-        <div className="profile-col">
+        <div className="profile-col aside">
           <div className="tip side-tracker">
-            Tip of the Day
+            <div className="side-tracker-header">
+              <TipsAndUpdatesIcon />
+              <h3>Tip of the Day</h3>
+            </div>
+            <div className="side-tracker-content">
+              <h4>Stay Strong</h4>
+              <p>Remember your reasons for quitting!</p>
+            </div>
           </div>
           <div className="side-tracker">
             Resources

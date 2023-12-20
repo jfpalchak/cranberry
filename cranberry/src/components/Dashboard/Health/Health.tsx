@@ -1,13 +1,11 @@
 import './Health.css';
 import { LinearProgress } from '@mui/material';
 import { healthBenefitsOverTime } from '../../../data/health-benefits';
+import useHealthBenefits from '../../../hooks/useHealthBenefits';
 import differenceInMinutes from 'date-fns/differenceInMinutes';
 import type { IUser } from '../../../types';
-import { useState } from 'react';
 
 export default function Health({ user }: { user: IUser }) {
-
-  const [totalProgress, setTotalProgress] = useState(0);
 
   // To calculate progress towards each health benefit,
   // we calculate the difference in hours between now and the user's quit date,
@@ -15,11 +13,13 @@ export default function Health({ user }: { user: IUser }) {
 
   // Make this a hook?
 
-  const healthProgress = (targetHours: number) => {
-    const elapsedTime = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
-    const progress = (elapsedTime / targetHours) * 100;
-    return progress > 100 ? 100 : progress;
-  };
+  // const healthProgress = (targetHours: number) => {
+  //   const elapsedTime = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
+  //   const progress = (elapsedTime / targetHours) * 100;
+  //   return progress > 100 ? 100 : progress;
+  // };
+
+  const { getHealthItemProgress } = useHealthBenefits(user.quitDate as string)
 
   const description = (benefit: string) => {
     let array = benefit.split(":");
@@ -27,6 +27,8 @@ export default function Health({ user }: { user: IUser }) {
     let text = array[1];
     return {units, text}
   }
+
+  console.log("Health page rendered")
   
   // TODO : refactor into smaller components
 
@@ -41,7 +43,7 @@ export default function Health({ user }: { user: IUser }) {
           {healthBenefitsOverTime.map((item, index) => (
             <div className="health-item" key={index} >
 
-              <div className={("progress-marker".concat(healthProgress(item.time) > 99 ? ' complete' : ' ongoing'))}></div>
+              <div className={("progress-marker".concat(getHealthItemProgress(item.time) > 99 ? ' complete' : ' ongoing'))}></div>
 
               <div className="health-item-info">
                 <div className="description">
@@ -52,10 +54,10 @@ export default function Health({ user }: { user: IUser }) {
                   <LinearProgress 
                     className="progress-bar" 
                     variant='determinate' 
-                    value={healthProgress(item.time)} 
-                    color={(healthProgress(item.time) > 99 ? 'primary' : 'error')}
+                    value={getHealthItemProgress(item.time)} 
+                    color='error'
                     />
-                    <p>{healthProgress(item.time).toFixed()}</p>
+                    <p>{getHealthItemProgress(item.time).toFixed()}</p>
                 </div>
               </div>
 
