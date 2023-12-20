@@ -85,7 +85,6 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 ### 🛠 Technology Used
 
 * [CranberryAPI](https://github.com/jfpalchak/CranberryAPI.git)
-  
 * TypeScript
 * React (v18.2.0)
 * React Router (v6.20.1)
