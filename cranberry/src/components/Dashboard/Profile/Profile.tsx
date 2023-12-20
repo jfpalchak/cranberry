@@ -8,11 +8,24 @@ import { Tooltip } from "@mui/material";
 import type { IUser } from "../../../types";
 import './Profile.css';
 
+import { healthBenefitsOverTime } from '../../../data/health-benefits';
+import differenceInMinutes from 'date-fns/differenceInMinutes';
+
+
+
 const moneyTrackerText = "This is calculated by multiplying the number of cigarettes you would have otherwise smoked by the cost of one cigarette per pack, according to your registration data.";
 
 export default function Profile({ user }: ProfileProps) {
   
   const userProgress = useProgressCalculations(user);
+
+  const totalHealthBenefitsAchieved = healthBenefitsOverTime.reduce((value, benefit) => {
+    const userHours = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
+    const benefitAchieved = (userHours / benefit.time) >= 1;
+    return benefitAchieved ? value + 1 : value + 0;
+  }, 0);
+
+  const healthPercentageAchieved = totalHealthBenefitsAchieved / healthBenefitsOverTime.length;
 
   return (
     <section className="user-profile dash-section">

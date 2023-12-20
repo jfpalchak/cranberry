@@ -14,7 +14,6 @@ export default function Health({ user }: { user: IUser }) {
   // and compare with the number of hours needed to reach a benefit
 
   // Make this a hook?
-  // let elapsedTime = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
 
   const healthProgress = (targetHours: number) => {
     const elapsedTime = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
@@ -54,7 +53,7 @@ export default function Health({ user }: { user: IUser }) {
                     className="progress-bar" 
                     variant='determinate' 
                     value={healthProgress(item.time)} 
-                    color={(healthProgress(item.time) > 99 ? 'primary' : 'primary')}
+                    color={(healthProgress(item.time) > 99 ? 'primary' : 'error')}
                     />
                     <p>{healthProgress(item.time).toFixed()}</p>
                 </div>
