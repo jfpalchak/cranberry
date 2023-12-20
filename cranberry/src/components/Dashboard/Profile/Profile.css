@@ -73,7 +73,7 @@
   /* box-sizing: border-box; */
   cursor: pointer;
   padding: 1em;
-  width: 45%;
+  width: 44%;
   height: 100px;
   background: var(--light);
   border-radius: 10px;
@@ -124,6 +124,73 @@
 .life-regained-tracker {
   background: rgba(202, 235, 255, 0.501);
   color: rgb(89, 114, 213);
+}
+
+/* ###### */
+/* ASIDES */
+/* ###### */
+
+.health-milestones {
+  cursor: pointer;
+  padding: 10px;
+  height: 100px;
+  width: 90%;
+  margin: auto;
+  background: var(--light);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  transition: all 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  background: rgb(255, 214, 214, 0.501);
+  background: rgba(255, 234, 234, 0.702);
+  color: rgb(251, 140, 140);
+
+  &:hover {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+  }
+
+  & .progress-bar {
+    align-self: center;
+    width: 95%;
+  }
+
+  & button {
+    width: 100px;
+    height: 20px;
+    padding: 0px;
+
+    border-radius: 20px;
+
+    align-self: flex-end;
+    border: 2px solid rgb(251, 140, 140);
+    background: rgba(255, 234, 234, 0.702);
+    color: rgb(251, 140, 140);
+
+    &:hover {
+      background: rgb(251, 140, 140);
+    }
+  }
+}
+
+.milestone-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 15px; */
+
+  & p {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-weight: bold;
+  }
+
 }
 
 /* ########## */

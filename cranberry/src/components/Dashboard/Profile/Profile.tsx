@@ -8,8 +8,14 @@ import { Tooltip } from "@mui/material";
 import type { IUser } from "../../../types";
 import './Profile.css';
 
+
 import { healthBenefitsOverTime } from '../../../data/health-benefits';
 import differenceInMinutes from 'date-fns/differenceInMinutes';
+import { LinearProgress } from '@mui/material';
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
+
+import { useNavigate } from "react-router-dom";
+
 
 
 
@@ -18,6 +24,7 @@ const moneyTrackerText = "This is calculated by multiplying the number of cigare
 export default function Profile({ user }: ProfileProps) {
   
   const userProgress = useProgressCalculations(user);
+  const navigate = useNavigate();
 
   const totalHealthBenefitsAchieved = healthBenefitsOverTime.reduce((value, benefit) => {
     const userHours = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
@@ -25,7 +32,7 @@ export default function Profile({ user }: ProfileProps) {
     return benefitAchieved ? value + 1 : value + 0;
   }, 0);
 
-  const healthPercentageAchieved = totalHealthBenefitsAchieved / healthBenefitsOverTime.length;
+  const healthPercentageAchieved = (totalHealthBenefitsAchieved / healthBenefitsOverTime.length) * 100;
 
   return (
     <section className="user-profile dash-section">
@@ -71,18 +78,27 @@ export default function Profile({ user }: ProfileProps) {
               </div>
             </div>
           </div>
-          <div className="milestones">
-            Milestones
-
+          <div className="health-milestones">
+            <div className="milestone-info">
+              <h3>Health Progress</h3>
+              <p><MonitorHeartOutlinedIcon/> {totalHealthBenefitsAchieved} / {healthBenefitsOverTime.length}</p>
+            </div>
+            <LinearProgress 
+              className='progress-bar'
+              variant='determinate'
+              value={healthPercentageAchieved}
+              color='error'
+            />
+            <button className="btn alternate-btn milestone-btn" onClick={() => navigate('/dashboard/health')}>See More</button>
           </div>
         </div>
 
         <div className="profile-col">
-          <div className="tip">
+          <div className="tip side-tracker">
             Tip of the Day
           </div>
-          <div className="health-progress">
-            Health Progress
+          <div className="side-tracker">
+            Resources
           </div>
         </div>
 
