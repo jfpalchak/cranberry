@@ -19,7 +19,7 @@
   margin: auto;
   margin-bottom: 100px;
 
-  background: white;
+  background: var(--light);
   border-radius: 10px;
   padding: 30px;
 
@@ -35,6 +35,8 @@
   /* border-left: 2px solid rgb(244, 233, 158); */
   border-left: 2px solid rgb(246, 116, 116);
   border-left: 2px solid rgb(172, 185, 238);
+
+  /* background: var(--light); */
 }
 
 .health-item {

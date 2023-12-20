@@ -23,8 +23,11 @@
   width: 95%;
   max-width: 990px;
   max-height: 500px;
-  background: white;
+  background: var(--light);
   border-radius: 10px;
   padding: 1em;
   transition: all 0.3s ease-in;
+
+  background: var(--light);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }

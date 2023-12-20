@@ -1,6 +1,14 @@
 /* ######## */
 /* GENERAL */
 /* ######## */
+:root {
+  /* --light: #f6f6f9; */
+  --light: white;
+  --primary: rgb(240, 88, 88);
+  --primary-dark: #e2373f;
+  /* --grey: #eee; */
+  --grey: whitesmoke;
+}
 
 body {
   margin: 0;
@@ -9,6 +17,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--light);
 }
 
 code {
@@ -38,7 +47,7 @@ input, textarea {
   border-radius: 5px;
 
   &:focus {
-    outline: rgb(240, 88, 88) 2px solid;
+    outline: var(--primary) 2px solid;
     outline-offset: -2px;
   }
 }
@@ -54,8 +63,8 @@ input, textarea {
 .btn {
   padding: 1em;
   border-radius: 3px;
-  border: rgb(240, 88, 88) 2px solid;
-  color: rgb(240, 88, 88);
+  border: var(--primary) 2px solid;
+  color: var(--primary);
   background: white;
   cursor: pointer;
   -o-transition: all .4s ease-in-out;
@@ -64,21 +73,21 @@ input, textarea {
 }
 
 .alternate-btn {
-  color: #e2373f;
+  color: var(--primary-dark);
   background: white;
-  border: rgb(240, 88, 88) 2px solid;
+  border: var(--primary) 2px solid;
   font-weight: bold;
   transition: all .4s ease-in-out;
 
   &:hover {
     color: white;
-    background: rgb(240, 88, 88);
+    background: var(--primary);
   }
   &:focus {
     outline: none;
   }
   &:active {
-    background: #e2373f;
+    background: var(--primary-dark);
   }
 }
 
@@ -102,7 +111,7 @@ header {
   /* background: rgb(254, 168, 168); */
 
   & svg {
-    color: rgb(240, 88, 88);
+    color: var(--primary);
     transition: 0.3s ease;
   }
 }
@@ -159,19 +168,26 @@ header nav a:hover {
   margin-left: 15px;
   font-size: 1.2em;
   color: white;
-  background: rgb(240, 88, 88);
-  border: 2px rgb(240, 86, 86) solid;
+  background: var(--primary);
+  border: 2px var(--primary) solid;
   border-radius: 3px;
   transition: all 0.3s ease-in;
 
   &:hover {
     cursor: pointer;
     background: white;
-    color: rgb(240, 88, 88);
+    color: var(--primary);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
 }
 
+.hero-cloud {
+  position: absolute;
+  left: 500px;
+  z-index: -1;
+  width: 100px;
+
+}
 
 /* ##################### */
 /*  SIGN-IN / REGISTER   */
@@ -190,7 +206,7 @@ header nav a:hover {
   justify-content: center;
 }
 .card-header {
-  color: rgb(240, 88, 88);
+  color: var(--primary);
   text-align: center;
   margin-bottom: 50px;
   font-size: 2.5em;
@@ -220,7 +236,7 @@ header nav a:hover {
 
 .primary-btn {
   color: white;
-  background: #e2373f;
+  background: var(--primary-dark);
   border: none;
   font-weight: bold;
   background-size: 300% 100%;
@@ -237,7 +253,7 @@ header nav a:hover {
     outline: none;
   }
   &:active {
-    background: #e2373f;
+    background: var(--primary-dark);
   }
 }
 
@@ -257,7 +273,7 @@ header nav a:hover {
 }
 
 .callout a {
-  color: rgb(240, 88, 88);
+  color: var(--primary);
   font-weight: bold;
 }
 

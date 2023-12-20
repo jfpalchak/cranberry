@@ -14,11 +14,11 @@
   width: 100%;
   height: 100vh;
   border-radius: 10px;
-  background: whitesmoke;
+  background: var(--grey);
   overflow-y: auto;
 
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-
+  /* box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset; */
 }
 
 /* ######## */
@@ -27,7 +27,7 @@
 
 .sidebar {
   /* position: fixed; */
-  background: white;
+  background: var(--light);
   /* border: 1px solid black; */
   height: 100%;
   height: 100vh;
@@ -52,7 +52,8 @@
   border-radius: 25px;
   width: 100%;
   /* background: transparent; */
-  background: white;
+  background: var(--light);
+  
   overflow-x: hidden;
   white-space: nowrap;
   transition: 0.3s ease;
@@ -60,6 +61,7 @@
   &:hover {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    color: rgb(240, 88, 88);
     transition: all 0.3s ease;
   }
 }
@@ -72,20 +74,20 @@
   height: 100%;
   border-radius: 50px 0 0 50px;
   text-decoration: none;
-  background: white;
+  background: var(--light);
   color: black;
 }
 
 .sidebar .active li {
-  background: white;
+  background: var(--light);
   /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .sidebar a.active {
-  background: whitesmoke;
+  background: var(--grey);
   /* background: rgba(202, 235, 255, 0.501); */
   font-weight: bold;
-  color: rgb(240, 88, 88);
+  color: var(--primary);
   position: relative;
 }
 .sidebar ul a.active::before{
@@ -96,8 +98,8 @@
   border-radius: 50%;
   top: -40px;
   right: 0;
-  box-shadow: 20px 20px 0 whitesmoke;
-  /* z-index: -1; */
+  box-shadow: 20px 20px 0 var(--grey);
+  z-index: 1;
 }
 .sidebar ul a.active::after{
   content: "";
@@ -107,8 +109,8 @@
   border-radius: 50%;
   bottom: -40px;
   right: 0;
-  box-shadow: 20px -20px 0 whitesmoke;
-  /* z-index: 1; */
+  box-shadow: 20px -20px 0 var(--grey);
+  z-index: 1;
 }
 
 .sidebar .logout-nav {

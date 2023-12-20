@@ -51,7 +51,7 @@
   height: 480px;
   width: 45%;
   padding: 15px;
-  background: white;
+  background: var(--light);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
@@ -72,7 +72,7 @@
   & a {
     text-decoration: none;
     font-weight: bold;
-    color: rgb(240, 88, 88);
+    color: var(--primary);
     transition: 0.3s ease;
   }
 }
@@ -81,7 +81,7 @@
   /* height: 350px; */
   /* width: 400px; */
   padding: 1em;
-  background: white;
+  background: var(--light);
 
   /* display: flex;
   flex-direction: column; */
@@ -113,8 +113,8 @@
 
 .add-journal {
   .action-button {
-    background-color: rgb(240, 88, 88);
-    color: white;
+    background-color: var(--primary);
+    color: var(--light);
   }
 
   & button.action-button:hover {
@@ -142,7 +142,7 @@
   }
 
   & p {
-    color: rgb(240, 88, 88);
+    color: var(--primary);
     font-weight: bold;
     padding: 2px;
     width: 100%;
@@ -155,7 +155,7 @@
 
 .journal-item {
   padding: 1em;
-  background: white;
+  background: var(--light);
   border-radius: 10px;
   width: 80%;
   max-width: 255px;
@@ -174,7 +174,7 @@
 
   & a {
     font-weight: bold;
-    color: rgb(240, 88, 88);
+    color: var(--primary);
     transition: 0.3s ease;
     width: 100%;
   }

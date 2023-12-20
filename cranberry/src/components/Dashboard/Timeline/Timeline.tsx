@@ -2,7 +2,7 @@ import './Timeline.css';
 import { 
   Chart as ChartJS,
   LineElement, 
-  BarElement, // !
+  BarElement,
   TimeScale, 
   LinearScale, 
   PointElement, 
@@ -10,13 +10,13 @@ import {
   Legend
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
-import { Chart, Line } from 'react-chartjs-2';
+import { Chart } from 'react-chartjs-2';
 import type { ChartData, ChartOptions } from 'chart.js';
 import type { IJournal } from '../../../types';
 
 ChartJS.register(
   LineElement, 
-  BarElement, // !
+  BarElement,
   TimeScale, 
   LinearScale, 
   PointElement, 
@@ -79,7 +79,6 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
             data={data}
             options={options}
           ></Chart>
-
         </div>
         ) : (
           <div className="time-scale">
