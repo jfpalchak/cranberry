@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useHealthBenefits } from '../../../hooks';
-import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
 import { LinearProgress } from '@mui/material';
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
 
 function HealthProgress({ userQuitDate } : { userQuitDate: string | Date } ) {
 
@@ -15,6 +15,7 @@ function HealthProgress({ userQuitDate } : { userQuitDate: string | Date } ) {
 
   return (
     <div className="health-milestones">
+
       <div className="milestone-info">
         <h3>Health Progress</h3>
         <p><MonitorHeartOutlinedIcon/> {totalHealthBenefitsAchieved} / {totalHealthBenefits}</p>
@@ -27,7 +28,13 @@ function HealthProgress({ userQuitDate } : { userQuitDate: string | Date } ) {
         color='error'
       />
 
-      <button className="btn alternate-btn milestone-btn" onClick={() => navigate('/dashboard/health')}>See More</button>
+      <button 
+        className="btn alternate-btn milestone-btn" 
+        onClick={() => navigate('/dashboard/health')}
+      >
+        See More
+      </button>
+
     </div>
   )
 }

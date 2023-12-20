@@ -14,7 +14,7 @@ export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) 
           if ( (unit === 'years' && !time)
             || (unit === 'months' && !time)
             || (unit === 'days' && !time) ) {
-            return
+            return null;
           } else {
           return (
             <li key={unit}>
