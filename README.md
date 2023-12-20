@@ -68,7 +68,7 @@
     * <a href="#-contact-and-support">Contact</a>
     * <a href="#-license">License</a>
     * <a href="#-acknowledgements">Acknowledgements</a>
-    * <a href="#-researchplanning">Research & Planning</a>
+    * <a href="#-research--planning-log">Research & Planning</a>
     
 ------------------------------
 
@@ -112,9 +112,9 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 
 #### 🛰️ Install Cranberry API
 
-This application relies upon the CranberryAPI for all data and user authentication. In order to properly run this web app, you'll need to install its API.
+This application relies on the CranberryAPI for all data and user authentication. In order to properly run this web app, you'll need to install its API.
 
-You can find the repository containing the documentation with instructions for setup and installation here:
+You can find the repository containing the necessary files and documentation, with instructions for setup and installation, here:
 
 * [CranberryAPI v1.0](https://github.com/jfpalchak/CranberryAPI.git)
 
