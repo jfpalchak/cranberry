@@ -208,6 +208,10 @@
   width: 300px;
 }
 
+.resources:hover {
+  cursor: pointer;
+}
+
 .side-tracker-card {
   display: flex;
   flex-direction: column;
@@ -242,6 +246,10 @@
   text-align: left;
 }
 
+.resource-link {
+  color: var(--primary);
+  text-decoration: none;
+}
 /* ########## */
 /* RESPONSIVE */
 /* ########## */

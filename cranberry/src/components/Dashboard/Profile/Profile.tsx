@@ -12,7 +12,13 @@ function Profile({ user }: { user: IUser }) {
   
   const [supportOpen, setSupportOpen] = useState(false);
 
-  console.log("Profile render")
+  const handleOpenSupport = () => {
+    setSupportOpen(true);
+  };
+
+  const handleCloseSupport = () => {
+    setSupportOpen(false);
+  };
 
   return (
     <section className="user-profile dash-section">
@@ -30,11 +36,14 @@ function Profile({ user }: { user: IUser }) {
 
         </div>
 
-        <Asides handleShowResources={setSupportOpen} />
+        <Asides handleOpenSupport={handleOpenSupport} />
 
       </div>
 
-      <DialogResources isOpen={supportOpen} />
+      <DialogResources 
+        isOpen={supportOpen} 
+        handleClosing={handleCloseSupport}
+      />
 
     </section>
   );

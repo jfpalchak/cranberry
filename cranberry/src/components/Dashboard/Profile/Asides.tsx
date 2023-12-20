@@ -1,18 +1,16 @@
-import { useState } from 'react';
-
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 
 
 function Asides(props: AsidesProps) {
-  
-  const { handleShowResources } = props;
+
+  const { handleOpenSupport } = props;
 
   return (
     <div className="profile-col aside">
-      <div className="tip side-tracker">
+      <div className="tips side-tracker">
         <div className="side-tracker-card">
-          <div className="side-tracker-header tips">
+          <div className="side-tracker-header">
             <TipsAndUpdatesIcon />
           </div>
           <div className="side-tracker-content">
@@ -21,9 +19,9 @@ function Asides(props: AsidesProps) {
           </div>
         </div>
       </div>
-      <div className="side-tracker" onClick={() => handleShowResources(true)}>
+      <div className="resources side-tracker" onClick={handleOpenSupport}>
         <div className="side-tracker-card">
-          <div className="side-tracker-header resources">
+          <div className="side-tracker-header">
             <ContactSupportIcon />
           </div>
           <div className="side-tracker-content">
@@ -37,7 +35,7 @@ function Asides(props: AsidesProps) {
 }
 
 type AsidesProps = {
-  handleShowResources: (x: boolean) => void;
+  handleOpenSupport: () => void;
 }
 
 export default Asides;
