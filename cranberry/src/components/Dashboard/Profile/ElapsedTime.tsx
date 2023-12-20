@@ -1,4 +1,4 @@
-import useElapsedTime from "../../../hooks/useElapsedTime";
+import { useElapsedTime } from "../../../hooks/";
 
 export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) {
   
@@ -11,9 +11,9 @@ export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) 
       <br/>
       <ul>
         {Object.entries(elapsedTime).map(([unit, time]) => {
-          if ( unit === 'years' && !time
-            || unit === 'months' && !time
-            || unit === 'days' && !time) {
+          if ( (unit === 'years' && !time)
+            || (unit === 'months' && !time)
+            || (unit === 'days' && !time) ) {
             return
           } else {
           return (

@@ -1,25 +1,11 @@
 import './Health.css';
 import { LinearProgress } from '@mui/material';
-import { healthBenefitsOverTime } from '../../../data/health-benefits';
-import useHealthBenefits from '../../../hooks/useHealthBenefits';
-import differenceInMinutes from 'date-fns/differenceInMinutes';
+import { useHealthBenefits } from '../../../hooks';
 import type { IUser } from '../../../types';
 
 export default function Health({ user }: { user: IUser }) {
 
-  // To calculate progress towards each health benefit,
-  // we calculate the difference in hours between now and the user's quit date,
-  // and compare with the number of hours needed to reach a benefit
-
-  // Make this a hook?
-
-  // const healthProgress = (targetHours: number) => {
-  //   const elapsedTime = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
-  //   const progress = (elapsedTime / targetHours) * 100;
-  //   return progress > 100 ? 100 : progress;
-  // };
-
-  const { getHealthItemProgress } = useHealthBenefits(user.quitDate as string)
+  const { getHealthItemProgress, healthBenefitsList } = useHealthBenefits(user.quitDate as string)
 
   const description = (benefit: string) => {
     let array = benefit.split(":");
@@ -40,7 +26,7 @@ export default function Health({ user }: { user: IUser }) {
       <div className="health-content">
         <div className="health-progress">
 
-          {healthBenefitsOverTime.map((item, index) => (
+          {healthBenefitsList.map((item, index) => (
             <div className="health-item" key={index} >
 
               <div className={("progress-marker".concat(getHealthItemProgress(item.time) > 99 ? ' complete' : ' ongoing'))}></div>

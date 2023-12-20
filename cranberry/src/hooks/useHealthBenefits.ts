@@ -5,6 +5,7 @@ import { healthBenefitsOverTime } from "../data/health-benefits";
 export default function useHealthBenefits(userQuitDate: string) {
 
   const [userHealthBenefits, setUserHealthBenefits] = useState<BenefitState>({
+    healthBenefitsList: healthBenefitsOverTime,
     getHealthItemProgress: (hours) => hours,
     totalHealthBenefits: healthBenefitsOverTime.length,
     totalHealthBenefitsAchieved: 0,
@@ -40,6 +41,7 @@ export default function useHealthBenefits(userQuitDate: string) {
       const totalHealthPercentAchieved = (totalHealthBenefitsAchieved / totalHealthBenefits) * 100;
       
       const userHealthProgress = {
+        ...userHealthBenefits,
         getHealthItemProgress,
         totalHealthBenefits,
         totalHealthBenefitsAchieved,
@@ -54,6 +56,7 @@ export default function useHealthBenefits(userQuitDate: string) {
 }
 
 interface BenefitState {
+  healthBenefitsList: typeof healthBenefitsOverTime;
   getHealthItemProgress: (data: number) => number;
   totalHealthBenefits: number;
   totalHealthBenefitsAchieved: number;

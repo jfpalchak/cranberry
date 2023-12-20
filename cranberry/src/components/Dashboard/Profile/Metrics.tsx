@@ -1,4 +1,4 @@
-import useProgressCalculations from "../../../hooks/useDataCalculations";
+import { useProgressCalculations } from "../../../hooks";
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
@@ -50,7 +50,7 @@ function Metrics({ user }: { user: IUser }) {
           <p>time gained (days)</p>
         </div>
       </div>
-      
+
     </div>
   );
 }

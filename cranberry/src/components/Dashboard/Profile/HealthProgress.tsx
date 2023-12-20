@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import useHealthBenefits from "../../../hooks/useHealthBenefits";
+import { useHealthBenefits } from '../../../hooks';
 import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
 import { LinearProgress } from '@mui/material';
 
@@ -8,9 +8,9 @@ function HealthProgress({ userQuitDate } : { userQuitDate: string | Date } ) {
   const navigate = useNavigate();
 
   const { 
+    totalHealthBenefits,
     totalHealthBenefitsAchieved, 
-    totalHealthPercentAchieved, 
-    totalHealthBenefits 
+    totalHealthPercentAchieved
   } = useHealthBenefits(userQuitDate as string);
 
   return (
