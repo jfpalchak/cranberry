@@ -3,8 +3,11 @@ import { LinearProgress } from '@mui/material';
 import { healthBenefitsOverTime } from '../../../data/health-benefits';
 import differenceInMinutes from 'date-fns/differenceInMinutes';
 import type { IUser } from '../../../types';
+import { useState } from 'react';
 
 export default function Health({ user }: { user: IUser }) {
+
+  const [totalProgress, setTotalProgress] = useState(0);
 
   // To calculate progress towards each health benefit,
   // we calculate the difference in hours between now and the user's quit date,
@@ -30,7 +33,9 @@ export default function Health({ user }: { user: IUser }) {
 
   return  (
     <section className="user-health dash-section">
-      <h1>Health Progress</h1>
+      <div className="section-header">
+          <h1>Health Progress</h1>
+      </div>
       <div className="health-content">
         <div className="health-progress">
 

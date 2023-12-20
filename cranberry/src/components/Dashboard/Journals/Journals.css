@@ -41,6 +41,10 @@
     /* color: rgb(240, 88, 88); */
   }
 
+  & h2 {
+    margin-top: 65%;
+  }
+
 }
 
 .journal-card {
@@ -128,18 +132,20 @@
 .journal-form {
   display: grid;
   grid-template-columns: .5fr 1fr;
-  gap: 5px;
+  gap: 10px;
   margin-bottom: 10px;
   padding: 10px;
 
   & label {
     text-align: left;
+    padding: 2px;
   }
 
   & p {
     color: rgb(240, 88, 88);
     font-weight: bold;
     padding: 2px;
+    width: 100%;
   }
 }
 
@@ -195,6 +201,10 @@
     flex-wrap: wrap;
     display: flex;
     flex-direction: column;
+
+    & input, textarea {
+      width: 95%;
+    }
   }
 
   .journal-display-index {

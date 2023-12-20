@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export default function Header({ loggedIn }: HeaderProps) {
 
@@ -14,7 +15,7 @@ export default function Header({ loggedIn }: HeaderProps) {
           <li>
             {!loggedIn 
               ? (<Link to="/sign-in">Sign In</Link>) 
-              : (<Link to="/account">Account</Link>)
+              : (<Link to="/account"><AccountCircleIcon /></Link>)
             }
           </li>
         </ul>

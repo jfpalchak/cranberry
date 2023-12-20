@@ -97,7 +97,14 @@ header {
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+
+  /* background: rgb(254, 168, 168); */
+
+  & svg {
+    color: rgb(240, 88, 88);
+    transition: 0.3s ease;
+  }
 }
 
 .logo {

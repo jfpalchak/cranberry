@@ -2,6 +2,7 @@ import './Timeline.css';
 import { 
   Chart as ChartJS,
   LineElement, 
+  BarElement, // !
   TimeScale, 
   LinearScale, 
   PointElement, 
@@ -9,12 +10,13 @@ import {
   Legend
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
-import { Line } from 'react-chartjs-2';
+import { Chart, Line } from 'react-chartjs-2';
 import type { ChartData, ChartOptions } from 'chart.js';
 import type { IJournal } from '../../../types';
 
 ChartJS.register(
   LineElement, 
+  BarElement, // !
   TimeScale, 
   LinearScale, 
   PointElement, 
@@ -24,34 +26,31 @@ ChartJS.register(
 
 export default function Timeline({ userJournals }: { userJournals: IJournal[] }) {
 
-  const data: ChartData<'line'> = {
+  const data: ChartData<'line' | 'bar'> = {
     labels: userJournals.map(journal => journal.date), // journal dates
     datasets: [
-      // {
-      //   label: 'Cravings',
-      //   data: [8, 2, 6],
-      //   backgroundColor: 'darkgreen',
-      //   borderColor: 'green',
-      //   tension: 0.4
-      // },
       {
+        type: 'line' as const,
         label: 'Craving Intensity',
         data: userJournals.map(journal => journal.cravingIntensity),
-        backgroundColor: 'blue',
-        borderColor: 'lightblue',
-        tension: 0.4
+        backgroundColor: 'lightblue',
+        borderColor: 'darkblue',
+        borderWidth: 2,
+        tension: 0.2,
       },
       {
+        type: 'bar' as const,
         label: 'Smoked',
         data: userJournals.map(journal => journal.cigsSmoked),
-        backgroundColor: 'red',
-        borderColor: 'orange',
-        tension: 0.4
+        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderWidth: 2
+        // tension: 0.2
       }
     ]
   };
 
-  const options: ChartOptions<'line'> = {
+  const options: ChartOptions<'line' | 'bar'> = {
     scales: {
       x: {
         type: 'time',
@@ -75,10 +74,12 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
       {userJournals.length > 1 
         ? (
         <div className="time-scale">
-          <Line
+          <Chart
+            type='bar'
             data={data}
             options={options}
-          ></Line>
+          ></Chart>
+
         </div>
         ) : (
           <div className="time-scale">

@@ -65,7 +65,9 @@ export default function JournalControl(props: JournalControlProps) {
 
   return  (
     <section className="user-journals dash-section">
-      <h1>Journals</h1>
+      <div className="section-header">
+        <h1>Journals</h1>
+      </div>
 
       {user && (
       <div className="journals-content">

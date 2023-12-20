@@ -8,7 +8,8 @@
   width: 100%;
   padding: 20px;
   /* height: 100%; */
-  overflow-y: none;
+  /* overflow-y: auto; */
+  /* background: rgba(202, 235, 255, 0.501); */
 }
 
 .health-content {
@@ -16,6 +17,7 @@
   flex-direction: column;
   width: 85%;
   margin: auto;
+  margin-bottom: 100px;
 
   background: white;
   border-radius: 10px;
@@ -49,7 +51,7 @@
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    position: absolute;
+    position: relative;
     margin-left: -11px;
     /* box-shadow: 20px 20px 0 yellowgreen; */
 
@@ -69,9 +71,10 @@
     margin-left: 25px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
 
     & .description {
-      width: 95%;
+      width: 85%;
     }
   }
 
@@ -96,7 +99,7 @@
 }
 
 .references {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;

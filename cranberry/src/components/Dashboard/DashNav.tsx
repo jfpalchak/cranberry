@@ -8,7 +8,6 @@ import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
-import HomeIcon from '@mui/icons-material/Home';
 
 export default function DashNav() {
 

@@ -15,11 +15,16 @@
   height: 100vh;
   border-radius: 10px;
   background: whitesmoke;
+  overflow-y: auto;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
 }
 
 /* ######## */
 /* DASH NAV */
 /* ######## */
+
 .sidebar {
   /* position: fixed; */
   background: white;
@@ -46,7 +51,8 @@
   /* margin-left: 5px; */
   border-radius: 25px;
   width: 100%;
-  background: transparent;
+  /* background: transparent; */
+  background: white;
   overflow-x: hidden;
   white-space: nowrap;
   transition: 0.3s ease;
@@ -77,6 +83,7 @@
 }
 .sidebar a.active {
   background: whitesmoke;
+  /* background: rgba(202, 235, 255, 0.501); */
   font-weight: bold;
   color: rgb(240, 88, 88);
   position: relative;
@@ -115,7 +122,8 @@
 }
 
 .sidebar .logout-red {
-  color: darkred;
+  /* color: darkred; */
+  color: rgb(240, 88, 88);
   margin-top: 3px;
 }
 /* MINIFY SIDEBAR */
