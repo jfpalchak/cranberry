@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import cloud from './../img/cloud.png';
 
 export default function Home() {
-
 
   return (
     <main className="hero">
       <div className="hero-call">
+        <img className="hero-cloud" src={cloud} alt="" />
         <div className="hero-text">
           <h1>When cold turkey isn't enough.</h1>
         </div>
