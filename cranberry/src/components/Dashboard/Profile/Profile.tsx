@@ -8,11 +8,10 @@ import { Tooltip } from "@mui/material";
 import type { IUser } from "../../../types";
 import './Profile.css';
 
-
-import { healthBenefitsOverTime } from '../../../data/health-benefits';
-import differenceInMinutes from 'date-fns/differenceInMinutes';
 import { LinearProgress } from '@mui/material';
 import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
+
+import useHealthBenefits from "../../../hooks/useHealthBenefits";
 
 import { useNavigate } from "react-router-dom";
 
@@ -26,13 +25,13 @@ export default function Profile({ user }: ProfileProps) {
   const userProgress = useProgressCalculations(user);
   const navigate = useNavigate();
 
-  const totalHealthBenefitsAchieved = healthBenefitsOverTime.reduce((value, benefit) => {
-    const userHours = (differenceInMinutes(new Date(), new Date(user.quitDate)) / 60);
-    const benefitAchieved = (userHours / benefit.time) >= 1;
-    return benefitAchieved ? value + 1 : value + 0;
-  }, 0);
+  const { 
+    totalHealthBenefitsAchieved, 
+    totalHealthPercentAchieved, 
+    totalHealthBenefits 
+  } = useHealthBenefits(user.quitDate as string);
 
-  const healthPercentageAchieved = (totalHealthBenefitsAchieved / healthBenefitsOverTime.length) * 100;
+  console.log("Profile render")
 
   return (
     <section className="user-profile dash-section">
@@ -81,12 +80,12 @@ export default function Profile({ user }: ProfileProps) {
           <div className="health-milestones">
             <div className="milestone-info">
               <h3>Health Progress</h3>
-              <p><MonitorHeartOutlinedIcon/> {totalHealthBenefitsAchieved} / {healthBenefitsOverTime.length}</p>
+              <p><MonitorHeartOutlinedIcon/> {totalHealthBenefitsAchieved} / {totalHealthBenefits}</p>
             </div>
             <LinearProgress 
               className='progress-bar'
               variant='determinate'
-              value={healthPercentageAchieved}
+              value={totalHealthPercentAchieved}
               color='error'
             />
             <button className="btn alternate-btn milestone-btn" onClick={() => navigate('/dashboard/health')}>See More</button>
