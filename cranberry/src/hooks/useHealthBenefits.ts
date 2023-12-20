@@ -15,14 +15,20 @@ export default function useHealthBenefits(userQuitDate: string) {
     console.log("Benefits hook is rendering.")
     if (userQuitDate){
 
+      // Calculate the percentage of hours met to achieve a particular health milestone.
+      // Takes the target number of hours needed, and the quit date for the registered user;
+      // Calculates the elapsed time from the quit date and compares to the required hours,
+      // returning a number between 0 and 100.
       const getHealthItemProgress = (benefitTargetHours: number) => {
         const elapsedTime = (differenceInMinutes(new Date(), new Date(userQuitDate)) / 60);
         const progress = (elapsedTime / benefitTargetHours) * 100;
         return progress > 100 ? 100 : progress;
       };
       
+      // Get the total number of health benefit milestones listed.
       const totalHealthBenefits = healthBenefitsOverTime.length;
       
+      // Calculate the total number of benefit milestones the user has achieved.
       const totalHealthBenefitsAchieved = healthBenefitsOverTime.reduce((value, benefit) => {
         const userHours = (differenceInMinutes(new Date(), new Date(userQuitDate)) / 60);
         const benefitAchieved = (userHours / benefit.time) >= 1;
@@ -30,6 +36,7 @@ export default function useHealthBenefits(userQuitDate: string) {
         return benefitAchieved ? value + 1 : value + 0;
       }, 0);
       
+      // Calculate the percentage of health benefit milestones achieved.
       const totalHealthPercentAchieved = (totalHealthBenefitsAchieved / totalHealthBenefits) * 100;
       
       const userHealthProgress = {
@@ -41,7 +48,7 @@ export default function useHealthBenefits(userQuitDate: string) {
 
       setUserHealthBenefits(userHealthProgress);
     }
-  }, []);
+  }, [userQuitDate]);
 
   return userHealthBenefits;
 }
