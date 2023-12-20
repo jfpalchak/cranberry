@@ -8,7 +8,7 @@
   padding: 20px;
   width: 100%;
   border-radius: 10px;
-  background: whitesmoke;
+  background: var(--grey);
 }
 
 .profile-content {
@@ -34,7 +34,7 @@
 
 .time-elapsed {
   /* text-align: center; */
-  background: white;
+  background: var(--light);
   border-radius: 20px;
   padding: 1em;
   /* width: 350px; */
@@ -43,7 +43,7 @@
   margin: auto;
   margin-bottom: 5px;
 
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
 }
@@ -54,7 +54,7 @@
 }
 
 .time-elapsed .time {
-  color: rgb(240, 88, 88);;
+  color: var(--primary);
 }
 
 .progress-trackers {
@@ -75,12 +75,12 @@
   padding: 1em;
   width: 45%;
   height: 100px;
-  background: white;
+  background: var(--light);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: 10px;
+  /* gap: 2px; */
   transition: all 0.3s ease;
   /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
 import ElapsedTime from "./ElapsedTime";
 import useProgressCalculations from "../../../hooks/useDataCalculations";
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
+import RestoreIcon from '@mui/icons-material/Restore';
 import { Tooltip } from "@mui/material";
 import type { IUser } from "../../../types";
 import './Profile.css';
@@ -51,9 +51,10 @@ export default function Profile({ user }: ProfileProps) {
               </div>
             </div>
             <div className="life-regained-tracker tracker">
+              <RestoreIcon />
               <div className="info">
-                <h3>(TBD)</h3>
-                <p>time gained</p>
+                <h3>{(userProgress?.timeGained! / 24).toFixed(2)}</h3>
+                <p>time gained (days)</p>
               </div>
             </div>
           </div>
@@ -79,10 +80,4 @@ export default function Profile({ user }: ProfileProps) {
 
 type ProfileProps = {
   user: IUser;
-}
-
-interface TimeType {
-  hours: number;
-  minutes: number;
-  seconds: number;
 }
