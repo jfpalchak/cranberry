@@ -18,6 +18,13 @@ export default function Health({ user }: { user: IUser }) {
     const progress = (elapsedTime / targetHours) * 100;
     return progress > 100 ? 100 : progress;
   };
+
+  const description = (benefit: string) => {
+    let array = benefit.split(":");
+    let units = array[0];
+    let text = array[1];
+    return {units, text}
+  }
   
   // TODO : refactor into smaller components
 
@@ -30,16 +37,19 @@ export default function Health({ user }: { user: IUser }) {
           {healthBenefitsOverTime.map((item, index) => (
             <div className="health-item" key={index} >
 
-              <div className="progress-marker"></div>
+              <div className={("progress-marker".concat(healthProgress(item.time) > 99 ? ' complete' : ' ongoing'))}></div>
 
               <div className="health-item-info">
-                <h4>{item.benefit}</h4>
+                <div className="description">
+                  <h4>{description(item.benefit).units}</h4>
+                  <p>{description(item.benefit).text}</p>
+                </div>
                 <div className="progress-label">
                   <LinearProgress 
                     className="progress-bar" 
                     variant='determinate' 
                     value={healthProgress(item.time)} 
-                    color={(healthProgress(item.time) > 99 ? 'success' : 'primary')}
+                    color={(healthProgress(item.time) > 99 ? 'primary' : 'primary')}
                     />
                     <p>{healthProgress(item.time).toFixed()}</p>
                 </div>

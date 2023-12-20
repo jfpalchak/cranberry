@@ -7,6 +7,8 @@
   grid-template-rows: 50px 1fr;
   width: 100%;
   padding: 20px;
+  /* height: 100%; */
+  overflow-y: none;
 }
 
 .health-content {
@@ -27,8 +29,10 @@
   /* max-width: 550px; */
   margin: auto;
   transition: all 0.3s ease-in;
-  border-left: 2px solid rgb(240, 181, 87);
-  border-left: 2px solid rgb(244, 233, 158);
+  /* border-left: 2px solid rgb(240, 181, 87); */
+  /* border-left: 2px solid rgb(244, 233, 158); */
+  border-left: 2px solid rgb(246, 116, 116);
+  border-left: 2px solid rgb(172, 185, 238);
 }
 
 .health-item {
@@ -42,28 +46,33 @@
   align-items: center;
 
   & .progress-marker {
-    background: rgb(255, 245, 181);
     border-radius: 50%;
     width: 20px;
     height: 20px;
     position: absolute;
     margin-left: -11px;
     /* box-shadow: 20px 20px 0 yellowgreen; */
+
+  }
+  & .complete {
+    background: rgb(249, 95, 95);
+    background: rgb(89, 114, 213);
+  }
+
+  & .ongoing {
+    background: rgb(255, 183, 183);
+    background: rgb(172, 185, 238);
   }
 
   & .health-item-info {
     width: 100%;
     margin-left: 25px;
+    display: flex;
+    flex-direction: column;
 
-    & h4 {
-      width: 80%;
+    & .description {
+      width: 95%;
     }
-  }
-  
-  & p {
-    text-align: center;
-    width: 50px;
-    font-weight: bold;
   }
 
 }
@@ -72,12 +81,13 @@
 .progress-bar {
   border-radius: 10px;
   padding: 3.5px;
-  width: 100%;
+  width: 90%;
 }
 
 .progress-label {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 5px;
 }
 
