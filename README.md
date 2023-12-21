@@ -56,7 +56,7 @@
 ### <u>Table of Contents</u>
 * <a href="#-about-the-project">About the Project</a>
     * <a href="#-description">Description</a>
-    * <a href="#-known-bugs">Known Bugs</a>
+    * <a href="#-known-bugs--WIP">Known Bugs & WIP</a>
     * <a href="#-technology-used">Built With</a>
     * <a href="#-preview">Preview</a>
 * <a href="#-getting-started">Getting Started</a>
@@ -83,7 +83,7 @@ With Cranberry, users can track their progress in real-time; check out your Heal
 
 To get started, all you need to do is Sign Up for an account, and start writing journals.
 
-### 🦠 Known Bugs
+### 🦠 Known Bugs & WIP
 
 * WIP: User Account full CRUD functionality. As of submission, a user cannot edit or delete their registered information.
 * WIP: The number of cigarettes smoked does not yet affect the user's overall metrics. 
@@ -214,11 +214,15 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 <details>
 <summary>View Component Diagrams:</summary>
 
+#### Profile:
+
 <p align="center">
     <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Profile-Dashboard.jpg" alt="Dashboard profile component diagram." />
 </p>
 
 > Initial component diagram for the user profile dashboard components.
+
+#### Health:
 
 <p align="center">
     <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Health-Dashboard.jpg" alt="Dashboard health component diagram." />
@@ -226,11 +230,15 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 
 > Initial component diagram for the user health progress/milestones dashboard components.
 
+#### Journals:
+
 <p align="center">
     <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Journals-Dashboard.jpg" alt="Dashboard journal component diagram." />
 </p>
 
  > Initial component diagram for the user journals dashboard components.
+
+#### Timeline:
 
 <p align="center">
     <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Timeline-Dashboard.jpg" alt="Dashboard timeline component diagram." />
