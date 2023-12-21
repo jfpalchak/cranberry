@@ -105,7 +105,7 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 ### 🔍 Preview
 
 <details>
-<summary>View Preview Images</summary>
+<summary>View Preview Images:</summary>
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/landing.png" alt="Cranberry landing page." />
@@ -153,31 +153,31 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 ### Component Diagrams
 
 <details>
-<summary>View Component Diagrams</summary>
+<summary>View Component Diagrams:</summary>
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Profile-Dashboard.jpg" alt="Dashboard profile component diagram." />
 </p>
 
-> Initial component diagram for the user profile dashboard components.
+    > Initial component diagram for the user profile dashboard components.
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Health-Dashboard.jpg" alt="Dashboard health component diagram." />
 </p>
 
-> Initial component diagram for the user health progress/milestones dashboard components.
+    > Initial component diagram for the user health progress/milestones dashboard components.
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Journals-Dashboard.jpg" alt="Dashboard journal component diagram." />
 </p>
 
-> Initial component diagram for the user journals dashboard components.
+    > Initial component diagram for the user journals dashboard components.
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Timeline-Dashboard.jpg" alt="Dashboard timeline component diagram." />
 </p>
 
-> Initial component diagram for the user timeline/analytics dashboard components.
+    > Initial component diagram for the user timeline/analytics dashboard components.
 
 </details>
 
@@ -189,7 +189,7 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 
 #### 🛰️ Install Cranberry API
 
-This application relies on the CranberryAPI for all user data and authentication. In order to properly run this web app, you'll need to install its API.
+This application relies on the CranberryAPI for all user data and authentication. In order to properly run this web app, you'll need to install and run its companion API.
 
 You can find the repository containing the necessary files and documentation, with instructions for setup and installation, here:
 
