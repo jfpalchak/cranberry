@@ -61,8 +61,9 @@
     * <a href="#-preview">Preview</a>
 * <a href="#-getting-started">Getting Started</a>
     * <a href="#-prerequisites">Prerequisites</a>
-    * <a href="#-setup-and-use">Setup and Use</a>
-* <a href="#-app-documentation">Application Documentation</a>
+    * <a href="#%EF%B8%8F-setup-and-use-cranberry-api">Setup and Use: API</a>
+    * <a href="#%EF%B8%8F-setup-and-use-cranberry-client">Setup and Use: Client</a>
+<!-- * <a href="#-app-documentation">Application Documentation</a> -->
 * <a href="#-contributors">Auxiliary</a>
     * <a href="#-contact-and-support">Contact</a>
     * <a href="#-license">License</a>
@@ -78,6 +79,7 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 
 With Cranberry, users can track their progress in real-time; check out your Health progress as you achieve milestones over the course of your journey, or record daily Journal entries to document your cravings, and watch the data from your journals chart the ups and downs of your story in your own personal Timeline.
 
+To get started, all you need to do is Sign Up for an account, and start writing journals.
 
 ### 🦠 Known Bugs
 
@@ -103,7 +105,7 @@ With Cranberry, users can track their progress in real-time; check out your Heal
 * HTML
 * CSS
 
-### 🔍 Preview
+### 🔍 Previews & Documentation
 
 <details>
 <summary>View Preview Images:</summary>
@@ -170,7 +172,7 @@ With Cranberry, users can track their progress in real-time; check out your Heal
 </details>
 
 
-### Component Diagrams
+### 🏗️ Component Diagrams
 
 <details>
 <summary>View Component Diagrams:</summary>
@@ -316,8 +318,14 @@ Or, [Download and install the appropriate version of MySQL Workbench](https://de
 
   #### Launch the API
   1) Navigate to CranberryAPI/CranberryAPI directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/CranberryAPI/CranberryAPI`).
-  2) Run the command `dotnet watch run` to have access to the API in Postman or browser.
+  2) Run the command `dotnet watch run` to have access to the API.
 
+<h3 align="center" >
+    With the API launched, our frontend has access to all the data it needs to run!
+</h3>
+<h3 align="center" >
+    Next, let's get the client up and running.
+</h3>
 
 ### ⚙️ Setup and Use: Cranberry Client
 
@@ -374,6 +382,20 @@ You may also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+------------------------------
+
+ <h3 align="center">
+     With both the Client & API running, it's time to use Cranberry!
+ </h3>
+ <h3 align="center">
+     All that's left is to Sign Up, and quit smoking.
+ </h3>
+
+<p align="center">
+<a href="https://github.com/jfpalchak/cranberry">
+    <img width="50" height="50" src="https://img.icons8.com/external-colored-outline-lafs/100/external-cranberry-flavors-colored-outline-part-2-colored-outline-lafs.png" alt="external-cranberry-flavors-colored-outline-part-2-colored-outline-lafs"/></a>
+</p>
 
 ------------------------------
 
