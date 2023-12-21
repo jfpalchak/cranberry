@@ -116,7 +116,7 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 ### 🔍 Previews & Documentation
 
 <details>
-<summary>View Preview Images:</summary>
+<summary>View Preview Images & Documentation:</summary>
 
 #### Landing Page:
 
