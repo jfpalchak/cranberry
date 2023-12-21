@@ -4,7 +4,7 @@
 
 .user-health {
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 65px 1fr;
   width: 100%;
   padding: 20px;
   /* height: 100%; */
@@ -15,7 +15,7 @@
 .health-content {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 90%;
   margin: auto;
   margin-bottom: 100px;
 
@@ -24,6 +24,22 @@
   padding: 30px;
 
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.health-header {
+  /* flex-direction: column; */
+  justify-content: space-between;
+
+  & h3 {
+    width: 100px;
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-around;
+  }
+
+  & svg, .achieved {
+    color: var(--primary);
+  }
 }
 
 .health-progress {
@@ -81,7 +97,6 @@
   }
 
 }
-
 
 .progress-bar {
   border-radius: 10px;

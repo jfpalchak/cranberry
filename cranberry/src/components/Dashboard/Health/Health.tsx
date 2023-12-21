@@ -2,10 +2,16 @@ import './Health.css';
 import { LinearProgress } from '@mui/material';
 import { useHealthBenefits } from '../../../hooks';
 import type { IUser } from '../../../types';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Health({ user }: { user: IUser }) {
 
-  const { getHealthItemProgress, healthBenefitsList } = useHealthBenefits(user.quitDate as string)
+  const {
+    healthBenefitsList, 
+    getHealthItemProgress, 
+    totalHealthBenefits,
+    totalHealthBenefitsAchieved, 
+  } = useHealthBenefits(user.quitDate as string)
 
   const description = (benefit: string) => {
     let array = benefit.split(":");
@@ -20,8 +26,9 @@ export default function Health({ user }: { user: IUser }) {
 
   return  (
     <section className="user-health dash-section">
-      <div className="section-header">
+      <div className="section-header health-header">
           <h1>Health Progress</h1>
+          <h3> <FavoriteIcon /> <span><span className="achieved">{totalHealthBenefitsAchieved}</span> / {totalHealthBenefits}</span></h3>
       </div>
       <div className="health-content">
         <div className="health-progress">
