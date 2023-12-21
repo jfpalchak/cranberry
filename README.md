@@ -58,7 +58,7 @@
     * <a href="#-description">Description</a>
     * <a href="#-known-bugs--WIP">Known Bugs & WIP</a>
     * <a href="#-technology-used">Built With</a>
-    * <a href="#-preview">Preview</a>
+    * <a href="#-preview--documentation">Previews & Documentation</a>
 * <a href="#-getting-started">Getting Started</a>
     * <a href="#-prerequisites">Prerequisites</a>
     * <a href="#%EF%B8%8F-setup-and-use-cranberry-api">Setup and Use: API</a>
