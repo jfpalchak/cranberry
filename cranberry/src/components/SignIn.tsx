@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { signIn} from "../store/authActions";
-
-import cloud from './../img/cloud.png';
+import cloudLeft from './../img/cloudLeft.png';
+import cloudRight from './../img/cloudRight.png';
 
 
 function SignIn() {
@@ -37,7 +37,10 @@ function SignIn() {
 
   return (
     <section className="auth-main">
+      <img className="form-cloud-1" src={cloudLeft} alt="Cloud" />
+      <img className="form-cloud-2" src={cloudRight} alt="Cloud" />
       <div className="auth-card signin-card">
+
 
         <div className="card-header">
           <h1>just breathe</h1>

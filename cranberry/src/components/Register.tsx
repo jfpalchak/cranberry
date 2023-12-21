@@ -8,7 +8,8 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import { Input } from '@chakra-ui/react';
-
+import cloudLeft from './../img/cloudLeft.png';
+import cloudRight from './../img/cloudRight.png';
 
 function Register() {
   
@@ -78,7 +79,8 @@ function Register() {
 
   return (
     <section className="auth-main">
-
+      <img className="form-cloud-1" src={cloudLeft} alt="Cloud" />
+      <img className="form-cloud-2" src={cloudRight} alt="Cloud" />
       <div className="auth-card">
 
         <div className="card-header">
