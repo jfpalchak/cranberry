@@ -261,13 +261,17 @@
   }
 
   .aside {
-    width: 78%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-top: 50px;
     margin-bottom: 20px;
     gap: 25px;
+  }
+
+  .side-tracker {
+    border-left: none;
   }
 
   .tracker {
@@ -324,8 +328,13 @@
     gap: 25px;
   }
 
+  .health-milestones {
+    margin-top: 30px;
+  }
+
   .side-tracker {
     width: 85%;
+    border-left: none;
   }
 
   .tracker {

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import { compareDesc } from 'date-fns';
 import JournalService from '../../../services/journal.service';
@@ -6,7 +5,7 @@ import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
 import JournalEdit from './JournalEdit';
-import { Fab } from '@mui/material';
+import { Fab, Tooltip } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import type { IUser, IJournal } from "../../../types";
 import './Journals.css';
@@ -91,11 +90,13 @@ export default function JournalControl(props: JournalControlProps) {
               </Link>
             </div>
             <div className="mobile-only add-journal" >
-              <Link to="/dashboard/journals/new">
-                <Fab className="action-button" aria-label="edit">
-                  <AddIcon />
-                </Fab>
-              </Link>
+              <Tooltip title="New Journal" placement="left-end">
+                <Link to="/dashboard/journals/new">
+                  <Fab className="action-button" aria-label="edit">
+                    <AddIcon />
+                  </Fab>
+                </Link>
+              </Tooltip>
             </div>
             </>
           } />

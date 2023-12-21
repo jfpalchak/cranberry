@@ -13,9 +13,11 @@ export default function JournalList(props: JournalListProps) {
         ? (
           <div>
             <h2>Track your journey! </h2>
+            <br/>
             <p>See your cravings decrease over time; </p>
             <p>keep notes to journal your process.</p>
-            <p>Click 'Add Journal' to get started!</p>
+            <br/>
+            <p>Create a journal to get started!</p>
           </div>
         ) : (
           <div className="introduction">

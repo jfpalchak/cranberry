@@ -17,7 +17,7 @@ function Metrics({ user }: { user: IUser }) {
   return (
     <div className="progress-trackers">
 
-      <Tooltip title={moneyTrackerText} >
+      <Tooltip title={moneyTrackerText} placement="top-start" >
       <div className="money-tracker tracker">
         <AttachMoneyIcon />
         <div className="info">
