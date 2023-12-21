@@ -119,6 +119,15 @@ header {
 .logo {
   font-size: 2em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  & img {
+    position: relative;
+    top: 7px;
+    right: 4px;
+    width: 45px;
+  }
 }
 
 header nav ul{
@@ -186,6 +195,21 @@ header nav a:hover {
   right: 600px;
   z-index: -1;
   width: 100px;
+  transition: 0.3s ease;
+  animation-duration: 55s;
+  animation-name: slide;
+}
+
+@keyframes slide {
+  from {
+    left: 0;
+    /* width: 300%; */
+  }
+
+  to {
+    left: 600px;
+    /* width: 100%; */
+  }
 }
 
 /* ##################### */
@@ -298,6 +322,10 @@ header nav a:hover {
   .hero-text {
     width: 100%;
     margin-top: -15px;
+  }
+
+  .hero-cloud {
+    display: none;
   }
 
 

@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { signIn} from "../store/authActions";
 
+import cloud from './../img/cloud.png';
+
+
 function SignIn() {
 
   const navigate = useNavigate();
@@ -34,7 +37,6 @@ function SignIn() {
 
   return (
     <section className="auth-main">
-
       <div className="auth-card signin-card">
 
         <div className="card-header">

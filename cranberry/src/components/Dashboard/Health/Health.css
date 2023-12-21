@@ -120,3 +120,18 @@
     color: rgb(246, 116, 116);
   }
 }
+
+@media screen and (max-width: 475px) {
+
+  .health-content {
+    width: 100%;
+  }
+
+  .health-progress {
+    width: 100%;
+  }
+
+  .description p{
+    width: 100%;
+  }
+}
