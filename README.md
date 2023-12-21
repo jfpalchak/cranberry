@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <small>Initiated December 8th, 2023.</small>
+  <small>Initiated December 8th, 2023</small>
 </p>
 
 <!-- Project Links -->
@@ -64,10 +64,8 @@
     * <a href="#-setup-and-use">Setup and Use</a>
 * <a href="#-app-documentation">Application Documentation</a>
 * <a href="#-contributors">Auxiliary</a>
-    * <a href="#-contributors">Contributors</a>
     * <a href="#-contact-and-support">Contact</a>
     * <a href="#-license">License</a>
-    * <a href="#-acknowledgements">Acknowledgements</a>
     * <a href="#-research--planning-log">Research & Planning</a>
     
 ------------------------------
@@ -76,7 +74,9 @@
 
 ### 📖 Description
 
-Cranberry is a daily tracker with motivating metrics to help users quit smoking. This is an API-consuming Single Page Application built with TypeScript and React. Utilizes the Cranberry API & implements JWT for user authentication.
+Cranberry is a daily tracker with motivating metrics to help users quit smoking. This is an API-consuming Single Page Application built with TypeScript and React. Utilizes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git) & implements JWT for user authentication.
+
+
 
 ### 🦠 Known Bugs
 
@@ -112,7 +112,7 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 
 #### 🛰️ Install Cranberry API
 
-This application relies on the CranberryAPI for all data and user authentication. In order to properly run this web app, you'll need to install its API.
+This application relies on the CranberryAPI for all user data and authentication. In order to properly run this web app, you'll need to install its API.
 
 You can find the repository containing the necessary files and documentation, with instructions for setup and installation, here:
 
