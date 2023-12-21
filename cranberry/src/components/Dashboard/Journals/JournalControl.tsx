@@ -10,6 +10,8 @@ import AddIcon from '@mui/icons-material/Add';
 import type { IUser, IJournal } from "../../../types";
 import './Journals.css';
 
+import CreateIcon from '@mui/icons-material/Create';
+
 
 export default function JournalControl(props: JournalControlProps) {
 
@@ -84,8 +86,8 @@ export default function JournalControl(props: JournalControlProps) {
               <br/>
               <br/>
               <Link className="add-journal" to="/dashboard/journals/new">
-                <Fab className="action-button" aria-label="edit">
-                  <AddIcon />
+                <Fab className="action-button no-shadow" aria-label="edit">
+                  <CreateIcon />
                 </Fab>
               </Link>
             </div>
@@ -93,7 +95,7 @@ export default function JournalControl(props: JournalControlProps) {
               <Tooltip title="New Journal" placement="left-end">
                 <Link to="/dashboard/journals/new">
                   <Fab className="action-button" aria-label="edit">
-                    <AddIcon />
+                    <CreateIcon />
                   </Fab>
                 </Link>
               </Tooltip>
