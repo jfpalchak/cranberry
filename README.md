@@ -76,6 +76,7 @@
 
 Cranberry is a daily tracker with motivating metrics to help users quit smoking. This is an API-consuming Single Page Application built with TypeScript and React. Utilizes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git) & implements JWT for user authentication.
 
+With Cranberry, users can track their progress in real-time; check out your Health progress as you achieve milestones over the course of your journey, or record daily Journal entries to document your cravings, and watch the data from your journals chart the ups and downs of your story in your own personal Timeline.
 
 
 ### 🦠 Known Bugs
@@ -111,29 +112,44 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/landing.png" alt="Cranberry landing page." />
 </p>
 
+> Landing page. If a user is already registered and authenticated when visiting the homepage, they will be redirected to their user dashboard.
+
+
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/register1.png" alt="Registration page, step one." />
 </p>
+
+> When a user registers for an account, they will be presented with a two step registration process; the second of which is rendered upon clicking the initial 'Register' button.
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/register2.png" alt="Registration page, step two." />
 </p>
 
+> Both the registration forms, and the sign in forms, have input validation with respective error messages.
+
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/profilev1.png" alt="Dashboard profile." />
 </p>
+
+> Upon logging in, or successful registration, the user will be redirected to their personal dashboard. Depending on the amount of time since their quit date, or last cigarette, they will be presented with a number of motivational metrics. The profile page also displays additional information on how certain data points are calculated, or additional resources to help users quit smoking beyond the use of Cranberry.
 
 <p align="center">
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/profilev2.png" alt="Dashboard profile, responsive." />
 </p>
 
+> Cranberry was built with responsive design in mind. 
+
 <p align="center">
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv2.png" alt="Health progress, responsive." />
 </p>
 
+> Users can follow their progress in real time by visiting their Health page, which displays their progress and achievable health milestones.
+
 <p align="center">
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals3.png" alt="Dashboard journals, responsive." />
 </p>
+
+> In their Journal page, users can Create, Read, Update, and Delete their own journal entries, documenting their progress and their cravings over time.
 
 <p align="center">
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals2.png" alt="Dashboard journals create, responsive." />
@@ -143,9 +159,13 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/timeline1.png" alt="Dashboard timeline, empty." />
 </p>
 
+> With less than two Journals, users will be met with an empty Timeline, and a prompt to add new journals to view their analytics. 
+
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/timeline2.png" alt="Dashboard timeline, results." />
 </p>
+
+> Users will otherwise have access to their own interactive timeline, displaying their cravings and cigarettes smoked over their entire journey to quit smoking.
 
 </details>
 
@@ -156,28 +176,28 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 <summary>View Component Diagrams:</summary>
 
 <p align="center">
-    <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Profile-Dashboard.jpg" alt="Dashboard profile component diagram." />
+    <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Profile-Dashboard.jpg" alt="Dashboard profile component diagram." />
 </p>
 
-    > Initial component diagram for the user profile dashboard components.
+> Initial component diagram for the user profile dashboard components.
 
 <p align="center">
-    <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Health-Dashboard.jpg" alt="Dashboard health component diagram." />
+    <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Health-Dashboard.jpg" alt="Dashboard health component diagram." />
 </p>
 
-    > Initial component diagram for the user health progress/milestones dashboard components.
+> Initial component diagram for the user health progress/milestones dashboard components.
 
 <p align="center">
-    <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Journals-Dashboard.jpg" alt="Dashboard journal component diagram." />
+    <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Journals-Dashboard.jpg" alt="Dashboard journal component diagram." />
 </p>
 
-    > Initial component diagram for the user journals dashboard components.
+ > Initial component diagram for the user journals dashboard components.
 
 <p align="center">
-    <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Timeline-Dashboard.jpg" alt="Dashboard timeline component diagram." />
+    <img width="90%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Timeline-Dashboard.jpg" alt="Dashboard timeline component diagram." />
 </p>
 
-    > Initial component diagram for the user timeline/analytics dashboard components.
+> Initial component diagram for the user timeline/analytics dashboard components.
 
 </details>
 
