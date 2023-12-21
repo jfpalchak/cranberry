@@ -85,7 +85,11 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 
 ### 🦠 Known Bugs
 
-* If any bugs are discovered, please contact the author.
+* WIP: User Account full CRUD functionality. As of submission, a user cannot edit or delete their registered information.
+* WIP: The number of cigarettes smoked does not yet affect the user's overall metrics. 
+  * WIP: Allow users to optionally reset their 'Smoke Free' clock.
+* WIP: Journals state management is not yet managed by a Redux store.
+* If any additional bugs are discovered, please contact the author.
 
 ### 🛠 Technology Used
 
@@ -132,7 +136,7 @@ To get started, all you need to do is Sign Up for an account, and start writing 
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/register2.png" alt="Registration page, step two." />
 </p>
 
-> Both the registration forms, and the sign in forms, have input validation with respective error messages.
+> Both the registration forms, and the sign in forms, have input validation with respective error messages. User credentials are managed and stored using both localStorage and Redux Toolkit. Upon selecting 'Log Out', all credentials are removed from localStorage, and the user will be prompted to 'Sign In'.
 
 #### Profile:
 
