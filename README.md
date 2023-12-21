@@ -124,7 +124,7 @@ To get started, all you need to do is Sign Up for an account, and start writing 
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/landing.png" alt="Cranberry landing page." />
 </p>
 
-> Landing page. If a user is already registered and authenticated when visiting the homepage, they will be redirected to their user dashboard.
+> If a user is already registered and authenticated when visiting the landing page, they will be redirected to their user dashboard.
 
 #### Registration:
 
@@ -166,7 +166,7 @@ To get started, all you need to do is Sign Up for an account, and start writing 
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv2.png" alt="Health progress, responsive." />
 </p>
 
-> There are multiple indicators throughout the application to help show users their progress: the Health page header displays the user's overall milestone progress, while each individual milestone displays a loading bar with its total progress, as well as a marker on the left-hand side with an appearance that changes depending on a milestone being achieved, or ongoing. 
+> There are multiple indicators throughout the application to help show users their progress: the Health page header displays the user's overall milestone progress, while each individual milestone displays a progress bar alongside the percent of completion, as well as a marker on the left-hand side with an appearance that changes depending on a milestone being achieved, or ongoing. 
 
 #### Journals:
 
