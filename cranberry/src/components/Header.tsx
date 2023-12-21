@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import berry from './../img/berry1.png';
-import berry2 from './../img/berry2.jpg';
-import can from './../img/canberries.png';
+// import berry2 from './../img/berry2.jpg';
+// import can from './../img/canberries.png';
 
 export default function Header({ loggedIn }: HeaderProps) {
 
@@ -18,7 +18,7 @@ export default function Header({ loggedIn }: HeaderProps) {
         <ul>
           <li>
             {!loggedIn 
-              ? (<Link to="/sign-in">Sign In</Link>) 
+              ? (<Link to="/sign-in"><button className="auth-btn">Sign In</button></Link>) 
               : (<Link to="/account"><AccountCircleIcon /></Link>)
             }
           </li>
