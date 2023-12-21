@@ -75,7 +75,9 @@
 
 ### 📖 Description
 
-Cranberry is a daily tracker with motivating metrics to help users quit smoking. This is an API-consuming Single Page Application built with TypeScript and React. Utilizes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git) & implements JWT for user authentication.
+Cranberry is a daily tracker with motivating metrics to help users quit smoking. This is an API-consuming Single Page Application built with TypeScript and React. Utilizes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git) & implements JWT for user authentication. 
+
+The application was intentionally developed with an interactive and responsive design in mind.
 
 With Cranberry, users can track their progress in real-time; check out your Health progress as you achieve milestones over the course of your journey, or record daily Journal entries to document your cravings, and watch the data from your journals chart the ups and downs of your story in your own personal Timeline.
 
@@ -110,12 +112,15 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 <details>
 <summary>View Preview Images:</summary>
 
+#### Landing Page:
+
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/landing.png" alt="Cranberry landing page." />
 </p>
 
 > Landing page. If a user is already registered and authenticated when visiting the homepage, they will be redirected to their user dashboard.
 
+#### Registration:
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/register1.png" alt="Registration page, step one." />
@@ -129,6 +134,8 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 
 > Both the registration forms, and the sign in forms, have input validation with respective error messages.
 
+#### Profile:
+
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/profilev1.png" alt="Dashboard profile." />
 </p>
@@ -139,23 +146,49 @@ To get started, all you need to do is Sign Up for an account, and start writing 
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/profilev2.png" alt="Dashboard profile, responsive." />
 </p>
 
-> Cranberry was built with responsive design in mind. 
+> Cranberry was built with responsive design in mind.
+
+#### Health:
 
 <p align="center">
-    <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv2.png" alt="Health progress, responsive." />
+    <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv1.png" alt="Health progress." />
 </p>
 
 > Users can follow their progress in real time by visiting their Health page, which displays their progress and achievable health milestones.
 
 <p align="center">
-    <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals3.png" alt="Dashboard journals, responsive." />
+    <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv2.png" alt="Health progress, responsive." />
+</p>
+
+> There are multiple indicators throughout the application to help show users their progress: the Health page header displays the user's overall milestone progress, while each individual milestone displays a loading bar with its total progress, as well as a marker on the left-hand side with an appearance that changes depending on a milestone being achieved, or ongoing. 
+
+#### Journals:
+
+<p align="center">
+    <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals1.png" alt="Dashboard journals." />
 </p>
 
 > In their Journal page, users can Create, Read, Update, and Delete their own journal entries, documenting their progress and their cravings over time.
 
 <p align="center">
+    <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals3.png" alt="Dashboard journals, responsive." />
+</p>
+
+> The Journal page, and its corresponding forms, were intentionally built with ease of use and responsive design in mind.
+
+<p align="center">
     <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals2.png" alt="Dashboard journals create, responsive." />
 </p>
+
+> When presented with the form to create a new journal, if a user selects 'Yes' for having smoked, they'll then be presented with an additional input in the form, in which they can enter the number of cigarettes they smoked. If they select 'No', or leave the toggle un-selected, the additional input will remain hidden and the form assumes the user did not smoke.
+
+<p align="center">
+    <img width="50%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals4.png" alt="Dashboard journal detail, responsive." />
+</p>
+
+> Users are able to select any of their listed journals to inspect its great details, as well as edit or delete that particular journal entry.
+
+#### Timeline:
 
 <p align="center">
     <img width="80%" src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/timeline1.png" alt="Dashboard timeline, empty." />
