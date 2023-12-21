@@ -115,8 +115,8 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 
 ### 🔍 Previews & Documentation
 
-<details>
-<summary>View Preview Images & Documentation:</summary>
+<!-- <details>
+<summary>View Preview Images & Documentation:</summary> -->
 
 #### Landing Page:
 
@@ -208,7 +208,7 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 
 > Users will otherwise have access to their own interactive timeline, displaying their cravings and cigarettes smoked over their entire journey to quit smoking.
 
-</details>
+<!-- </details> -->
 
 
 ### 🏗️ Component Diagrams
