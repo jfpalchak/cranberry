@@ -76,7 +76,7 @@
 
 ### 📖 Description
 
-Cranberry is a daily tracker with motivating metrics to help users quit smoking. Cranberry is an API-consuming SPA built with TypeScript and React. Utilizes the Cranberry API & implements JWT for user authentication.
+Cranberry is a daily tracker with motivating metrics to help users quit smoking. This is an API-consuming Single Page Application built with TypeScript and React. Utilizes the Cranberry API & implements JWT for user authentication.
 
 ### 🦠 Known Bugs
 
@@ -313,4 +313,10 @@ Began work on backend. Can find the repository here: [CranberryAPI](https://gith
 * 5pm-6pm - continue updating styles for dashboard navigation & dash components
 * 6pm-9pm - update hero page styles, WIP Journal component styles; need to add a couple more analytics to Timeline + styles for Health + a few more metrics for the Profile
 ```
- 
+
+ ### Wednesday, 12/20/2023
+```
+* 8am-10am  - add Health Progress tracker to Profile component
+* 10am-12pm - refactor & create a custom hook for all Health related data
+* 1pm-5pm   - create additional Profile components & update styles
+```
