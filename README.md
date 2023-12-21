@@ -104,6 +104,37 @@ Cranberry is a daily tracker with motivating metrics to help users quit smoking.
 
 ### 🔍 Preview
 
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/landing.png" alt="Cranberry landing page." />
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/register1.png" alt="Registration page, step one." />
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/register2.png" alt="Registration page, step two." />
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/profilev1.png" alt="Dashboard profile." />
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/profilev2.png" alt="Dashboard profile, responsive." />
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv1.png" alt="Dashboard health progress." />
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/healthv2.png" alt="Health progress, responsive." />
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals1.png" alt="Dashboard journals." />
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/journals2.png" alt="Dashboard journals create, responsive." />
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/timeline1.png" alt="Dashboard timeline, empty." />
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/timeline2.png" alt="Dashboard timeline, results." />
+
+### Component Diagrams
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Profile-Dashboard.jpg" alt="Dashboard profile component diagram." />
+> Initial component diagram for the user profile dashboard components.
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Health-Dashboard.jpg" alt="Dashboard health component diagram." />
+> Initial component diagram for the user health progress/milestones dashboard components.
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Journals-Dashboard.jpg" alt="Dashboard journal component diagram." />
+> Initial component diagram for the user journals dashboard components.
+
+<img src="https://github.com/jfpalchak/cranberry/blob/assets_branch/assets/Timeline-Dashboard.jpg" alt="Dashboard timeline component diagram." />
+> Initial component diagram for the user timeline/analytics dashboard components.
+
 ------------------------------
 
 ## 🏁 Getting Started
