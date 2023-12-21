@@ -9,8 +9,8 @@
 // return the appropriate HTTP Authorization header.
 // Otherwise, return an empty object.
 export default function authHeader() {
-  const userId = sessionStorage.getItem("user");
-  const token = sessionStorage.getItem("token");
+  const userId = localStorage.getItem("user");
+  const token = localStorage.getItem("token");
 
   if (userId && token) {
     return { Authorization: `Bearer ${token}` };

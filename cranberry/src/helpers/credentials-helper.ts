@@ -2,18 +2,18 @@
 // user credentials (JWT and User Id) with local browser storage
 
 export const getCredentials = () => {
-  const token = sessionStorage.getItem('token');
-  const userId = sessionStorage.getItem('user');
+  const token = localStorage.getItem('token');
+  const userId = localStorage.getItem('user');
   
   return { token, userId }
 }
 
 export const removeCredentials = (): void => {
-  sessionStorage.removeItem('token');
+  localStorage.removeItem('token');
   sessionStorage.removeItem('user');
 }
 
 export const setCredentials = (token: string, userId: string): void => {
-  sessionStorage.setItem('token', token);
-  sessionStorage.setItem('user', userId);
+  localStorage.setItem('token', token);
+  localStorage.setItem('user', userId);
 }
