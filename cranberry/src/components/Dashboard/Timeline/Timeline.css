@@ -31,3 +31,19 @@
   background: var(--light);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+.timeline-warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  & .btn {
+    border-radius: 50px;
+  }
+  & svg {
+    font-size: 100px;
+    color: var(--primary);
+  }
+}

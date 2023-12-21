@@ -12,7 +12,9 @@ import {
 import 'chartjs-adapter-date-fns';
 import { Chart } from 'react-chartjs-2';
 import type { ChartData, ChartOptions } from 'chart.js';
+import { Link } from 'react-router-dom';
 import type { IJournal } from '../../../types';
+import QueryStatsIcon from '@mui/icons-material/QueryStats';
 
 ChartJS.register(
   LineElement, 
@@ -81,8 +83,12 @@ export default function Timeline({ userJournals }: { userJournals: IJournal[] })
           ></Chart>
         </div>
         ) : (
-          <div className="time-scale">
-            <h1>You'll need to add a couple journals before there can be data to plot!</h1>
+          <div className="time-scale timeline-warning">
+            <h1>You'll need to add a couple more journals before there's enough data to plot.</h1>
+            <QueryStatsIcon />
+            <Link to="/dashboard/journals/new">
+              <button className="btn alternate-btn">Add a Journal</button>
+            </Link>
           </div>
       )}
       </div>
