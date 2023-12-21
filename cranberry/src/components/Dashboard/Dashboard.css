@@ -9,6 +9,12 @@
   /* width: 100%; */
 }
 
+.section-header {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+}
+
 .dash-section {
   padding: 20px;
   width: 100%;
