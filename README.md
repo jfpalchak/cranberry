@@ -207,15 +207,119 @@ With Cranberry, users can track their progress in real-time; check out your Heal
 
 ### 📋 Prerequisites
 
-#### 🛰️ Install Cranberry API
+#### 🛰️ Installing Cranberry API
 
 This application relies on the CranberryAPI for all user data and authentication. In order to properly run this web app, you'll need to install and run its companion API.
 
-You can find the repository containing the necessary files and documentation, with instructions for setup and installation, here:
+Beyond the steps listed below, you can find the repository containing the necessary files and documentation, with instructions for setup and installation, here:
 
 * [CranberryAPI v1.0](https://github.com/jfpalchak/CranberryAPI.git)
 
-### ⚙️ Setup and Use
+#### Install .NET Core
+* On macOS with Apple Chip:
+  * [Click here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.402-macos-arm64-installer) to download the .NET Core SDK from Microsoft Corp for macOS.
+* On macOs with Intel Chip:
+  * [Click here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.402-macos-x64-installer) to download the .NET Core SDK from Microsoft Corp for macOS.
+* On Windows:
+  * [Click here](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.402-windows-x64-installer) to download the 64-bit .NET Core SDK from Microsoft Corp for Windows.
+
+#### Install dotnet-script
+In Terminal for macOS or PowerShell for Windows, enter the following command to install the REPL dotnet-script:
+
+ ```
+ $ dotnet tool install -g dotnet-script
+ ```
+
+#### Install dotnet-ef
+For Entity Framework Core, we'll use a tool called dotnet-ef to reference the project's migrations and update our database accordingly. To install this tool globally, run the following command in your terminal:
+
+```
+$ dotnet tool install --global dotnet-ef --version 6.0.0
+```
+
+Optionally, you can run the following command to verify that EF Core CLI tools are correctly installed:
+
+```
+$ dotnet ef
+```
+
+#### Install MySQL Workbench
+This project assumes you have MySQL Server and MySQL Workbench installed on your system. If you do not have these tools installed, follow along with the installation steps for the the necessary tools introduced in the series of lessons found here on [LearnHowToProgram](https://full-time.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql).
+
+Or, [Download and install the appropriate version of MySQL Workbench](https://dev.mysql.com/downloads/workbench/).
+
+#### Install Postman
+(Optional) [Download and install Postman](https://www.postman.com/downloads/).
+
+#### Code Editor
+
+  To view or edit the code, you will need a code editor or text editor. A popular open-source choice for a code editor is VisualStudio Code.
+
+  1) Code Editor Download:
+     * [VisualStudio Code](https://code.visualstudio.com/)
+  2) Click the download most applicable to your OS and system.
+  3) Wait for download to complete, then install -- Windows will run the setup exe and macOS will drag and drop into applications.
+  4) Optionally, create a [GitHub Account](https://github.com)
+
+### ⚙️ Setup and Use: Cranberry API
+
+  #### Cloning
+
+  1) Navigate to the [Cranberry API repository here](https://github.com/jfpalchak/CranberryAPI.git).
+  2) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
+  3) Open up your system Terminal or GitBash, navigate to your desktop with the command: `cd Desktop`, or whichever location suits you best.
+  4) Clone the repository to your desktop: `$ git clone https://github.com/jfpalchak/CranberryAPI.git`
+  5) Run the command `cd CranberryAPI/CranberryAPI` to enter into the project directory.
+  6) View or Edit:
+      * Code Editor - Run the command `code .` to open the project in VisualStudio Code for review and editing.
+      * Text Editor - Open by double clicking on any of the files to open in a text editor.
+
+  #### Download
+
+  1) Navigate to the [Cranberry API repository here](https://github.com/jfpalchak/CranberryAPI.git).
+  2) Click 'Clone or download' to reveal the HTTPS url ending with .git and the 'Download ZIP' option.
+  3) Click 'Download ZIP' and extract.
+  4) Open by double clicking on any of the files to open in a text editor.
+
+  #### AppSettings
+
+  1) Create a new file in the CranberryAPI project directory named `appsettings.json`
+  2) Add in the following code snippet to the new `appsettings.json` file:
+  
+  ```json
+  {
+      "Logging": {
+          "LogLevel": {
+          "Default": "Warning"
+          }
+      },
+      "AllowedHosts": "*",
+      "ConnectionStrings": {
+          "DefaultConnection": "Server=localhost;Port=3306;database=cranberry_api;uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];"
+      },
+      "JWT": {
+          "ValidAudience": "example-audience",
+          "ValidIssuer": "example-issuer",
+          "Secret": "[YOUR-SECRET-HERE]"
+    }
+  }
+  ```
+  3) Change the server, port, and user id as necessary. Replace `[YOUR-USERNAME-HERE]` and `[YOUR-PASSWORD-HERE]` with your personal MySQL username and password (set at installation of MySQL).
+  4) In order to properly implement JSON Web Tokens for API authorization, replace `[YOUR-SECRET-HERE]` with your own personalized string.
+     1) NOTE: The `Secret` is a special string that will be used to encode our JWTs, to make them unique to our application. Depending on what type of algorithm being used, the Secret string will need to be a certain length. **In this case, it needs to be at least 16 characters long**. 
+   
+  #### Database
+  1) Navigate to CranberryAPI/CranberryAPI directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/CranberryAPI/CranberryAPI`).
+  2) Run the command `dotnet ef database update` to generate the database through Entity Framework Core.
+  3) (Optional) To update the database with any changes to the code, run the command `dotnet ef migrations add <MigrationsName>` which will use Entity Framework Core's code-first principle to generate a database update. 
+     1) After, run the previous command `dotnet ef database update` to update the database.
+
+  #### Launch the API
+  1) Navigate to CranberryAPI/CranberryAPI directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/CranberryAPI/CranberryAPI`).
+  2) Run the command `dotnet watch run` to have access to the API in Postman or browser.
+
+
+### ⚙️ Setup and Use: Cranberry Client
 
   #### Cloning
 
