@@ -110,6 +110,8 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 * Chakra UI
 * HTML
 * CSS
+  
+------------------------------
 
 ### 🔍 Previews & Documentation
 
