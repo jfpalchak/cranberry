@@ -365,12 +365,16 @@ Or, [Download and install the appropriate version of MySQL Workbench](https://de
   1) Navigate to CranberryAPI/CranberryAPI directory using the MacOS Terminal or Windows Powershell (e.g. `cd Desktop/CranberryAPI/CranberryAPI`).
   2) Run the command `dotnet watch run` to have access to the API.
 
+------------------------------
+
 <h3 align="center" >
     With the API launched, our frontend has access to all the data it needs to run!
 </h3>
 <h3 align="center" >
     Next, let's get the client up and running.
 </h3>
+
+------------------------------
 
 ### ⚙️ Setup and Use: Cranberry Client
 
