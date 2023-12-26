@@ -77,7 +77,7 @@
 
 Cranberry is a daily tracker with motivating metrics to help users quit smoking. 
 
-This is a full-stack application, in which the front-end client is built with TypeScript and React, and consumes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git), which is built in C#/.NET. The application implements JWT for user authentication. 
+This is a full-stack application, in which the front-end client is built with TypeScript and React, and consumes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git), which is built in C#/.NET and utilizes a MySQL database. The application implements Json Web Tokens for user authentication. 
 
 With Cranberry, users can track their progress in real-time; check out your Health progress as you achieve milestones over the course of your journey, or record daily Journal entries to document your cravings, and watch the data from your journals chart the ups and downs of your story in your own personal Timeline.
 
