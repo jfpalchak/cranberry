@@ -29,7 +29,6 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Poppins', sans-serif; */
 }
 
 li {
@@ -262,16 +261,10 @@ header nav a:hover {
 /* ##################### */
 .signin-card {
   margin-top: 75px;
-  
 }
-
-/* .auth-card {
-  margin-top: 20px;
-} */
 
 .auth-main {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 .card-header {
@@ -394,13 +387,4 @@ header nav a:hover {
     display: none;
   }
 
-
 }
-
-/* @media screen and (max-width: 650px) and (min-width: 475px) {
-
-}
-
-@media screen and (max-width: 475px) {
-
-} */

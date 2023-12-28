@@ -75,9 +75,9 @@
 
 ### 📖 Description
 
-Cranberry is a daily tracker with motivating metrics to help users quit smoking. 
+A play on _"quitting cold turkey,"_ Cranberry is a daily tracker with motivating metrics to help users quit smoking. 
 
-This is a full-stack application, in which the front-end client is built with TypeScript and React, and consumes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git), which is built in C#/.NET and utilizes a MySQL database. The application implements Json Web Tokens for user authentication. 
+This is a full-stack application, in which the front-end client is built with TypeScript and React, and consumes the [Cranberry API](https://github.com/jfpalchak/CranberryAPI.git), which is built in C#/.NET and utilizes a MySQL database. The application implements JSON Web Tokens for user authentication. 
 
 With Cranberry, users can track their progress in real-time; check out your Health progress as you achieve milestones over the course of your journey, or record daily Journal entries to document your cravings, and watch the data from your journals chart the ups and downs of your story in your own personal Timeline.
 
@@ -98,14 +98,10 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 * React (v18.2.0)
 * React Router (v6.20.1)
 * Redux Toolkit (v2.0.1)
-* React-Redux (v9.0.4)
 * Axios (v1.6.2)
 * Chart.js (v4.4.1)
 * react-chartjs-2 (v5.2.0)
-* chartjs-adapter-date-fns (v3.0.0)
 * date-fns (v2.30.0)
-* Node.js (v18.17.1)
-* npm (v8.1.2)
 * Material UI
 * Chakra UI
 * HTML
