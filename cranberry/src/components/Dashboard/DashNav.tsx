@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks";
 import { signOut } from "../../store/authActions";

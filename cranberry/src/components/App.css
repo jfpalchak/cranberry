@@ -1,0 +1,261 @@
+/* ####################### */
+/* HEADER COMPONENT STYLES */
+/* ####################### */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+
+  & svg {
+    color: var(--primary);
+    transition: 0.3s ease;
+  }
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+
+  & img {
+    position: relative;
+    top: 7px;
+    right: 4px;
+    width: 45px;
+  }
+}
+
+header nav ul{
+  margin: auto;
+  display: flex;
+  justify-content: row;
+  gap: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid transparent;
+  transition: 0.2s;
+}
+
+header nav a:hover {
+  border-bottom: 1px solid black;
+}
+
+.auth-btn {
+  font-weight: bold;
+  background: white;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: .5em;
+  transition: 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.537);
+    border: 2px solid rgba(0, 0, 0, 0.537);
+  }
+}
+
+/* ########### */
+/* HERO/SPLASH */
+/* ########### */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 650px;
+  padding-top: 50px;
+  background: url(./../img/splash-2.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 75%;
+}
+
+.hero-text {
+  font-size: 2.5em;
+  width: 70%;
+  margin-top: 70px;
+  margin-left: 15px;
+  letter-spacing: 2px;
+}
+
+.splash-btn {
+  position: relative;
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size: 1.2em;
+  color: white;
+  background: var(--primary);
+  border: 2px var(--primary) solid;
+  border-radius: 3px;
+  transition: all 0.3s ease-in;
+
+  &:hover {
+    cursor: pointer;
+    background: white;
+    color: var(--primary);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+}
+
+.hero-cloud {
+  position: absolute;
+  right: 600px;
+  z-index: -2;
+  width: 100px;
+  transition: 0.3s ease;
+  animation-duration: 55s;
+  animation-iteration-count: infinite;
+  animation-name: slideRight;
+}
+
+.hero-cloud-2 {
+  position: absolute;
+  left: 50px;
+  top: 100px;
+  z-index: -1;
+  width: 300px;
+  transition: 0.3s ease;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-name: slideLeft;
+}
+
+/* CLOUD ANIMATIONS */
+@keyframes slideRight {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: .8;
+  }
+  100% {
+    left: 600px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    left: 800px;
+    opacity: 0;
+  }
+  50% {
+    opacity: .9;
+  }
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}
+
+/* ##################### */
+/*  SIGN-IN / REGISTER   */
+/* ##################### */
+.signin-card {
+  margin-top: 75px;
+}
+
+.auth-main {
+  display: flex;
+  justify-content: center;
+}
+.card-header {
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5em;
+  max-width: 450px;
+}
+
+.card-body {
+  padding: 50px 50px 10px 50px;
+  width: 450px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: var(--light);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form label {
+  margin-bottom: -15px;
+}
+
+.auth-form button {
+  margin-top: 10px;
+}
+
+.error-message {
+  background: rgba(240, 88, 88, 0.284);
+  color: darkred;
+  padding: .5em;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.callout {
+  padding: 20px;
+  width: 350px;
+  text-align: center;
+}
+
+.callout a {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.form-cloud-1, .form-cloud-2 {
+  z-index: -2;
+  position: absolute;
+  opacity: 0.45;
+}
+
+.form-cloud-1 {
+  top: 100px;
+  right: 10px;
+  left: 285px;
+  width: 175px;
+}
+
+.form-cloud-2 {
+  top: 80px;
+  right: 115px;
+  width: 450px;
+}
+
+/* ########## */
+/* RESPONSIVE */
+/* ########## */
+
+@media screen and (max-width: 750px) {
+
+  .hero {
+    background: none;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    margin-top: -15px;
+  }
+
+  .hero-cloud {
+    display: none;
+  }
+
+}

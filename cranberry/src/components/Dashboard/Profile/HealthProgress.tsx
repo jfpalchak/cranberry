@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useHealthBenefits } from '../../../hooks';
 import { LinearProgress } from '@mui/material';
-import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 

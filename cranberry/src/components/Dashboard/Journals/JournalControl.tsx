@@ -6,7 +6,6 @@ import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
 import JournalEdit from './JournalEdit';
 import { Fab, Tooltip } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 import type { IUser, IJournal } from "../../../types";
 import './Journals.css';
 

@@ -1,4 +1,3 @@
-import './Timeline.css';
 import { 
   Chart as ChartJS,
   LineElement, 
@@ -11,10 +10,11 @@ import {
 } from 'chart.js';
 import 'chartjs-adapter-date-fns';
 import { Chart } from 'react-chartjs-2';
-import type { ChartData, ChartOptions } from 'chart.js';
 import { Link } from 'react-router-dom';
+import type { ChartData, ChartOptions } from 'chart.js';
 import type { IJournal } from '../../../types';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import './Timeline.css';
 
 ChartJS.register(
   LineElement, 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import type { IJournal } from "../../../types";
 import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
+import type { IJournal } from "../../../types";
 
 export default function JournalEdit({ journals, onSubmission }: JournalEditProps) {
 

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import format from "date-fns/format";
-import type { IJournal } from "../../../types"
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
+import type { IJournal } from "../../../types"
 
 export default function JournalList(props: JournalListProps) {
 

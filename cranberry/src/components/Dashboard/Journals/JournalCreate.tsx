@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
-// import ToggleButton from '@mui/material/ToggleButton';
-// import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { Input } from '@chakra-ui/react';
 import type { IJournal, IUser } from "../../../types";
 

@@ -1,8 +1,8 @@
-import './Health.css';
-import { LinearProgress } from '@mui/material';
 import { useHealthBenefits } from '../../../hooks';
-import type { IUser } from '../../../types';
+import { LinearProgress } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import type { IUser } from '../../../types';
+import './Health.css';
 
 export default function Health({ user }: { user: IUser }) {
 

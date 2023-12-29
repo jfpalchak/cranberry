@@ -8,6 +8,7 @@ import Register from './Register';
 import SignIn from './SignIn';
 import Home from './Home';
 import Header from './Header';
+import './App.css';
 
 function App() {
 
