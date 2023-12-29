@@ -36,9 +36,6 @@ export default function JournalList(props: JournalListProps) {
               <div className="date-card-head">
                 {format(new Date(journal.date), 'MMMM dd, yyyy')}
               </div>
-              {/* <div className="date-card-body">
-                {(new Date(journal.date)).getDate()}
-              </div> */}
             </div>
           </Link>
         </li>

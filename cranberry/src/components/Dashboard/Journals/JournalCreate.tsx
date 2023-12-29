@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
-import { Input } from '@chakra-ui/react';
 import type { IJournal, IUser } from "../../../types";
 
 export default function JournalCreate(props: JournalCreateProps) {
@@ -42,12 +41,12 @@ export default function JournalCreate(props: JournalCreateProps) {
       <form onSubmit={handleCreateJournal}>
         <div className="journal-form">
           <label>Entry Date:</label>
-          <Input 
+          <input 
             type="datetime-local"
             id="date"
             name="date"
             onChange={handleChange} 
-            isRequired={true}
+            required
           />
           <label>Craving Intensity:</label>
           <Slider

@@ -7,7 +7,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import { Input } from '@chakra-ui/react';
 import cloudLeft from './../img/cloudLeft.png';
 import cloudRight from './../img/cloudRight.png';
 
@@ -146,13 +145,13 @@ function Register() {
             <br/>
           <form className="register-form auth-form" onSubmit={handleRegister}>
             <label htmlFor="quitDate">When is (or was) your quit date?</label>
-            <Input 
+            <input 
               type="datetime-local"
               value={formData.quitDate}
               id="quitDate"
               name="quitDate"
               onChange={handleChange} 
-              isRequired={true}
+              required
             />
             <label htmlFor="avgSmokedDaily">About how many cigarettes do (or did) you smoke a day?</label>
             <input 

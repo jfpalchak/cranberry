@@ -51,7 +51,7 @@ export default function JournalControl(props: JournalControlProps) {
   const handleDeletingJournal = async(userId: string, journalId: number) => {
     JournalService.deleteUserJournal(userId, journalId)
       .then(response => {
-        setUserJournals(userJournals.filter((journal => journal.journalId != journalId)));
+        setUserJournals(userJournals.filter((journal => journal.journalId !== journalId)));
         console.log(`JOURNAL ${journalId} DELETED.`)
         navigate("/dashboard/journals/");
       })

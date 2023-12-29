@@ -103,7 +103,6 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 * react-chartjs-2 (v5.2.0)
 * date-fns (v2.30.0)
 * Material UI
-* Chakra UI
 * HTML
 * CSS
   
