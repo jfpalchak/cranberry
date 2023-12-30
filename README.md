@@ -23,7 +23,7 @@
             <img src="https://img.shields.io/github/contributors/jfpalchak/cranberry.svg?style=plastic">
         </a>
         &nbsp; -->
-        <a href="https://github.com/jfpalchak/cranberry/stargazers">
+        <!-- <a href="https://github.com/jfpalchak/cranberry/stargazers">
             <img src="https://img.shields.io/github/stars/jfpalchak/cranberry.svg?color=yellow&style=plastic">
         </a>
         &nbsp;
@@ -33,7 +33,7 @@
         &nbsp;
         <a href="https://github.com/jfpalchak/cranberry/blob/main/LICENSE.txt">
             <img src="https://img.shields.io/github/license/jfpalchak/cranberry?color=orange&style=plastic">
-        </a>
+        </a> -->
         <!-- &nbsp;
         <a href="">
             <img src="https://img.shields.io/badge/">
@@ -46,11 +46,11 @@
 </p>
 
 <!-- Project Links -->
-<p align="center">
+<!-- <p align="center">
     <a href="https://github.com/jfpalchak/cranberry.git"><big>Project Docs</big></a> ·
     <a href="https://github.com/jfpalchak/cranberry/issues"><big>Report Bug</big></a> ·
     <a href="https://github.com/jfpalchak/cranberry/issues"><big>Request Feature</big></a>
-</p>
+</p> -->
 
 ------------------------------
 ### <u>Table of Contents</u>

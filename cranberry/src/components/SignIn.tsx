@@ -5,6 +5,7 @@ import { signIn} from "../store/authActions";
 import cloudLeft from './../img/cloudLeft.png';
 import cloudRight from './../img/cloudRight.png';
 
+import { CircularProgress } from '@mui/material';
 
 function SignIn() {
 
@@ -12,6 +13,7 @@ function SignIn() {
   const dispatch = useAppDispatch();
   const { error } = useAppSelector(state => state.auth);
 
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<SignInFormState>({
     email: '',
     password: ''
@@ -25,12 +27,16 @@ function SignIn() {
   const handleSignIn = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setLoading(true);
+
     dispatch(signIn({ email: formData.email, password: formData.password}))
       .unwrap()
       .then(() => {
+        setLoading(false);
         navigate("/dashboard/profile");
       })
       .catch((error) => {
+        setLoading(false);
         console.log("Error logging in: ", error); // ! CONSOLE LOG
       })
   }
@@ -69,7 +75,20 @@ function SignIn() {
               required
               onChange={handleChange}
             />
-            <button className="btn primary-btn" type="submit">SIGN IN</button>
+            <button className="btn primary-btn" type="submit">
+              SIGN IN
+              {loading &&
+                <CircularProgress 
+                  size={20} 
+                  sx={{ 
+                    color: 'white', 
+                    position: 'absolute', 
+                    top: '50%', 
+                    left: '53%' 
+                  }} 
+                />
+              }
+            </button>
           </form>
 
           <div className="callout">

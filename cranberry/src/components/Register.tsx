@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { registerUser, signIn } from '../store/authActions';
+import { CircularProgress } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -38,31 +39,31 @@ function Register() {
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(formData);
+    console.log(formData); // ! CONSOLE LOG
 
-      setLoading(true);
+    setLoading(true);
 
-      dispatch(registerUser(formData))
-      .unwrap()
-      .then(() => {
-        dispatch(signIn({ email: formData.email, password: formData.password }))
-          .unwrap()
-          .then(() => {
-            setNextStep(false);
-            setLoading(false);
-            navigate("/dashboard/profile");
-          })
-          .catch((error) => {
-            setNextStep(false);
-            setLoading(false);
-            console.log("Error signing in from registration: ", error); // ! CONSOLE LOG
-          });
-      })
-      .catch((error) => {
-        setNextStep(false);
-        setLoading(false);
-        console.log("Error registering user: ", error); // ! CONSOLE LOG
-      });
+    dispatch(registerUser(formData))
+    .unwrap()
+    .then(() => {
+      dispatch(signIn({ email: formData.email, password: formData.password }))
+        .unwrap()
+        .then(() => {
+          setNextStep(false);
+          setLoading(false);
+          navigate("/dashboard/profile");
+        })
+        .catch((error) => {
+          setNextStep(false);
+          setLoading(false);
+          console.log("Error signing in from registration: ", error); // ! CONSOLE LOG
+        });
+    })
+    .catch((error) => {
+      setNextStep(false);
+      setLoading(false);
+      console.log("Error registering user: ", error); // ! CONSOLE LOG
+    });
   }
 
   const handleNextStep = (e: React.FormEvent<HTMLFormElement>) => {
@@ -184,7 +185,19 @@ function Register() {
               onChange={handleChange} 
               required 
             />
-            <button className="btn primary-btn">SUBMIT</button>
+            <button className="btn primary-btn">
+              SUBMIT
+              {loading &&
+                <CircularProgress 
+                  size={20} 
+                  sx={{ 
+                    color: 'white', 
+                    position: 'absolute', 
+                    left: '60%',
+                  }} 
+                />
+              }
+            </button>
           </form>
         </DialogContent>
         <DialogActions>
