@@ -397,6 +397,15 @@ Or, [Download and install the appropriate version of MySQL Workbench](https://de
   3) Click 'Download ZIP' and extract.
   4) Open by double clicking on any of the files to open in a text editor.
 
+  #### .env 
+
+  1) Create a new file in the 'cranberry' project directory named `.env`
+  2) Add in the following code snippet to the new `.env` file:
+  
+  ```json
+  REACT_APP_API_URL="http://localhost:5000/api"
+  ```
+
   #### Installation
 
   1) Assuming you've followed the previous steps, in your Terminal, make sure you've changed your working directory to be in the project's directory.
