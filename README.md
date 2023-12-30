@@ -83,6 +83,9 @@ With Cranberry, users can track their progress in real-time; check out your Heal
 
 To get started, all you need to do is Sign Up for an account, and start writing journals.
 
+You can demo the project at its current state here:
+* https://cranberry-axec.onrender.com/ 
+
 ### 🦠 Known Bugs & WIP
 
 * WIP: User Account full CRUD functionality. Currently, a user cannot edit or delete their registered information.
