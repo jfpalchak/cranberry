@@ -85,7 +85,7 @@ To get started, all you need to do is Sign Up for an account, and start writing 
 
 ### 🦠 Known Bugs & WIP
 
-* WIP: User Account full CRUD functionality. As of submission, a user cannot edit or delete their registered information.
+* WIP: User Account full CRUD functionality. Currently, a user cannot edit or delete their registered information.
 * WIP: The number of cigarettes smoked does not yet affect the user's overall metrics. 
   * WIP: Allow users to optionally reset their 'Smoke Free' clock.
 * WIP: Journals state management is not yet managed by a Redux store.
