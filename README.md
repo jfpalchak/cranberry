@@ -16,41 +16,12 @@
         <a href="https://github.com/jfpalchak">
             <strong>by Joey Palchak</strong>
         </a>
-    </p>
-    <!-- Project Shields -->
-    <p align="center">
-        <!-- <a href="https://github.com/jfpalchak/cranberry/graphs/contributors">
-            <img src="https://img.shields.io/github/contributors/jfpalchak/cranberry.svg?style=plastic">
-        </a>
-        &nbsp; -->
-        <!-- <a href="https://github.com/jfpalchak/cranberry/stargazers">
-            <img src="https://img.shields.io/github/stars/jfpalchak/cranberry.svg?color=yellow&style=plastic">
-        </a>
-        &nbsp;
-        <a href="https://github.com/jfpalchak/cranberry/issues">
-            <img src="https://img.shields.io/github/issues/jfpalchak/cranberry?style=plastic">
-        </a>
-        &nbsp;
-        <a href="https://github.com/jfpalchak/cranberry/blob/main/LICENSE.txt">
-            <img src="https://img.shields.io/github/license/jfpalchak/cranberry?color=orange&style=plastic">
-        </a> -->
-        <!-- &nbsp;
-        <a href="">
-            <img src="https://img.shields.io/badge/">
-        </a> -->
-    </p>    
+    </p> 
 </p>
 
 <p align="center">
   <small>Initiated December 8th, 2023</small>
 </p>
-
-<!-- Project Links -->
-<!-- <p align="center">
-    <a href="https://github.com/jfpalchak/cranberry.git"><big>Project Docs</big></a> ·
-    <a href="https://github.com/jfpalchak/cranberry/issues"><big>Report Bug</big></a> ·
-    <a href="https://github.com/jfpalchak/cranberry/issues"><big>Request Feature</big></a>
-</p> -->
 
 ------------------------------
 ### <u>Table of Contents</u>
@@ -470,7 +441,7 @@ If you have any feedback or concerns, please contact one of the contributors.
 
 ### ⚖️ License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Copyright (C) 2023 Joey Palchak. All Rights Reserved.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 ```
 MIT License
