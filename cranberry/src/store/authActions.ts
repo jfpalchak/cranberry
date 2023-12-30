@@ -23,7 +23,6 @@ export const registerUser = createAsyncThunk(
     }
     try {
       const response = await AuthService.register(userRegistration);
-      console.log("Register success: ", response) // ! CONSOLE LOG
       return response.data;
     }
     catch(error: any) {
@@ -33,8 +32,6 @@ export const registerUser = createAsyncThunk(
         || error.response.data.errors.Password
         || error.response.data.errors.UserName
       
-      console.log("Register error: ", error) // ! CONSOLE LOG
-
       thunkAPI.dispatch(setError(message))
       return thunkAPI.rejectWithValue(message as string );
     }
@@ -50,8 +47,6 @@ export const signIn = createAsyncThunk(
       
       setCredentials(token, userId);
 
-      console.log( "Sign in response: ", response) // ! CONSOLE LOG
-
       return response.data;
     }
     catch (error: any) {
@@ -62,6 +57,7 @@ export const signIn = createAsyncThunk(
       message = message.includes("Unable") 
         ? message.concat(" Please make sure your email or password is correct.")
         : message.concat("");
+        
       thunkAPI.dispatch(setError(message))
       return thunkAPI.rejectWithValue(message);
     }
@@ -82,9 +78,7 @@ export const fetchUserData = createAsyncThunk(
     try {
       const { data } = await AuthService.getUserProfile();
 
-      console.log("User Data", data) // ! CONSOLE LOG
       return data;
-
     }
     catch (error: any) {
       if (error.response && error.response.data.message) {

@@ -29,7 +29,6 @@ export default function JournalControl(props: JournalControlProps) {
       navigate(`/dashboard/journals/${newJournal.journalId}`)
     })
     .catch(error => {
-      console.log("Create Journal error: ", error); // ! CONSOLE LOG
     });
   };
 
@@ -40,11 +39,10 @@ export default function JournalControl(props: JournalControlProps) {
         const newJournalList = [...userJournals];
         newJournalList[jIndex] = journalData;
         setUserJournals(newJournalList);
-        console.log("Edit Journal success.");
         navigate(`/dashboard/journals/${journalData.journalId}`)
       })
       .catch(error => {
-        console.log("Edit Journal error: ", error);
+        console.log("Edit Journal error: ", error); // ! CONSOLE LOG
       })
   }
 
@@ -52,11 +50,10 @@ export default function JournalControl(props: JournalControlProps) {
     JournalService.deleteUserJournal(userId, journalId)
       .then(response => {
         setUserJournals(userJournals.filter((journal => journal.journalId !== journalId)));
-        console.log(`JOURNAL ${journalId} DELETED.`)
         navigate("/dashboard/journals/");
       })
       .catch(error => {
-        console.log("Delete Journal error: ", error);
+        console.log("Delete Journal error: ", error); // ! CONSOLE LOG
       });
   };
 

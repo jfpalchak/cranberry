@@ -16,8 +16,6 @@ export default function useElapsedTime(quitDate: Date) {
       }, 1000 // every second
     );
 
-    console.log("tick", elapsedTime) // ! CONSOLE LOG
-
     return () => clearInterval(timeInterval);
   }, [])
 

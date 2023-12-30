@@ -19,8 +19,6 @@ export default function Health({ user }: { user: IUser }) {
     let text = array[1];
     return {units, text}
   }
-
-  console.log("Health page rendered")
   
   // TODO : refactor into smaller components
 

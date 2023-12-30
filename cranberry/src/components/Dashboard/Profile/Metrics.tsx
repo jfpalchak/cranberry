@@ -17,8 +17,6 @@ function Metrics({ user }: { user: IUser }) {
 
   const userProgress = useProgressCalculations(user);
 
-  console.log("Metrics render")
-
   return (
     <div className="progress-trackers">
 

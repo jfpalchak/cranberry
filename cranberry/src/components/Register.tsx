@@ -39,8 +39,6 @@ function Register() {
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    console.log(formData); // ! CONSOLE LOG
-
     setLoading(true);
 
     dispatch(registerUser(formData))
@@ -56,13 +54,11 @@ function Register() {
         .catch((error) => {
           setNextStep(false);
           setLoading(false);
-          console.log("Error signing in from registration: ", error); // ! CONSOLE LOG
         });
     })
     .catch((error) => {
       setNextStep(false);
       setLoading(false);
-      console.log("Error registering user: ", error); // ! CONSOLE LOG
     });
   }
 

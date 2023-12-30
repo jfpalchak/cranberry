@@ -37,7 +37,6 @@ function SignIn() {
       })
       .catch((error) => {
         setLoading(false);
-        console.log("Error logging in: ", error); // ! CONSOLE LOG
       })
   }
 
