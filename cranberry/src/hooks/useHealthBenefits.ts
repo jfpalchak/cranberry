@@ -13,7 +13,6 @@ export default function useHealthBenefits(userQuitDate: string) {
   });
 
   useEffect(() => {
-    console.log("Benefits hook is rendering.")
     if (userQuitDate){
 
       // Calculate the percentage of hours met to achieve a particular health milestone.
