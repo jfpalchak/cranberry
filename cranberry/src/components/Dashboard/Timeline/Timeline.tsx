@@ -1,7 +1,9 @@
 import { 
   Chart as ChartJS,
-  LineElement, 
+  LineElement,
+  LineController, 
   BarElement,
+  BarController,
   TimeScale, 
   LinearScale, 
   PointElement, 
@@ -17,8 +19,10 @@ import QueryStatsIcon from '@mui/icons-material/QueryStats';
 import './Timeline.css';
 
 ChartJS.register(
-  LineElement, 
+  LineElement,
+  LineController,
   BarElement,
+  BarController,
   TimeScale, 
   LinearScale, 
   PointElement, 
