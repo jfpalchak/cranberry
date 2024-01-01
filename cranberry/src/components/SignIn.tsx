@@ -82,8 +82,8 @@ function SignIn() {
                   sx={{ 
                     color: 'white', 
                     position: 'absolute', 
-                    top: '50%', 
-                    left: '53%' 
+                    top: '59.2%', 
+                    left: '56%' 
                   }} 
                 />
               }
