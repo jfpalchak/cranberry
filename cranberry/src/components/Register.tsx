@@ -189,6 +189,7 @@ function Register() {
                   sx={{ 
                     color: 'white', 
                     position: 'absolute', 
+                    top: '25%',
                     left: '60%',
                   }} 
                 />

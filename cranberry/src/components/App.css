@@ -21,6 +21,7 @@
 .primary-btn {
   color: white;
   background: var(--primary-dark);
+  position: relative;
   border: none;
   font-weight: bold;
   background-size: 300% 100%;
