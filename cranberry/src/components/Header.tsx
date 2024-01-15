@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import berry from './../img/berry1.png';
+import berry from './../assets/img/berry1.png';
 
 export default function Header({ loggedIn }: HeaderProps) {
 

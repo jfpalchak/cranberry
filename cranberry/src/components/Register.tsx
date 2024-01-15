@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppSelector, useAppDispatch } from '../store/hooks';
+import { useAppDispatch } from '../store/hooks';
 import { registerUser, signIn } from '../store/authActions';
 import { CircularProgress } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
@@ -8,16 +8,16 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import cloudLeft from './../img/cloudLeft.png';
-import cloudRight from './../img/cloudRight.png';
+import cloudLeft from './../assets/img/cloudLeft.png';
+import cloudRight from './../assets/img/cloudRight.png';
 
 function Register() {
   
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { error } = useAppSelector(state => state.auth);
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [nextStep, setNextStep] = useState(false);
   const [formData, setFormData] = useState<RegisterFormState>({
     userName: '',
@@ -54,11 +54,13 @@ function Register() {
         .catch((error) => {
           setNextStep(false);
           setLoading(false);
+          setError(error);
         });
     })
     .catch((error) => {
       setNextStep(false);
       setLoading(false);
+      setError(error);
     });
   }
 

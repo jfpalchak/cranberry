@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import cloud from './../img/cloudRight.png';
-import cloud2 from './../img/cloudLeft.png';
-
+import cloud from './../assets/img/cloudRight.png';
+import cloud2 from './../assets/img/cloudLeft.png';
 
 export default function Home() {
 

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { useAppDispatch } from "../store/hooks";
 import { signIn} from "../store/authActions";
-import cloudLeft from './../img/cloudLeft.png';
-import cloudRight from './../img/cloudRight.png';
+import cloudLeft from './../assets/img/cloudLeft.png';
+import cloudRight from './../assets/img/cloudRight.png';
 
 import { CircularProgress } from '@mui/material';
 
@@ -11,9 +11,9 @@ function SignIn() {
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { error } = useAppSelector(state => state.auth);
 
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [formData, setFormData] = useState<SignInFormState>({
     email: '',
     password: ''
@@ -37,6 +37,7 @@ function SignIn() {
       })
       .catch((error) => {
         setLoading(false);
+        setError(error);
       })
   }
 

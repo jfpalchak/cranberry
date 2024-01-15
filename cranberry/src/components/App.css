@@ -147,9 +147,9 @@ header nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 650px;
+  height: 102vh;
   padding-top: 50px;
-  background: url(./../img/splash-2.png);
+  background: url(./../assets/img/splash-2.png);
   background-position: right;
   background-repeat: no-repeat;
   background-size: 75%;
