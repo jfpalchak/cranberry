@@ -62,7 +62,6 @@ You can demo the project at its current state here:
 * WIP: User Account full CRUD functionality. Currently, a user cannot edit or delete their registered information.
 * WIP: The number of cigarettes smoked does not yet affect the user's overall metrics. 
   * WIP: Allow users to optionally reset their 'Smoke Free' clock.
-* WIP: Journals state management is not yet managed by a Redux store.
 * If any additional bugs are discovered, please contact the author.
 
 ### 🛠 Technology Used
