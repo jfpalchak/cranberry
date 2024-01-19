@@ -7,6 +7,11 @@ const getUserJournals = (userId: string) => {
   return api.get(`/users/${userId}/journals`);
 }
 
+const getUserJournal = (userId: string, journalId: number) => {
+
+  return api.get(`/users/${userId}/journals/${journalId}`);
+}
+
 const createUserJournal = (userId: string, journalData: IJournal) => {
 
   return api.post(`/users/${userId}/journals`, journalData);
@@ -24,6 +29,7 @@ const deleteUserJournal = (userId: string, journalId: number) => {
 
 const JournalService = {
   getUserJournals,
+  getUserJournal,
   createUserJournal,
   updateUserJournal,
   deleteUserJournal

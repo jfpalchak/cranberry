@@ -15,6 +15,7 @@ import CreateIcon from '@mui/icons-material/Create';
 export default function JournalControl(props: JournalControlProps) {
 
   const { user, userJournals, setUserJournals } = props;
+  
   const navigate = useNavigate();
 
   // TODO : create Journal reducer w/ redux tk

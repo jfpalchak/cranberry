@@ -1,10 +1,12 @@
 import type { ThunkAction, Action } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from './authSlice';
+import journalsReducer from './journalsSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer
+    auth: authReducer,
+    journals: journalsReducer,
   }
 });
 

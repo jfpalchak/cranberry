@@ -8,7 +8,7 @@ import { getCredentials } from "../helpers/credentials-helper";
 // if user is still logged in local storage, keep isLoggedIn true,
 // otherwise initialize empty user state
 const userAuth = getCredentials();
-const initialState: IState = userAuth.token && userAuth.userId
+const initialState: AuthState = userAuth.token && userAuth.userId
   ? {
       token: userAuth.token,
       userId: userAuth.userId,
@@ -68,7 +68,7 @@ const authSlice = createSlice({
   }
 });
 
-interface IState {
+interface AuthState {
   token: string;
   userId: string;
   userData: IUser | null;
