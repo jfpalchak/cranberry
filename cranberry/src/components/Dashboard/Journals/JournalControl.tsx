@@ -1,64 +1,43 @@
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
-import { compareDesc } from 'date-fns';
-import JournalService from '../../../services/journal.service';
+import { Fab, Tooltip } from '@mui/material';
+import CreateIcon from '@mui/icons-material/Create';
 import JournalList from "./JournalList";
 import JournalDetail from "./JournalDetail";
 import JournalCreate from './JournalCreate';
 import JournalEdit from './JournalEdit';
-import { Fab, Tooltip } from '@mui/material';
 import type { IUser, IJournal } from "../../../types";
 import './Journals.css';
 
-import CreateIcon from '@mui/icons-material/Create';
+import { useAppDispatch, useAppSelector } from '../../../store/hooks';
+import { createJournal, deleteJournal, editJournal } from '../../../store/journalsSlice';
 
+export default function JournalControl({ user }: { user: IUser}) {
 
-export default function JournalControl(props: JournalControlProps) {
+  const { userJournals } = useAppSelector(state => state.journals)
+  const dispatch = useAppDispatch();
 
-  const { user, userJournals, setUserJournals } = props;
-  
   const navigate = useNavigate();
 
-  // TODO : create Journal reducer w/ redux tk
-
   const handleAddingNewJournal = async (journalData: IJournal) => {
-    JournalService.createUserJournal(user.userId!, journalData)
-    .then(response => {
-      const newJournal = response.data.data;
-      const updatedJournalList = [...userJournals, newJournal]
-        .sort((a: IJournal, b: IJournal) => compareDesc(new Date(a.date) , new Date(b.date)));
-      setUserJournals(updatedJournalList);
-      navigate(`/dashboard/journals/${newJournal.journalId}`)
-    })
-    .catch(error => {
-    });
-  };
-
-  const handleEditingJournal = async(journalData: IJournal) => {
-    JournalService.updateUserJournal(journalData)
-      .then(response => {
-        const jIndex = userJournals.findIndex(journal => journal.journalId === journalData.journalId);
-        const newJournalList = [...userJournals];
-        newJournalList[jIndex] = journalData;
-        setUserJournals(newJournalList);
-        navigate(`/dashboard/journals/${journalData.journalId}`)
+    dispatch(createJournal({ userId: user.userId!, journalData }))
+      .unwrap()
+      .then((response) => {
+        navigate(`/dashboard/journals/${response.journalId}`)
       })
-      .catch(error => {
-        console.log("Edit Journal error: ", error); // ! CONSOLE LOG
-      })
-  }
-
-  const handleDeletingJournal = async(userId: string, journalId: number) => {
-    JournalService.deleteUserJournal(userId, journalId)
-      .then(response => {
-        setUserJournals(userJournals.filter((journal => journal.journalId !== journalId)));
-        navigate("/dashboard/journals/");
-      })
-      .catch(error => {
-        console.log("Delete Journal error: ", error); // ! CONSOLE LOG
+      .catch((error) => {
+        console.log('Create Journal error: ', error);
       });
   };
 
+  const handleEditingJournal = async(journalData: IJournal) => {
+    dispatch(editJournal(journalData))
+    navigate(`/dashboard/journals/${journalData.journalId}`)
+  };
 
+  const handleDeletingJournal = async(userId: string, journalId: number) => {
+    dispatch(deleteJournal({ userId, journalId }));
+    navigate("/dashboard/journals/");
+  };
 
   return  (
     <section className="user-journals dash-section">
@@ -69,7 +48,7 @@ export default function JournalControl(props: JournalControlProps) {
       {user && (
       <div className="journals-content">
 
-          <JournalList journals={userJournals} />
+        <JournalList journals={userJournals} />
 
         {/* Dynamically render the chosen journal entries using our router parameters. */}
         <Routes>
@@ -101,7 +80,7 @@ export default function JournalControl(props: JournalControlProps) {
           } />
           <Route path="/new" element={
             <JournalCreate 
-              user={user} 
+              userId={user.userId!} 
               onSubmission={handleAddingNewJournal} 
             />} 
           />
@@ -123,10 +102,3 @@ export default function JournalControl(props: JournalControlProps) {
     </section>
   );
 }
-
-type JournalControlProps = {
-  user: IUser;
-  userJournals: IJournal[];
-  setUserJournals: (data: IJournal[]) => void;
-}
-

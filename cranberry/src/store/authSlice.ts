@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchUserData, registerUser, signIn, signOut } from "./authActions";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import type { IUser } from "../types";
+import { type PayloadAction } from "@reduxjs/toolkit";
+import { type IUser } from "../types";
 import { getCredentials } from "../helpers/credentials-helper";
 
 // initialize state:

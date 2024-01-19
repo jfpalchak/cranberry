@@ -3,6 +3,10 @@ import format from "date-fns/format";
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import type { IJournal } from "../../../types"
 
+type JournalListProps = {
+  journals: IJournal[]
+}
+
 export default function JournalList(props: JournalListProps) {
 
   const { journals } = props;
@@ -42,8 +46,4 @@ export default function JournalList(props: JournalListProps) {
       ))}
     </div>
   )
-}
-
-type JournalListProps = {
-  journals: IJournal[]
 }

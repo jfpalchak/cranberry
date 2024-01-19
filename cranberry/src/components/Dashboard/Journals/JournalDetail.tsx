@@ -1,11 +1,16 @@
 import { useParams, useNavigate } from "react-router-dom";
 import type { IJournal } from "../../../types";
 
+type JournalDetailProps = {
+  journals: IJournal[];
+  onClickingDelete: (uI: string, jI: number) => void;
+}
+
 export default function JournalDetail({ journals, onClickingDelete }: JournalDetailProps) {
 
   // grab the Journal ID from the URL (:journalId)
-  const params = useParams();
-  const journal = journals.find(journal => journal.journalId === parseInt(params.journalId!))
+  const { journalId } = useParams();
+  const journal = journals.find(journal => journal.journalId === parseInt(journalId!))
 
   const navigate = useNavigate();
 
@@ -34,7 +39,7 @@ export default function JournalDetail({ journals, onClickingDelete }: JournalDet
           </ul>
           <div className="buttons">
             <div className="crud-btn">
-              <button className="btn primary-btn" onClick={() => navigate(`/dashboard/journals/${params.journalId}/edit`)}>Edit</button>
+              <button className="btn primary-btn" onClick={() => navigate(`/dashboard/journals/${journalId}/edit`)}>Edit</button>
               <button className="btn alternate-btn" onClick={() => onClickingDelete(journal.userId, journal.journalId!)}>Delete</button>
             </div>
             <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/`)}>Close</button>
@@ -43,9 +48,4 @@ export default function JournalDetail({ journals, onClickingDelete }: JournalDet
       )}
     </div>
   )
-}
-
-type JournalDetailProps = {
-  journals: IJournal[];
-  onClickingDelete: (uI: string, jI: number) => void;
 }

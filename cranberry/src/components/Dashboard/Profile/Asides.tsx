@@ -1,6 +1,9 @@
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 
+type AsidesProps = {
+  handleOpenSupport: () => void;
+};
 
 function Asides(props: AsidesProps) {
 
@@ -32,10 +35,6 @@ function Asides(props: AsidesProps) {
       </div>
     </div>
   );
-}
-
-type AsidesProps = {
-  handleOpenSupport: () => void;
 }
 
 export default Asides;

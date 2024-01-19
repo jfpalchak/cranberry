@@ -12,6 +12,11 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogTitle from '@mui/material/DialogTitle';
 
+type DialogResourcesProps = {
+  isOpen: boolean;
+  handleClosing: () => void;
+};
+
 function DialogResources(props: DialogResourcesProps) {
   const { isOpen, handleClosing } = props;
 
@@ -77,11 +82,6 @@ function DialogResources(props: DialogResourcesProps) {
     </Dialog>
     </>
   );
-}
-
-type DialogResourcesProps = {
-  isOpen: boolean;
-  handleClosing: () => void;
 }
 
 export default DialogResources;

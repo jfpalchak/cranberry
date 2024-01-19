@@ -3,6 +3,11 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import type { IJournal } from "../../../types";
 
+type JournalEditProps = {
+  journals: IJournal[];
+  onSubmission: (x: IJournal) => void;
+}
+
 export default function JournalEdit({ journals, onSubmission }: JournalEditProps) {
 
   const params = useParams();
@@ -94,9 +99,4 @@ export default function JournalEdit({ journals, onSubmission }: JournalEditProps
         <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/${journal!.journalId}`)}>Cancel</button>
     </div>
   );
-}
-
-type JournalEditProps = {
-  journals: IJournal[];
-  onSubmission: (x: IJournal) => void;
 }

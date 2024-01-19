@@ -1,6 +1,6 @@
 import api from "./api";
 import { removeCredentials, getCredentials } from "../helpers/credentials-helper";
-import type { IRegistrationData } from "../types";
+import { type IRegistrationData } from "../types";
 
 const register = (userRegistration: IRegistrationData) => {
   return api.post(`/users/register`, userRegistration);

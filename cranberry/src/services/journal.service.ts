@@ -1,6 +1,5 @@
 import api from "./api";
-import { IJournal } from "../types";
-
+import { type IJournal } from "../types";
 
 const getUserJournals = (userId: string) => {
 

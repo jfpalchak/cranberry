@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { setCredentials } from "../helpers/credentials-helper";
 import AuthService from "../services/auth.service";
 import { setError } from "./authSlice";
-import type { IRegistrationData } from "../types";
+import { type IRegistrationData } from "../types";
 
 interface IUserCredentials {
   email: string;

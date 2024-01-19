@@ -14,8 +14,8 @@ import 'chartjs-adapter-date-fns';
 import { Chart } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import type { ChartData, ChartOptions } from 'chart.js';
-import type { IJournal } from '../../../types';
 import QueryStatsIcon from '@mui/icons-material/QueryStats';
+import { useAppSelector } from '../../../store/hooks';
 import './Timeline.css';
 
 ChartJS.register(
@@ -30,7 +30,9 @@ ChartJS.register(
   Legend
 );
 
-export default function Timeline({ userJournals }: { userJournals: IJournal[] }) {
+export default function Timeline() {
+
+  const userJournals = useAppSelector(state => state.journals.userJournals);
 
   const data: ChartData<'line' | 'bar'> = {
     labels: userJournals.map(journal => journal.date), // journal dates

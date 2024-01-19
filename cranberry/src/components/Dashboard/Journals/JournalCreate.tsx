@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Slider, ToggleButton, ToggleButtonGroup } from "@mui/material";
-import type { IJournal, IUser } from "../../../types";
+import type { IJournal } from "../../../types";
+
+type JournalCreateProps = {
+  userId: string;
+  onSubmission: (x: IJournal) => void;
+}
 
 export default function JournalCreate(props: JournalCreateProps) {
 
-  const { user, onSubmission } = props;
+  const { userId, onSubmission } = props;
 
   const navigate = useNavigate();
   const [didSmoke, setDidSmoke] = useState<boolean | null>(null);
@@ -14,7 +19,7 @@ export default function JournalCreate(props: JournalCreateProps) {
     cravingIntensity: 0,
     cigsSmoked: 0,
     notes: "",
-    userId: user.userId!
+    userId: userId!
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -101,9 +106,4 @@ export default function JournalCreate(props: JournalCreateProps) {
         <button className="btn cancel-btn" onClick={() => navigate(`/dashboard/journals/`)}>Cancel</button>
     </div>
   );
-}
-
-type JournalCreateProps = {
-  user: IUser;
-  onSubmission: (x: IJournal) => void;
 }
