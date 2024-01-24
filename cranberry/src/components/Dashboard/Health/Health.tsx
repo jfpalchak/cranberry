@@ -1,8 +1,9 @@
 import { useHealthBenefits } from '../../../hooks';
-import { LinearProgress } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import type { IUser } from '../../../types';
 import './Health.css';
+import HealthBenefit from './HealthBenefit';
+import HealthReferences from './HealthReferences';
 
 export default function Health({ user }: { user: IUser }) {
 
@@ -12,15 +13,6 @@ export default function Health({ user }: { user: IUser }) {
     totalHealthBenefits,
     totalHealthBenefitsAchieved, 
   } = useHealthBenefits(user.quitDate as string)
-
-  const description = (benefit: string) => {
-    let array = benefit.split(":");
-    let units = array[0];
-    let text = array[1];
-    return {units, text}
-  }
-  
-  // TODO : refactor into smaller components
 
   return  (
     <section className="user-health dash-section">
@@ -32,43 +24,13 @@ export default function Health({ user }: { user: IUser }) {
         <div className="health-progress">
 
           {healthBenefitsList.map((item, index) => (
-            <div className="health-item" key={index} >
-
-              <div className={("progress-marker".concat(getHealthItemProgress(item.time) > 99 ? ' complete' : ' ongoing'))}></div>
-
-              <div className="health-item-info">
-                <div className="description">
-                  <h4>{description(item.benefit).units}</h4>
-                  <p>{description(item.benefit).text}</p>
-                </div>
-                <div className="progress-label">
-                  <LinearProgress 
-                    className="progress-bar" 
-                    variant='determinate' 
-                    value={getHealthItemProgress(item.time)} 
-                    color='error'
-                    />
-                    <p>{getHealthItemProgress(item.time).toFixed()}</p>
-                </div>
-              </div>
-
-            </div>
+            <HealthBenefit key={index} item={item} formatProgress={getHealthItemProgress} />
           ))}
 
         </div>
 
-        <div className="references">
-          <p>Information sourced by:</p>
-          <a href="https://www.who.int/news-room/questions-and-answers/item/tobacco-health-benefits-of-smoking-cessation">
-            World Health Organization (WHO)
-          </a>
-          <a href="https://www.cdc.gov/tobacco/quit_smoking/how_to_quit/benefits/">
-            CDC
-          </a>
-          <a href="https://www.heart.org/en/healthy-living/healthy-lifestyle/quit-smoking-tobacco/the-benefits-of-quitting-smoking-now">
-            heart.org
-          </a>
-        </div>
+        <HealthReferences />
+
       </div>
     </section>
   );
