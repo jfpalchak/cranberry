@@ -1,5 +1,6 @@
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import useDailyReminders from '../../../hooks/useDailyReminders';
 
 type AsidesProps = {
   handleOpenSupport: () => void;
@@ -9,6 +10,8 @@ function Asides(props: AsidesProps) {
 
   const { handleOpenSupport } = props;
 
+  const reminder = useDailyReminders();
+
   return (
     <div className="profile-col aside">
       <div className="tips side-tracker">
@@ -17,8 +20,8 @@ function Asides(props: AsidesProps) {
             <TipsAndUpdatesIcon />
           </div>
           <div className="side-tracker-content">
-            <h4>Stay Strong</h4>
-            <p>Remember your reasons for quitting!</p>
+            <h4>{reminder.header}</h4>
+            <p>{reminder.text}</p>
           </div>
         </div>
       </div>

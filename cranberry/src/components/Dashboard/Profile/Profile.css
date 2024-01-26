@@ -215,7 +215,7 @@
   width: 300px;
 }
 
-.resources:hover {
+.resources:hover, .tips:hover {
   cursor: pointer;
 }
 
