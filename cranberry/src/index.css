@@ -12,6 +12,16 @@
   --grey: whitesmoke;
 }
 
+.dark {
+  --light: #3b3b3b;
+  --primary: #f05858;
+  --primary-dark: #e2373f;
+  --primary-light: #f87777;
+  /* --grey: #eee; */
+  --grey: #6d6c6c;
+  color: white;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

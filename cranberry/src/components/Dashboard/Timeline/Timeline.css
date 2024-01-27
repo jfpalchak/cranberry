@@ -47,3 +47,13 @@
     color: var(--primary);
   }
 }
+
+/* ########## */
+/* DARK  MODE */
+/* ########## */
+
+.dark {
+  .time-scale {
+    background: #cdcdcd;;
+  }
+}

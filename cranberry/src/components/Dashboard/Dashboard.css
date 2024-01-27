@@ -145,6 +145,20 @@
   cursor: pointer;
 }
 
+/* ########## */
+/* DARK  MODE */
+/* ########## */
+
+.dark {
+  .sidebar a:not(.active) {
+    color: whitesmoke;
+  }
+}
+
+/* ########## */
+/* RESPONSIVE */
+/* ########## */
+
 @media screen and (max-width: 750px) {
   .sidebar {
     width: 60px;

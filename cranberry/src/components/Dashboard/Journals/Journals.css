@@ -185,6 +185,34 @@
 }
 
 /* ########## */
+/* DARK  MODE */
+/* ########## */
+
+.dark {
+
+  .journal-create,
+  .journa-edit,
+  .journal-form {
+    input,
+    textarea {
+      background: transparent;
+      color: whitesmoke;
+    }
+
+    div[role=group] {
+      button {
+        color: whitesmoke;
+      }
+    }
+  }
+
+  .cancel-btn,
+  .alternate-btn {
+    background: transparent;
+  }
+}
+
+/* ########## */
 /* RESPONSIVE */
 /* ########## */
 

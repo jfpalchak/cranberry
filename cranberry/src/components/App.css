@@ -120,9 +120,9 @@ header a {
   transition: 0.2s;
 }
 
-header nav a:hover {
+/* header nav a:hover {
   border-bottom: 1px solid black;
-}
+} */
 
 .auth-btn {
   font-weight: bold;
@@ -137,6 +137,12 @@ header nav a:hover {
     cursor: pointer;
     color: var(--primary);
     border: 2px solid var(--primary);
+  }
+}
+
+.theme-toggle {
+  &:hover {
+    cursor: pointer;
   }
 }
 
@@ -317,6 +323,23 @@ header nav a:hover {
   top: 80px;
   right: 115px;
   width: 450px;
+}
+
+/* ########## */
+/* DARK  MODE */
+/* ########## */
+
+.dark {
+  .auth-btn {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+
+    &:hover {
+      background: var(--primary);
+      color: whitesmoke;
+    }
+  }
 }
 
 /* ########## */
