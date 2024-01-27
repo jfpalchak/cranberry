@@ -2,17 +2,25 @@ import { Link } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+
 import useDarkMode from '../hooks/useDarkMode';
+
+import lightBerry from './../assets/img/berry1.png';
+import darkBerry from './../assets/img/berry2.png';
+
+type HeaderProps = {
+  loggedIn: boolean;
+}
 
 export default function Header({ loggedIn }: HeaderProps) {
 
-  const { logo, theme, setTheme } = useDarkMode(loggedIn);
+  const { theme, setTheme } = useDarkMode();
 
   return (
     <header>
       <div className="logo">
         <Link to={!loggedIn ? "/" : "/dashboard/profile"}>
-          <img src={ logo } alt="Cranberry Logo" />
+          <img src={theme === 'light' ? lightBerry : darkBerry } alt="Cranberry Logo" />
           <span style={ { color: "rgb(240, 88, 88)" } }>Cranberry</span>
         </Link>
       </div>
@@ -42,8 +50,4 @@ export default function Header({ loggedIn }: HeaderProps) {
       </nav>
     </header>
   );
-}
-
-type HeaderProps = {
-  loggedIn: boolean;
 }
