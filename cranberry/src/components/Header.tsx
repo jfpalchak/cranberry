@@ -20,7 +20,7 @@ export default function Header({ loggedIn }: HeaderProps) {
     <header>
       <div className="logo">
         <Link to={!loggedIn ? "/" : "/dashboard/profile"}>
-          <img src={theme === 'light' ? lightBerry : darkBerry } alt="Cranberry Logo" />
+          <img src={loggedIn && theme === 'dark' ? darkBerry : lightBerry} alt="Cranberry Logo" />
           <span style={ { color: "rgb(240, 88, 88)" } }>Cranberry</span>
         </Link>
       </div>
