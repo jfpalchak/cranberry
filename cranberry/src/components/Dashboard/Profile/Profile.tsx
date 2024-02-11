@@ -30,7 +30,7 @@ function Profile({ user }: { user: IUser }) {
       <div className="profile-content">
         <div className="profile-col">
 
-          <ElapsedTime quitDate={user.quitDate} />
+          <ElapsedTime userQuitDate={user.quitDate} />
           <Metrics user={user} />
           <HealthProgress userQuitDate={user.quitDate} />
 

@@ -1,9 +1,9 @@
 import { useElapsedTime } from "../../../hooks/";
 
-export default function ElapsedTime({ quitDate } : { quitDate: Date | string }) {
+export default function ElapsedTime({ userQuitDate } : { userQuitDate: Date | string }) {
   
-  quitDate = (typeof quitDate === 'string' ? new Date(quitDate) : quitDate);
-  const elapsedTime = useElapsedTime(quitDate);
+  userQuitDate = (typeof userQuitDate === 'string' ? new Date(userQuitDate) : userQuitDate);
+  const elapsedTime = useElapsedTime(userQuitDate);
 
   return (
     <div className="time-elapsed">
