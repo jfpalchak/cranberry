@@ -6,8 +6,8 @@ import Profile from "./Profile/Profile";
 import Health from './Health/Health';
 import Timeline from './Timeline/Timeline';
 import JournalControl from "./Journals/JournalControl";
-import './Dashboard.css';
 import { fetchUserJournals } from "../../store/journalsSlice";
+import './Dashboard.css';
 
 export default function Dashboard() {
 

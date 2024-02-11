@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../store/hooks";
-import { signOut } from "../../store/authActions";
 import LogoutIcon from '@mui/icons-material/Logout';
 import InsightsIcon from '@mui/icons-material/Insights';
 import EditCalendarIcon from '@mui/icons-material/EditCalendar';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useAppDispatch } from "../../store/hooks";
+import { signOut } from "../../store/authActions";
 
 export default function DashNav() {
 

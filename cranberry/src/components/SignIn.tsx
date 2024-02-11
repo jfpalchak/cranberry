@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { CircularProgress } from '@mui/material';
 import { useAppDispatch } from "../store/hooks";
 import { signIn} from "../store/authActions";
+
 import cloudLeft from './../assets/img/cloudLeft.png';
 import cloudRight from './../assets/img/cloudRight.png';
-
-import { CircularProgress } from '@mui/material';
 
 function SignIn() {
 

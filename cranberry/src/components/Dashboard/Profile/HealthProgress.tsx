@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { useHealthBenefits } from '../../../hooks';
 import { LinearProgress } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useHealthBenefits } from '../../../hooks';
 
 
 function HealthProgress({ userQuitDate } : { userQuitDate: string | Date } ) {

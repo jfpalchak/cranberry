@@ -1,16 +1,16 @@
-import { useProgressCalculations } from "../../../hooks";
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import RestoreIcon from '@mui/icons-material/Restore';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { Tooltip } from "@mui/material";
+import type { IUser } from "../../../types";
+import { useProgressCalculations } from "../../../hooks";
 import { 
   moneyText, 
   avoidedText, 
   lifeText, 
   timeText } from "../../../data/metrics-text";
-import { Tooltip } from "@mui/material";
-import type { IUser } from "../../../types";
 
 
 function Metrics({ user }: { user: IUser }) {

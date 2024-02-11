@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppDispatch } from '../store/hooks';
-import { registerUser, signIn } from '../store/authActions';
 import { CircularProgress } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
+import { registerUser, signIn } from '../store/authActions';
+import { useAppDispatch } from '../store/hooks';
 import cloudLeft from './../assets/img/cloudLeft.png';
 import cloudRight from './../assets/img/cloudRight.png';
 

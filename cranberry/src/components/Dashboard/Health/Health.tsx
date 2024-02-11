@@ -1,9 +1,9 @@
-import { useHealthBenefits } from '../../../hooks';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import type { IUser } from '../../../types';
-import './Health.css';
+import { useHealthBenefits } from '../../../hooks';
 import HealthBenefit from './HealthBenefit';
 import HealthReferences from './HealthReferences';
+import type { IUser } from '../../../types';
+import './Health.css';
 
 export default function Health({ user }: { user: IUser }) {
 
