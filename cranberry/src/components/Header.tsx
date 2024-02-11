@@ -3,7 +3,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
-import useDarkMode from '../hooks/useDarkMode';
+import { useDarkMode } from "../hooks";
 
 import lightBerry from './../assets/img/berry1.png';
 import darkBerry from './../assets/img/berry2.png';

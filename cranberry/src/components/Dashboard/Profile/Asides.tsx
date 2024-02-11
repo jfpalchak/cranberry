@@ -1,6 +1,6 @@
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
-import useDailyReminders from '../../../hooks/useDailyReminders';
+import { useDailyReminders } from '../../../hooks';
 
 type AsidesProps = {
   handleOpenSupport: () => void;
