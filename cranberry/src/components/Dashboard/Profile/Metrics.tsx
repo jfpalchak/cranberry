@@ -4,6 +4,7 @@ import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import RestoreIcon from '@mui/icons-material/Restore';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Tooltip } from "@mui/material";
+import { SvgIcon } from '@mui/material';
 import type { IUser } from "../../../types";
 import { useProgressCalculations } from "../../../hooks";
 import { 
@@ -12,6 +13,35 @@ import {
   lifeText, 
   timeText } from "../../../data/metrics-text";
 
+interface MetricCardProps {
+  tracker: string;
+  Icon: typeof SvgIcon;
+  metric: {
+    data: string | undefined;
+    text: string;
+  }
+  tooltip: {
+    info: string;
+    id: string;
+  }
+}
+
+function MetricCard(props: MetricCardProps) {
+  const { metric, tooltip, tracker, Icon } = props;
+
+  return (
+    <div className={`${tracker}-tracker tracker`}>
+      <Icon />
+      <div className="info">
+        <h3>{metric.data}</h3>
+        <p>{metric.text}</p>
+      </div>
+      <Tooltip title={tooltip.info} placement="top-start" >
+        <HelpOutlineIcon id={`${tooltip.id}-question`} />
+      </Tooltip>
+    </div>
+  );
+}
 
 function Metrics({ user }: { user: IUser }) {
 
@@ -20,49 +50,33 @@ function Metrics({ user }: { user: IUser }) {
   return (
     <div className="progress-trackers">
 
-      <div className="money-tracker tracker">
-        <AttachMoneyIcon className="tracker-icon" />
-        <div className="info">
-          <h3>{userProgress?.moneySaved.toFixed(2)}</h3>
-          <p>money saved</p>
-        </div>
-        <Tooltip title={moneyText} placement="top-start" >
-          <HelpOutlineIcon id="money-question" />
-        </Tooltip>
-      </div>
+      <MetricCard 
+        tracker={"money"}
+        Icon={AttachMoneyIcon}
+        metric={ { data: userProgress?.moneySaved.toFixed(2), text: 'money saved' } }
+        tooltip={ { info: moneyText, id: 'money' } }
+      />
 
-      <div className="avoided-tracker tracker">
-        <SmokeFreeIcon />
-        <div className="info">
-          <h3>{userProgress?.cigsAvoided.toFixed()}</h3>
-          <p>cigarettes avoided</p>
-        </div>
-        <Tooltip title={avoidedText} placement="top-start" >
-          <HelpOutlineIcon id="avoided-question" />
-        </Tooltip>
-      </div>
+      <MetricCard 
+        tracker={"avoided"}
+        Icon={SmokeFreeIcon}
+        metric={ { data: userProgress?.cigsAvoided.toFixed(), text: 'cigarettes avoided' } }
+        tooltip={ { info: avoidedText, id: 'avoided' } }
+      />
 
-      <div className="time-gained-tracker tracker">
-        <MoreTimeIcon />
-        <div className="info">
-          <h3>{(userProgress?.timeSaved! / 60).toFixed(2)}</h3>
-          <p>time saved (hours)</p>
-        </div>
-        <Tooltip title={timeText} placement="top-start" >
-          <HelpOutlineIcon id="time-question" />
-        </Tooltip>
-      </div>
+      <MetricCard 
+        tracker={"time-gained"}
+        Icon={MoreTimeIcon}
+        metric={ { data: (userProgress?.timeSaved! / 60).toFixed(2), text: 'time saved (hours)' } }
+        tooltip={ { info: timeText, id: 'time' } }
+      />
 
-      <div className="life-regained-tracker tracker">
-        <RestoreIcon />
-        <div className="info">
-          <h3>{(userProgress?.timeGained! / 24).toFixed(2)}</h3>
-          <p>time gained (days)</p>
-        </div>
-        <Tooltip title={lifeText} placement="top-start" >
-          <HelpOutlineIcon id="life-question" />
-        </Tooltip>
-      </div>
+      <MetricCard 
+        tracker={"life-regained"}
+        Icon={RestoreIcon}
+        metric={ { data: (userProgress?.timeGained! / 24).toFixed(2), text: 'time gained (days)' } }
+        tooltip={ { info: lifeText, id: 'life' } }
+      />
 
     </div>
   );
