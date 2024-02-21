@@ -36,7 +36,15 @@ export default function DashNav() {
       <nav className="dash-nav">
         <ul className="side-menu">
           {links.map((link) => (
-            <NavLink to={`/dashboard/${link.path}`}><li><link.Icon/> &nbsp;&nbsp; {link.label}</li></NavLink>
+            <NavLink
+              key={link.path}
+              to={`/dashboard/${link.path}`}
+            >
+              <li>
+                <link.Icon/> 
+                &nbsp;&nbsp;&nbsp;{link.label}
+              </li>
+            </NavLink>
           ))}
         </ul>
         <ul className="side-menu logout-nav">
