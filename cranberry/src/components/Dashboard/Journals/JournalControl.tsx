@@ -57,7 +57,7 @@ export default function JournalControl({ user }: { user: IUser}) {
             <div className="journal-card center journal-display-index">
               {userJournals.length > 0 
                 ? <h1>Select a Journal</h1>
-                : <><h1>Start your Journals:</h1></>
+                : <h1>Start your Journals:</h1>
               }
               <br/>
               <br/>

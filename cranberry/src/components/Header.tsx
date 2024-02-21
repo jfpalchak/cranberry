@@ -25,27 +25,29 @@ export default function Header({ loggedIn }: HeaderProps) {
         </Link>
       </div>
       <nav className="header-nav">
-        {!loggedIn 
-          ? (
-            <ul>
-              <li><Link to="/sign-in"><button className="auth-btn">Sign In</button></Link></li>
-            </ul>
-          ) 
-          : (
-            <ul>
-              <li>
-                <div className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-                  {theme === 'light'
-                    ? <DarkModeIcon />
-                    : <LightModeIcon />
-                  }
-                </div>
-              </li>
-              <li>
-                <Link to="/account"><AccountCircleIcon /></Link>
-              </li>
-            </ul>
-          )
+        {!loggedIn &&
+          <ul>
+            <li>
+              <Link to="/sign-in">
+                <button className="auth-btn">Sign In</button>
+              </Link>
+            </li>
+          </ul>
+        }
+        {loggedIn &&
+          <ul>
+            <li>
+              <div className="theme-toggle" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+                {theme === 'light'
+                  ? <DarkModeIcon />
+                  : <LightModeIcon />
+                }
+              </div>
+            </li>
+            <li>
+              <Link to="/account"><AccountCircleIcon /></Link>
+            </li>
+          </ul>
         }
       </nav>
     </header>

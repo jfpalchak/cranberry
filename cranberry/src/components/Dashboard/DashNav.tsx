@@ -16,10 +16,10 @@ export default function DashNav() {
   const navigate = useNavigate();
 
   const links = [
-    { path: '/profile', label: 'Profile', Icon: DashboardIcon },
-    { path: '/health', label: 'Health', Icon: FavoriteBorderIcon },
-    { path: '/journals', label: 'Journals', Icon: EditCalendarIcon },
-    { path: '/timeline', label: 'Profile', Icon: InsightsIcon },
+    { path: 'profile', label: 'Profile', Icon: DashboardIcon },
+    { path: 'health', label: 'Health', Icon: FavoriteBorderIcon },
+    { path: 'journals', label: 'Journals', Icon: EditCalendarIcon },
+    { path: 'timeline', label: 'Profile', Icon: InsightsIcon },
   ]
 
   const handleLogOut = () => {
@@ -36,7 +36,7 @@ export default function DashNav() {
       <nav className="dash-nav">
         <ul className="side-menu">
           {links.map((link) => (
-            <NavLink to={`/dashboard${link.path}`}><li><link.Icon/> &nbsp;&nbsp; {link.label}</li></NavLink>
+            <NavLink to={`/dashboard/${link.path}`}><li><link.Icon/> &nbsp;&nbsp; {link.label}</li></NavLink>
           ))}
         </ul>
         <ul className="side-menu logout-nav">

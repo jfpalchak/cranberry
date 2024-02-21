@@ -77,8 +77,7 @@ export default function JournalCreate(props: JournalCreateProps) {
             <ToggleButton value={false} >
               No
             </ToggleButton>
-            {(didSmoke && <p>That's okay! It's not a linear process.</p>) 
-              ||
+            {(didSmoke && <p>That's okay! It's not a linear process.</p>) ||
               (didSmoke != null && <p>Hell yeah! You're doing fantastic!</p>)}
           </ToggleButtonGroup>
           {didSmoke && 

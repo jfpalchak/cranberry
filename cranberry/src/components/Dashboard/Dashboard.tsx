@@ -21,18 +21,20 @@ export default function Dashboard() {
   return (
     <main className="main-dashboard">
       <DashNav />
-      {userData ? (
-      <Routes>
-        <Route index path="/*" element={<Profile user={userData} />} />
-        <Route path="/journals/*" element={<JournalControl user={userData} />} />
-        <Route path="/health" element={<Health user={userData} />} />
-        <Route path="/timeline" element={<Timeline />} />
-      </Routes>
-      ) : (
+      {userData &&
+        <Routes>
+          <Route index path="/*" element={<Profile user={userData} />} />
+          <Route path="/journals/*" element={<JournalControl user={userData} />} />
+          <Route path="/health" element={<Health user={userData} />} />
+          <Route path="/timeline" element={<Timeline />} />
+          {/* <Route path="/account" element={<Account />} /> */}
+        </Routes>
+      }
+      {!userData &&
         <div className="dash-section">
           <h1>Loading... </h1>
         </div>
-      )}
+      }
     </main>
   );
 }
