@@ -21,6 +21,13 @@ export default function DashNav() {
     window.location.reload();
   }
 
+  const links = [
+    { path: '/profile', label: 'Profile', Icon: DashboardIcon },
+    { path: '/health', label: 'Health', Icon: FavoriteBorderIcon },
+    { path: '/journals', label: 'Journals', Icon: EditCalendarIcon },
+    { path: '/timeline', label: 'Profile', Icon: InsightsIcon },
+  ]
+
   return (
     <div className={`sidebar ${ isMini ? "close" : "" }`}> {/* toggle "close" class to shrink */}
       <div className="dash-toggle" onClick={() => setIsMini(!isMini)}>
@@ -28,12 +35,10 @@ export default function DashNav() {
       </div>
       <nav className="dash-nav">
         <ul className="side-menu">
-          <NavLink to="/dashboard/profile"><li><DashboardIcon/> &nbsp;&nbsp; Profile</li></NavLink>
-          <NavLink to="/dashboard/health"><li><FavoriteBorderIcon/> &nbsp;&nbsp; Health</li></NavLink>
-          <NavLink to="/dashboard/journals"><li><EditCalendarIcon/> &nbsp;&nbsp; Journals</li></NavLink>
-          <NavLink to="/dashboard/timeline"><li><InsightsIcon/> &nbsp;&nbsp; Timeline</li></NavLink>
+          {links.map((link) => (
+            <NavLink to={`/dashboard/${link.path}`}><li><link.Icon/> &nbsp;&nbsp; {link.label}</li></NavLink>
+          ))}
         </ul>
-
         <ul className="side-menu logout-nav">
           <li onClick={handleLogOut}>
             <span className="logout-red" ><LogoutIcon /></span> &nbsp;&nbsp; Log Out
