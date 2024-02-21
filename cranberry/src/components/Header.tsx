@@ -45,7 +45,7 @@ export default function Header({ loggedIn }: HeaderProps) {
               </div>
             </li>
             <li>
-              <Link to="/account"><AccountCircleIcon /></Link>
+              <Link to="/dashboard/account"><AccountCircleIcon /></Link>
             </li>
           </ul>
         }

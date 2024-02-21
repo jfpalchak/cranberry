@@ -42,7 +42,7 @@ export default function DashNav() {
             >
               <li>
                 <link.Icon/> 
-                &nbsp;&nbsp;&nbsp;{link.label}
+                &nbsp;&nbsp; {link.label}
               </li>
             </NavLink>
           ))}
