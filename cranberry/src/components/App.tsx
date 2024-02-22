@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Header loggedIn={isLoggedIn} />
         <Routes>
-          <Route path='/' element={ 
+          <Route path='/*' element={ 
             isLoggedIn 
               ? <Dashboard /> 
               : <Home />

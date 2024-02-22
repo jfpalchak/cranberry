@@ -4,14 +4,15 @@ import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import RestoreIcon from '@mui/icons-material/Restore';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Tooltip } from "@mui/material";
-import { SvgIcon } from '@mui/material';
+import { SvgIconProps } from '@mui/material';
 import type { IUser } from "../../../types";
 import { useProgressCalculations } from "../../../hooks";
 import { 
   moneyText, 
   avoidedText, 
   lifeText, 
-  timeText } from "../../../data/metrics-text";
+  timeText 
+} from "../../../data/metrics-text";
 
 interface MetricsProps {
   user: IUser;
@@ -19,7 +20,7 @@ interface MetricsProps {
 
 interface MetricCardProps {
   tracker: string;
-  Icon: typeof SvgIcon;
+  Icon: React.ComponentType<SvgIconProps>;
   metric: {
     data: string | undefined;
     text: string;
