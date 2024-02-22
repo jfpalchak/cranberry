@@ -13,6 +13,10 @@ import {
   lifeText, 
   timeText } from "../../../data/metrics-text";
 
+interface MetricsProps {
+  user: IUser;
+}
+
 interface MetricCardProps {
   tracker: string;
   Icon: typeof SvgIcon;
@@ -43,40 +47,49 @@ function MetricCard(props: MetricCardProps) {
   );
 }
 
-function Metrics({ user }: { user: IUser }) {
+function Metrics({ user }: MetricsProps) {
 
-  const userProgress = useProgressCalculations(user);
+  const { moneySaved, cigsAvoided, timeSaved, timeGained } = useProgressCalculations(user);
+
+  const data = [
+    {
+      tracker: 'money',
+      Icon: AttachMoneyIcon,
+      metric: { data: moneySaved.toFixed(2), text: 'money saved' },
+      tooltip: { info: moneyText, id: 'money' },
+    },
+    {
+      tracker: 'avoided',
+      Icon: SmokeFreeIcon,
+      metric: { data: cigsAvoided.toFixed(), text: 'cigarettes avoided' },
+      tooltip: { info: avoidedText, id: 'avoided' },
+    },
+    {
+      tracker: 'time-gained',
+      Icon: MoreTimeIcon,
+      metric: { data: (timeSaved / 60).toFixed(2), text: 'time saved (hours)' },
+      tooltip: { info: timeText, id: 'time' },
+    },
+    {
+      tracker: 'life-regained',
+      Icon: RestoreIcon,
+      metric: { data: (timeGained / 24).toFixed(2), text: 'time gained (days)' },
+      tooltip: { info: lifeText, id: 'life' },
+    },
+  ];
 
   return (
     <div className="progress-trackers">
 
-      <MetricCard 
-        tracker={"money"}
-        Icon={AttachMoneyIcon}
-        metric={ { data: userProgress?.moneySaved.toFixed(2), text: 'money saved' } }
-        tooltip={ { info: moneyText, id: 'money' } }
-      />
-
-      <MetricCard 
-        tracker={"avoided"}
-        Icon={SmokeFreeIcon}
-        metric={ { data: userProgress?.cigsAvoided.toFixed(), text: 'cigarettes avoided' } }
-        tooltip={ { info: avoidedText, id: 'avoided' } }
-      />
-
-      <MetricCard 
-        tracker={"time-gained"}
-        Icon={MoreTimeIcon}
-        metric={ { data: (userProgress?.timeSaved! / 60).toFixed(2), text: 'time saved (hours)' } }
-        tooltip={ { info: timeText, id: 'time' } }
-      />
-
-      <MetricCard 
-        tracker={"life-regained"}
-        Icon={RestoreIcon}
-        metric={ { data: (userProgress?.timeGained! / 24).toFixed(2), text: 'time gained (days)' } }
-        tooltip={ { info: lifeText, id: 'life' } }
-      />
+      {data.map((item) => (
+        <MetricCard
+          key={item.tooltip.id}
+          tracker={item.tracker}
+          Icon={item.Icon}
+          metric={item.metric}
+          tooltip={item.tooltip}
+        />
+      ))}
 
     </div>
   );

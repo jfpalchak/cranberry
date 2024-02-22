@@ -7,7 +7,12 @@ const AVG_HOURS_PER_DAY_BACK_SANS_SMOKE = 6;
 
 function useProgressCalculations(userData: IUser) {
 
-  const [userProgress, setUserProgress] = useState<ProgressData | null>(null);
+  const [userProgress, setUserProgress] = useState<ProgressData>({ 
+    cigsAvoided: 0, 
+    moneySaved: 0, 
+    timeSaved: 0, 
+    timeGained: 0 
+  });
 
   useEffect(() => {
     if(userData) {
