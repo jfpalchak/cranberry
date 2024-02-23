@@ -1,3 +1,4 @@
+import { SvgIconProps } from '@mui/material';
 
 export interface IUser {
   userId?: string;
@@ -28,3 +29,5 @@ export interface IJournal {
   notes: string;
   userId: string;
 }
+
+export type IconType = React.ComponentType<SvgIconProps>;

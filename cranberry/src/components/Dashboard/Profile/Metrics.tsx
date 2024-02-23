@@ -4,8 +4,7 @@ import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import RestoreIcon from '@mui/icons-material/Restore';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Tooltip } from "@mui/material";
-import { SvgIconProps } from '@mui/material';
-import type { IUser } from "../../../types";
+import type { IUser, IconType } from "../../../types";
 import { useProgressCalculations } from "../../../hooks";
 import { 
   moneyText, 
@@ -20,7 +19,7 @@ interface MetricsProps {
 
 interface MetricCardProps {
   tracker: string;
-  Icon: React.ComponentType<SvgIconProps>;
+  Icon: IconType;
   metric: {
     data: string | undefined;
     text: string;
