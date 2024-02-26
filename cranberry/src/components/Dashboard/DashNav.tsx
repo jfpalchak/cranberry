@@ -19,7 +19,7 @@ export default function DashNav() {
     { path: 'profile', label: 'Profile', Icon: DashboardIcon },
     { path: 'health', label: 'Health', Icon: FavoriteBorderIcon },
     { path: 'journals', label: 'Journals', Icon: EditCalendarIcon },
-    { path: 'timeline', label: 'Profile', Icon: InsightsIcon },
+    { path: 'timeline', label: 'Timeline', Icon: InsightsIcon },
   ]
 
   const handleLogOut = () => {
