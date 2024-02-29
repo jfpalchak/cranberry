@@ -6,12 +6,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Tooltip } from "@mui/material";
 import type { IUser, IconType } from "../../../types";
 import { useProgressCalculations } from "../../../hooks";
-import { 
-  moneyText, 
-  avoidedText, 
-  lifeText, 
-  timeText 
-} from "../../../data/metrics-text";
+import { metricInfo } from '../../../data/metrics-text';
 
 interface MetricsProps {
   user: IUser;
@@ -56,25 +51,25 @@ function Metrics({ user }: MetricsProps) {
       tracker: 'money',
       Icon: AttachMoneyIcon,
       metric: { data: moneySaved.toFixed(2), text: 'money saved' },
-      tooltip: { info: moneyText, id: 'money' },
+      tooltip: { info: metricInfo.money, id: 'money' },
     },
     {
       tracker: 'avoided',
       Icon: SmokeFreeIcon,
       metric: { data: cigsAvoided.toFixed(), text: 'cigarettes avoided' },
-      tooltip: { info: avoidedText, id: 'avoided' },
+      tooltip: { info: metricInfo.avoided, id: 'avoided' },
     },
     {
       tracker: 'time-gained',
       Icon: MoreTimeIcon,
       metric: { data: (timeSaved / 60).toFixed(2), text: 'time saved (hours)' },
-      tooltip: { info: timeText, id: 'time' },
+      tooltip: { info: metricInfo.time, id: 'time' },
     },
     {
       tracker: 'life-regained',
       Icon: RestoreIcon,
       metric: { data: (timeGained / 24).toFixed(2), text: 'time gained (days)' },
-      tooltip: { info: lifeText, id: 'life' },
+      tooltip: { info: metricInfo.life, id: 'life' },
     },
   ];
 
